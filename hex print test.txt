@@ -1,0 +1,40 @@
+
+
+          / \ / \ / \ / \ / \ / \ / \ / \  // line 1: space slash space slash
+         | R | B |   |   |   |   |   |   | // line 2: 3 chars between pipes
+        / \ / \ / \ / \ / \ / \ / \ / \ /  // line 3: see line 1
+       |   |   |   |   |   |   |   |   |   // line 4: see line 2
+      / \ / \ / \ / \ / \ / \ / \ / \ /    // line 5: see line 1
+     |   |   |   |   |   |   |   |   |     // line 6: see line 2
+      \ / \ / \ / \ / \ / \ / \ / \ /      // line 7: see line 1
+
+
+  __
+ /  \
+/ rr \
+\ rr /
+ \__/
+ 
+  __
+ /  \
+/ bb \
+\ bb /
+ \__/
+ 
+      __
+     /  \
+  __/    \__
+ /  \    /  \
+/ bb \__/    \
+\ bb /  \    /
+ \__/    \__/
+    \    /
+     \__/
+
+
+       /\   /\
+      /  \ /  \
+     | RR | BB |
+     | RR | BB |
+      \  / \  /
+       \/   \/
