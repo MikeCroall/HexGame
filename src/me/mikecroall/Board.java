@@ -7,11 +7,23 @@ import java.util.Arrays;
 public class Board {
 
     private colour[][] grid;
+
     private enum colour{
-        BLANK,
-        RED,
-        BLUE,
-        OFFLIMITS
+        BLANK(' '),
+        RED('R'),
+        BLUE('B'),
+        OFFLIMITS('#');
+
+        private char letter;
+
+        colour(char let){  //is already private by default
+            letter = let;
+        }
+
+        public String getLetter(){
+            return "" + letter;
+        }
+
     }
 
     public Board(int width, int height){
@@ -31,40 +43,27 @@ public class Board {
     }
 
     public void print(){
-
-        //TODO optimise and refactor this method like hell
-
-        System.out.println("\n");
+        System.out.print("\n\n  ");
+        for (int x = 0; x < grid[0].length; x++) {
+            System.out.print(" / \\");
+        }
+        System.out.println();
+        String leftPadding;
         for (int y = 0; y < grid.length ; y++) {
-            String leftPadding = "";
-            for (int spaces = 0; spaces < 2*y; spaces++) {
+            //Start at the correct position
+            leftPadding = "";
+            for (int spaces = 0; spaces < 2*y; spaces++)
                 leftPadding += " ";
-            }
-            if(y==0) {
-                System.out.print(leftPadding);
-                System.out.print("  ");
-                for (int x = 0; x < grid[y].length; x++) {
-                    System.out.print(" / \\");
-                }
-                System.out.println();
-            }
             System.out.print(leftPadding + "  ");
-            for (int x = 0; x < grid[y].length ; x++) {
-                String letter = "?";
-                switch(grid[y][x]){
-                    case BLANK: letter = " "; break;
-                    case RED: letter = "R"; break;
-                    case BLUE: letter = "B"; break;
-                    case OFFLIMITS: letter = "#"; break;
-                    default: break;
-                }
-                System.out.print("| " + letter + " ");
-            }
-            System.out.println("|");
-            System.out.print(leftPadding);
-            for (int x = 0; x < grid[y].length; x++) {
+
+            //Top of hex is present, print middle row
+            for (int x = 0; x < grid[y].length ; x++)
+                System.out.print("| " + grid[y][x].getLetter() + " ");
+            System.out.print("|\n" + leftPadding);
+
+            //Close off hex (and top of next row, if exists)
+            for (int x = 0; x < grid[y].length; x++)
                 System.out.print((x == 0 ? "  " : " /") + " \\");
-            }
             System.out.println(" /" + (y < grid.length - 1 ? " \\" : ""));
         }
         System.out.println();
