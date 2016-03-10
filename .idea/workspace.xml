@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f778a171-f913-492a-b16f-269dd8982837" name="Default" comment="Optimised Board.print()">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HexGame/me/mikecroall/Board$1.class" afterPath="$PROJECT_DIR$/out/production/HexGame/me/mikecroall/Board$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HexGame/me/mikecroall/Board.class" afterPath="$PROJECT_DIR$/out/production/HexGame/me/mikecroall/Board.class" />
+    <list default="true" id="f778a171-f913-492a-b16f-269dd8982837" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/mikecroall/Board.java" afterPath="$PROJECT_DIR$/src/me/mikecroall/Board.java" />
     </list>
     <ignored path="HexGame.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -368,6 +365,13 @@
       <option name="number" value="Default" />
       <updated>1457623370501</updated>
     </task>
+    <task id="LOCAL-00001" summary="Optimised Board.print()">
+      <created>1457651898435</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1457651898435</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
