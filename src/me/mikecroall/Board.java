@@ -1,9 +1,5 @@
 package me.mikecroall;
 
-import com.sun.org.apache.xpath.internal.SourceTree;
-
-import java.util.Arrays;
-
 public class Board {
 
     private colour[][] grid;
