@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f778a171-f913-492a-b16f-269dd8982837" name="Default" comment="">
+    <list default="true" id="f778a171-f913-492a-b16f-269dd8982837" name="Default" comment="Removed unused imports">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HexGame/me/mikecroall/Board$1.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HexGame/me/mikecroall/Board$colour.class" afterPath="$PROJECT_DIR$/out/production/HexGame/me/mikecroall/Board$colour.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HexGame/me/mikecroall/Board.class" afterPath="$PROJECT_DIR$/out/production/HexGame/me/mikecroall/Board.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/mikecroall/Board.java" afterPath="$PROJECT_DIR$/src/me/mikecroall/Board.java" />
     </list>
     <ignored path="HexGame.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,29 +31,26 @@
       <file leaf-file-name="Board.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/me/mikecroall/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33265924">
-              <caret line="18" column="58" selection-start-line="18" selection-start-column="58" selection-end-line="18" selection-end-column="58" />
+            <state vertical-scroll-proportion="0.41764706">
+              <caret line="199" column="31" selection-start-line="199" selection-start-column="31" selection-end-line="199" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#386#387#0" expanded="true" />
-                <element signature="e#422#423#0" expanded="true" />
-                <element signature="e#464#465#0" expanded="true" />
+                <element signature="class#Colour#0;class#Board#0" expanded="false" />
                 <element signature="method#Board#0;class#Board#0" expanded="false" />
-                <element signature="method#setColour#0;class#Board#0" expanded="false" />
-                <element signature="method#validSpace#0;class#Board#0" expanded="false" />
+                <element signature="method#print#0;class#Board#0" expanded="false" />
+                <element signature="method#makeMove#0;class#Board#0" expanded="false" />
+                <element signature="method#isValidSpace#0;class#Board#0" expanded="false" />
+                <element signature="method#isValidExtraSpace#0;class#Board#0" expanded="false" />
                 <element signature="method#isFreeSpace#0;class#Board#0" expanded="false" />
-                <element signature="method#main#0;class#Board#0" expanded="false" />
+                <element signature="method#hasWon#0;class#Board#0" expanded="false" />
+                <element signature="e#3986#3993#0" expanded="true" />
+                <element signature="e#4046#4053#0" expanded="true" />
+                <element signature="e#4414#4421#0" expanded="true" />
+                <element signature="method#findNeighbours#0;class#Board#0" expanded="false" />
+                <element signature="e#4900#4907#0" expanded="true" />
+                <element signature="method#handleNeighbour#0;class#Board#0" expanded="false" />
+                <element signature="method#foundOppositeEdge#0;class#Board#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="hex print test.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hex print test.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -57,6 +58,7 @@
     </leaf>
   </component>
   <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
@@ -74,10 +76,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-13" />
-    <option name="y" value="-13" />
-    <option name="width" value="3226" />
-    <option name="height" value="1746" />
+    <option name="x" value="-11" />
+    <option name="width" value="1622" />
+    <option name="height" value="1731" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -149,7 +150,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
-    <property name="last_opened_file_path" value="$USER_HOME$/AppData/Local/GitHub/PortableGit_c2ba306e536fdf878271f7fe636a147ff37326ad/bin/git.exe" />
+    <property name="last_opened_file_path" value="$USER_HOME$/AppData/Local/GitHub/PortableGit_cf76fc1621ac41ad4fe86c420ab5ff403f1808b9/cmd/git.exe" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -377,24 +378,30 @@
       <option name="project" value="LOCAL" />
       <updated>1457651948997</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Removed unused imports">
+      <created>1457795055227</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1457795055227</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-13" y="-13" width="3226" height="1746" extended-state="6" />
+    <frame x="-11" y="0" width="1622" height="1731" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32965606" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32965606" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44192082" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.52555704" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1946875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39035088" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -421,11 +428,13 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Optimised Board.print()" />
-    <option name="LAST_COMMIT_MESSAGE" value="Optimised Board.print()" />
+    <MESSAGE value="Removed unused imports" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed unused imports" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="7" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -440,14 +449,78 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#386#387#0" expanded="true" />
-            <element signature="e#422#423#0" expanded="true" />
-            <element signature="e#464#465#0" expanded="true" />
+            <element signature="class#Colour#0;class#Board#0" expanded="false" />
             <element signature="method#Board#0;class#Board#0" expanded="false" />
-            <element signature="method#setColour#0;class#Board#0" expanded="false" />
-            <element signature="method#validSpace#0;class#Board#0" expanded="false" />
+            <element signature="method#print#0;class#Board#0" expanded="false" />
+            <element signature="method#makeMove#0;class#Board#0" expanded="false" />
+            <element signature="method#isValidSpace#0;class#Board#0" expanded="false" />
+            <element signature="method#isValidExtraSpace#0;class#Board#0" expanded="false" />
             <element signature="method#isFreeSpace#0;class#Board#0" expanded="false" />
-            <element signature="method#main#0;class#Board#0" expanded="false" />
+            <element signature="method#hasWon#0;class#Board#0" expanded="false" />
+            <element signature="e#3986#3993#0" expanded="true" />
+            <element signature="e#4046#4053#0" expanded="true" />
+            <element signature="e#4414#4421#0" expanded="true" />
+            <element signature="method#findNeighbours#0;class#Board#0" expanded="false" />
+            <element signature="e#4900#4907#0" expanded="true" />
+            <element signature="method#handleNeighbour#0;class#Board#0" expanded="false" />
+            <element signature="method#foundOppositeEdge#0;class#Board#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/mikecroall/Board.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="class#Colour#0;class#Board#0" expanded="false" />
+            <element signature="method#Board#0;class#Board#0" expanded="false" />
+            <element signature="method#print#0;class#Board#0" expanded="false" />
+            <element signature="method#makeMove#0;class#Board#0" expanded="false" />
+            <element signature="method#isValidSpace#0;class#Board#0" expanded="false" />
+            <element signature="method#isValidExtraSpace#0;class#Board#0" expanded="false" />
+            <element signature="method#isFreeSpace#0;class#Board#0" expanded="false" />
+            <element signature="method#hasWon#0;class#Board#0" expanded="false" />
+            <element signature="e#3986#3993#0" expanded="true" />
+            <element signature="e#4046#4053#0" expanded="true" />
+            <element signature="e#4414#4421#0" expanded="true" />
+            <element signature="method#findNeighbours#0;class#Board#0" expanded="false" />
+            <element signature="e#4900#4907#0" expanded="true" />
+            <element signature="method#handleNeighbour#0;class#Board#0" expanded="false" />
+            <element signature="method#foundOppositeEdge#0;class#Board#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hex print test.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/mikecroall/Board.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="class#Colour#0;class#Board#0" expanded="false" />
+            <element signature="method#Board#0;class#Board#0" expanded="false" />
+            <element signature="method#print#0;class#Board#0" expanded="false" />
+            <element signature="method#makeMove#0;class#Board#0" expanded="false" />
+            <element signature="method#isValidSpace#0;class#Board#0" expanded="false" />
+            <element signature="method#isValidExtraSpace#0;class#Board#0" expanded="false" />
+            <element signature="method#isFreeSpace#0;class#Board#0" expanded="false" />
+            <element signature="method#hasWon#0;class#Board#0" expanded="false" />
+            <element signature="e#3986#3993#0" expanded="true" />
+            <element signature="e#4046#4053#0" expanded="true" />
+            <element signature="e#4414#4421#0" expanded="true" />
+            <element signature="method#findNeighbours#0;class#Board#0" expanded="false" />
+            <element signature="e#4900#4907#0" expanded="true" />
+            <element signature="method#handleNeighbour#0;class#Board#0" expanded="false" />
+            <element signature="method#foundOppositeEdge#0;class#Board#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -456,32 +529,37 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="14" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hex print test.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.7007722">
+          <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/me/mikecroall/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33265924">
-          <caret line="18" column="58" selection-start-line="18" selection-start-column="58" selection-end-line="18" selection-end-column="58" />
+        <state vertical-scroll-proportion="0.41764706">
+          <caret line="199" column="31" selection-start-line="199" selection-start-column="31" selection-end-line="199" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#386#387#0" expanded="true" />
-            <element signature="e#422#423#0" expanded="true" />
-            <element signature="e#464#465#0" expanded="true" />
+            <element signature="class#Colour#0;class#Board#0" expanded="false" />
             <element signature="method#Board#0;class#Board#0" expanded="false" />
-            <element signature="method#setColour#0;class#Board#0" expanded="false" />
-            <element signature="method#validSpace#0;class#Board#0" expanded="false" />
+            <element signature="method#print#0;class#Board#0" expanded="false" />
+            <element signature="method#makeMove#0;class#Board#0" expanded="false" />
+            <element signature="method#isValidSpace#0;class#Board#0" expanded="false" />
+            <element signature="method#isValidExtraSpace#0;class#Board#0" expanded="false" />
             <element signature="method#isFreeSpace#0;class#Board#0" expanded="false" />
-            <element signature="method#main#0;class#Board#0" expanded="false" />
+            <element signature="method#hasWon#0;class#Board#0" expanded="false" />
+            <element signature="e#3986#3993#0" expanded="true" />
+            <element signature="e#4046#4053#0" expanded="true" />
+            <element signature="e#4414#4421#0" expanded="true" />
+            <element signature="method#findNeighbours#0;class#Board#0" expanded="false" />
+            <element signature="e#4900#4907#0" expanded="true" />
+            <element signature="method#handleNeighbour#0;class#Board#0" expanded="false" />
+            <element signature="method#foundOppositeEdge#0;class#Board#0" expanded="false" />
           </folding>
         </state>
       </provider>
