@@ -11,7 +11,8 @@ public class Move implements MoveInterface {
 
     @Override
     public boolean setPosition(int x, int y) throws InvalidPositionException {
-        //TODO check valid coordinates
+        if (x < 0 || y < 0)
+            throw new InvalidPositionException();
 
         this.x = x;
         this.y = y;
@@ -30,15 +31,13 @@ public class Move implements MoveInterface {
     }
 
     @Override
-    public boolean setConceeded() {
-        conceded = true;
-        return true;
+    public boolean setConceded() {
+        return conceded = true;
     }
 
     @Override
-    public boolean hasConceeded() {
+    public boolean hasConceded() {
         return conceded;
     }
 
-    //TODO ensure concede is correctly implemented (email sent, awaiting reply)
 }

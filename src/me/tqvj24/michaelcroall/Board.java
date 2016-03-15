@@ -79,17 +79,20 @@ public class Board implements BoardInterface {
         //Blue starts at left, finds right
         boolean topToBottom = (colour == Piece.RED);
 
-        Point start;
-        if (topToBottom)
-            start = new Point((int) (grid[0].length / 2), 0);
-        else
-            start = new Point(0, (int) (grid.length / 2));
-
         ArrayList<Point> closed = new ArrayList<Point>();
         ArrayList<Point> open = new ArrayList<Point>();
 
-        closed.add(start);
-        open.addAll(neighboursOf(start, closed));
+        if (topToBottom)
+            for (int x = 0; x < grid[0].length; x++)
+                if (grid[0][x] == colour)
+                    closed.add(new Point(x, 0));
+        else
+            for (int y = 0; y < grid.length; y++)
+                if (grid[y][0] == colour)
+                    closed.add(new Point(0, y));
+
+        for(Point p : closed)
+            open.addAll(neighboursOf(p, closed));
 
         boolean found = false;
         while (!open.isEmpty()) {
@@ -134,48 +137,6 @@ public class Board implements BoardInterface {
                 return true;
         }
         return false;
-    }
-
-    //TODO put board borders into print method and optimise print method
-    public void print() {
-        //Print top of hexs
-        System.out.print("\n\n  ");
-        for (int x = 0; x < grid[0].length; x++) {
-            System.out.print(" / \\");
-        }
-        System.out.println();
-
-        for (int y = 0; y < grid.length; y++) {
-            //Start at the correct position
-            String leftPadding = "";
-            for (int spaces = 0; spaces < 2 * y; spaces++)
-                leftPadding += " ";
-            System.out.print(leftPadding + "  ");
-
-            //Top of hex is present, print middle row
-            for (int x = 0; x < grid[y].length; x++)
-                System.out.print("| " + getLetter(grid[y][x]) + " ");
-            System.out.print("|\n" + leftPadding);
-
-            //Close off hex (and top of next row, if exists)
-            for (int x = 0; x < grid[y].length; x++)
-                System.out.print((x == 0 ? "  " : " /") + " \\");
-            System.out.println(" /" + (y < grid.length - 1 ? " \\" : ""));
-        }
-        System.out.println();
-    }
-
-    private String getLetter(Piece colour){
-        switch(colour){
-            case RED:
-                return "R";
-            case BLUE:
-                return "B";
-            case UNSET:
-                return " ";
-            default:
-                return "?";
-        }
     }
 
 }

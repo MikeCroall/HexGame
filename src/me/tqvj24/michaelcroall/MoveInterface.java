@@ -22,11 +22,13 @@ public interface MoveInterface
     public boolean setPosition(int x, int y) throws InvalidPositionException;
     
     /**
-     * Has the player conceeded in this move?
-     * 
-     * @return true if the player has conceeded.
+     * Has the player conceded in this move?
+     * i.e. have they yielded to the fact that their opponent has won before all required
+     * moves are made.
+     *
+     * @return true if the player has conceded.
      */
-    public boolean hasConceeded();
+    public boolean hasConceded();
     
     /**
      * Get the x coordinate of the move.
@@ -43,9 +45,9 @@ public interface MoveInterface
     public int getYPosition();
     
     /**
-     * Indicate that the player has conceeded in this move.
+     * Indicate that the player has conceded in this move.
      * 
-     * @return true indicating conceed is set.
+     * @return true indicating conceded is set.
      */
-    public boolean setConceeded();
+    public boolean setConceded();
 }
