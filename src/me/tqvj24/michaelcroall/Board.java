@@ -16,10 +16,8 @@ public class Board implements BoardInterface {
     //Interface methods
     @Override
     public boolean setBoardSize(int sizeX, int sizeY) throws InvalidBoardSizeException, BoardAlreadySizedException {
-        if (grid != null)
-            throw new BoardAlreadySizedException();
-        if (sizeX < 2 || sizeY < 2)
-            throw new InvalidBoardSizeException();
+        if (grid != null) { throw new BoardAlreadySizedException(); }
+        if (sizeX < 2 || sizeY < 2) { throw new InvalidBoardSizeException(); }
 
         grid = new Piece[sizeY][sizeX];
         for (int y = 0; y < sizeY; y++) {
@@ -32,19 +30,18 @@ public class Board implements BoardInterface {
 
     @Override
     public Piece[][] getBoardView() throws NoBoardDefinedException {
-        if (grid == null)
-            throw new NoBoardDefinedException();
+        if (grid == null) { throw new NoBoardDefinedException(); }
         return grid;
     }
 
     @Override
     public boolean placePiece(Piece colour, MoveInterface move) throws PositionAlreadyTakenException, InvalidPositionException, InvalidColourException {
         if (colour == lastMove || colour == Piece.UNSET)
-            throw new InvalidColourException();
+        { throw new InvalidColourException(); }
         if (!isValidSpace(move.getXPosition(), move.getYPosition()))
-            throw new InvalidPositionException();
+        { throw new InvalidPositionException(); }
         if (!isFreeSpace(move.getXPosition(), move.getYPosition()))
-            throw new PositionAlreadyTakenException();
+        { throw new PositionAlreadyTakenException(); }
 
         grid[move.getYPosition()][move.getXPosition()] = colour;
         lastMove = colour;
@@ -54,15 +51,13 @@ public class Board implements BoardInterface {
 
     @Override
     public Piece gameWon() throws NoBoardDefinedException {
-        if (grid == null)
+        if (grid == null) {
             throw new NoBoardDefinedException();
+        }
 
-        if(hasWon(Piece.RED))
-            return Piece.RED;
-        else if(hasWon(Piece.BLUE))
-            return Piece.BLUE;
-        else
-            return Piece.UNSET;
+        if(hasWon(Piece.RED)) { return Piece.RED; }
+        else if(hasWon(Piece.BLUE)) { return Piece.BLUE; }
+        else { return Piece.UNSET; }
     }
 
     //Non-interface methods
@@ -82,17 +77,23 @@ public class Board implements BoardInterface {
         ArrayList<Point> closed = new ArrayList<Point>();
         ArrayList<Point> open = new ArrayList<Point>();
 
-        if (topToBottom)
-            for (int x = 0; x < grid[0].length; x++)
-                if (grid[0][x] == colour)
+        if (topToBottom) {
+            for (int x = 0; x < grid[0].length; x++) {
+                if (grid[0][x] == colour) {
                     closed.add(new Point(x, 0));
-        else
-            for (int y = 0; y < grid.length; y++)
-                if (grid[y][0] == colour)
+                }
+            }
+        } else {
+            for (int y = 0; y < grid.length; y++) {
+                if (grid[y][0] == colour) {
                     closed.add(new Point(0, y));
+                }
+            }
+        }
 
-        for(Point p : closed)
+        for(Point p : closed) {
             open.addAll(neighboursOf(p, closed));
+        }
 
         boolean found = false;
         while (!open.isEmpty()) {
@@ -125,16 +126,19 @@ public class Board implements BoardInterface {
     }
 
     private void checkNeighbour(Point p, ArrayList<Point> neighbours, ArrayList<Point> closed, Piece colour) {
-        if (isValidSpace(p.x, p.y) && grid[p.y][p.x] == colour && !closed.contains(p))
+        if (isValidSpace(p.x, p.y) && grid[p.y][p.x] == colour && !closed.contains(p)) {
             neighbours.add(p);
+        }
     }
 
     private boolean foundOppositeEdge(boolean topToBottom, ArrayList<Point> open) {
         for (Point p : open) {
-            if(topToBottom && p.y == grid.length - 1)
+            if(topToBottom && p.y == grid.length - 1) {
                 return true;
-            else if(!topToBottom && p.x == grid[0].length - 1)
+            }
+            else if(!topToBottom && p.x == grid[0].length - 1) {
                 return true;
+            }
         }
         return false;
     }

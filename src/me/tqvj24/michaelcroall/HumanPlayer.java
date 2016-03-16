@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class HumanPlayer implements PlayerInterface {
 
-    Piece colour;
+    private Piece colour;
 
     public HumanPlayer(){
         colour = Piece.UNSET;
@@ -12,8 +12,9 @@ public class HumanPlayer implements PlayerInterface {
 
     @Override
     public MoveInterface makeMove(Piece[][] boardView) throws NoValidMovesException {
-        if (!hasValidMove(boardView))
+        if (!hasValidMove(boardView)) {
             throw new NoValidMovesException();
+        }
 
         Move move = new Move();
         boolean validPosition = false;
@@ -28,7 +29,7 @@ public class HumanPlayer implements PlayerInterface {
             if (items.length == 1) {
                 move.setConceded();
             } else {
-                //length is 2, getValidInput ensures this
+                //length is 2, items are int, getValidInput ensures this
                 int x = Integer.parseInt(items[0]);
                 int y = Integer.parseInt(items[1]);
 
@@ -36,7 +37,7 @@ public class HumanPlayer implements PlayerInterface {
                     move.setPosition(x, y);
                 } catch (InvalidPositionException ex) {
                     validPosition = false;
-                    System.out.println("That's not a valid position");
+                    System.out.println("That is not a valid position");
                 }
             }
         }
@@ -46,20 +47,25 @@ public class HumanPlayer implements PlayerInterface {
 
     @Override
     public boolean setColour(Piece colour) throws InvalidColourException, ColourAlreadySetException {
-        if (this.colour != Piece.UNSET)
-            throw new ColourAlreadySetException();
-        if(colour == Piece.UNSET)
+        if (this.colour != Piece.UNSET) {
+            {
+                throw new ColourAlreadySetException();
+            }
+        }
+        if(colour == Piece.UNSET) {
             throw new InvalidColourException();
+        }
         this.colour = colour;
         return true;
     }
 
     @Override
     public boolean finalGameState(GameState state) {
-        if (state == GameState.WON)
-            System.out.println("Congratulations, you have won!");
-        else if (state == GameState.LOST)
-            System.out.println("Unfortunately, you have lost.");
+        if (state == GameState.WON) {
+            System.out.println("Congratulations " + colour.name().toLowerCase() + ", you have won!");
+        } else if (state == GameState.LOST) {
+            System.out.println("Unfortunately " + colour.name().toLowerCase() + ", you have lost.");
+        }
         return true;
     }
 
@@ -76,18 +82,21 @@ public class HumanPlayer implements PlayerInterface {
         for (int y = 0; y < grid.length; y++) {
             //Start at the correct position
             String leftPadding = "";
-            for (int spaces = 0; spaces < 2 * y; spaces++)
+            for (int spaces = 0; spaces < 2 * y; spaces++) {
                 leftPadding += " ";
+            }
             System.out.print(leftPadding + "  ");
 
             //Top of hex is present, print middle row
-            for (int x = 0; x < grid[y].length; x++)
+            for (int x = 0; x < grid[y].length; x++) {
                 System.out.print("| " + getLetter(grid[y][x]) + " ");
+            }
             System.out.print("|\n" + leftPadding);
 
             //Close off hex (and top of next row, if exists)
-            for (int x = 0; x < grid[y].length; x++)
+            for (int x = 0; x < grid[y].length; x++) {
                 System.out.print((x == 0 ? "  " : " /") + " \\");
+            }
             System.out.println(" /" + (y < grid.length - 1 ? " \\" : ""));
         }
         System.out.println();
@@ -107,29 +116,32 @@ public class HumanPlayer implements PlayerInterface {
     }
 
     private boolean hasValidMove(Piece[][] grid){
-        for (Piece[] row : grid)
-            for (Piece piece : row)
-                if (piece == Piece.UNSET)
+        for (Piece[] row : grid) {
+            for (Piece piece : row) {
+                if (piece == Piece.UNSET) {
                     return true;
+                }
+            }
+        }
         return false;
     }
 
     private String getValidInput(){
         Scanner scan = new Scanner(System.in);
-        String input = "", output = "";
+        String input, output = "";
         boolean valid = false;
 
         while (!valid){
             valid = true;
-            System.out.println("Please enter the move you wish to make.\n\tEnter 'concede' to concede to your opponent\n\tEnter coordinates in the form 'x y' to make a move\nChoice: ");
+            System.out.print("Please enter the move you wish to make, " + colour.name().toLowerCase() + " player.\n\tEnter 'concede' to concede to your opponent\n\tEnter coordinates in the form 'x y' to make a move\nChoice: ");
             input = scan.nextLine();
             String items[]  = input.trim().toLowerCase().replace(",", " ").replace("'", "").split(" ");
             if (items.length == 1){
                 //Probably conceding, double check
-                if (items[0].equals("concede"))
+                if (items[0].equals("concede")) {
                     output = items[0];
-                else { valid = false; }
-            }else if (items.length == 2){
+                } else { valid = false; }
+            } else if (items.length == 2){
                 //Probably coordinates, double check
                 int x, y;
                 Scanner numCheck = new Scanner(items[0]);
@@ -142,6 +154,10 @@ public class HumanPlayer implements PlayerInterface {
                     } else { valid = false; }
                 } else {valid = false; }
             } else {valid = false; }
+
+            if(!valid){
+                System.out.println("Invalid input - please try again!");
+            }
         }
         return output;
     }
