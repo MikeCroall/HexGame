@@ -97,13 +97,17 @@ public class GameManager implements GameManagerInterface {
                     winner = conceded ? Piece.RED : board.gameWon();
                 }
             }
-            if (winner == Piece.RED){
+
+            HumanPlayer.printBoard(board.getBoardView());
+
+            if (winner == Piece.RED) {
                 redPlayer.finalGameState(GameState.WON);
                 bluePlayer.finalGameState(GameState.LOST);
-            }else{
+            } else {
                 redPlayer.finalGameState(GameState.LOST);
                 bluePlayer.finalGameState(GameState.WON);
             }
+
         } catch(NoBoardDefinedException noBoardEx){
             System.out.println("No board has been defined!");
         } catch(NoValidMovesException noMovesEx){

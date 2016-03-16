@@ -9,6 +9,7 @@ public class HumanPlayer implements PlayerInterface {
      * https://en.wikipedia.org/wiki/ANSI_escape_code
      */
     private static final boolean colourOutput = true; //Colours letters and names, may not work in some environments
+
     private Piece colour;
 
     public HumanPlayer(){
@@ -75,8 +76,9 @@ public class HumanPlayer implements PlayerInterface {
     }
 
     //Non-interface methods
-    //TODO print borders/markers, and optimise
-    private void printBoard(Piece[][] grid){
+    //TODO print borders/markers, and
+    //Static to allow printing once game has been won
+    public static void printBoard(Piece[][] grid){
         //Print top of hexs
         System.out.print("\n\n  ");
         for (int x = 0; x < grid[0].length; x++) {
@@ -107,7 +109,7 @@ public class HumanPlayer implements PlayerInterface {
         System.out.println();
     }
 
-    private String getLetter(Piece colour) {
+    private static String getLetter(Piece colour) {
         switch (colour) {
             case RED:
                 if(colourOutput) { return "\u001B[31m" + "R" + "\u001B[0m"; }
