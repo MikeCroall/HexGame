@@ -7,14 +7,11 @@
     <list default="true" id="f778a171-f913-492a-b16f-269dd8982837" name="Default" comment="Removed unused imports">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HexGame/me/tqvj24/michaelcroall/Board.class" afterPath="$PROJECT_DIR$/out/production/HexGame/me/tqvj24/michaelcroall/Board.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HexGame/me/tqvj24/michaelcroall/GameManager.class" afterPath="$PROJECT_DIR$/out/production/HexGame/me/tqvj24/michaelcroall/GameManager.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HexGame/me/tqvj24/michaelcroall/HumanPlayer$1.class" afterPath="$PROJECT_DIR$/out/production/HexGame/me/tqvj24/michaelcroall/HumanPlayer$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HexGame/me/tqvj24/michaelcroall/HumanPlayer.class" afterPath="$PROJECT_DIR$/out/production/HexGame/me/tqvj24/michaelcroall/HumanPlayer.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HexGame/me/tqvj24/michaelcroall/Move.class" afterPath="$PROJECT_DIR$/out/production/HexGame/me/tqvj24/michaelcroall/Move.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hex print test.txt" afterPath="$PROJECT_DIR$/hex print test.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/tqvj24/michaelcroall/Board.java" afterPath="$PROJECT_DIR$/src/me/tqvj24/michaelcroall/Board.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/tqvj24/michaelcroall/GameManager.java" afterPath="$PROJECT_DIR$/src/me/tqvj24/michaelcroall/GameManager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/tqvj24/michaelcroall/HumanPlayer.java" afterPath="$PROJECT_DIR$/src/me/tqvj24/michaelcroall/HumanPlayer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/tqvj24/michaelcroall/Move.java" afterPath="$PROJECT_DIR$/src/me/tqvj24/michaelcroall/Move.java" />
     </list>
     <ignored path="HexGame.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,7 +32,54 @@
     <favorites_list name="HexGame" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="600" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
+      <file leaf-file-name="Board.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/me/tqvj24/michaelcroall/Board.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="138" column="18" selection-start-line="138" selection-start-column="18" selection-end-line="138" selection-end-column="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#Board#0;class#Board#0" expanded="false" />
+                <element signature="method#setBoardSize#0;class#Board#0" expanded="false" />
+                <element signature="method#getBoardView#0;class#Board#0" expanded="false" />
+                <element signature="method#placePiece#0;class#Board#0" expanded="false" />
+                <element signature="method#gameWon#0;class#Board#0" expanded="false" />
+                <element signature="method#isValidSpace#0;class#Board#0" expanded="false" />
+                <element signature="e#2472#2479#0" expanded="true" />
+                <element signature="e#2528#2535#0" expanded="true" />
+                <element signature="e#3309#3316#0" expanded="true" />
+                <element signature="e#3698#3705#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/me/tqvj24/michaelcroall/GameManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="127" column="11" selection-start-line="127" selection-start-column="11" selection-end-line="127" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HumanPlayer.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/me/tqvj24/michaelcroall/HumanPlayer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.72302735">
+              <caret line="71" column="32" selection-start-line="71" selection-start-column="32" selection-end-line="71" selection-end-column="32" />
+              <folding>
+                <element signature="method#getPlayerName#0;class#HumanPlayer#0" expanded="false" />
+                <element signature="method#hasValidMove#0;class#HumanPlayer#0" expanded="false" />
+                <element signature="method#getValidInput#0;class#HumanPlayer#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -64,9 +108,16 @@
         <option value="$PROJECT_DIR$/hex print test.txt" />
         <option value="$PROJECT_DIR$/src/me/tqvj24/michaelcroall/Board.java" />
         <option value="$PROJECT_DIR$/src/me/tqvj24/michaelcroall/GameManager.java" />
-        <option value="$PROJECT_DIR$/src/me/tqvj24/michaelcroall/HumanPlayer.java" />
         <option value="$PROJECT_DIR$/src/me/tqvj24/michaelcroall/Move.java" />
+        <option value="$PROJECT_DIR$/src/me/tqvj24/michaelcroall/HumanPlayer.java" />
       </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Bundled (Maven 3)" />
+      </MavenGeneralSettings>
     </option>
   </component>
   <component name="ProjectFrameBounds">
@@ -429,7 +480,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-13" y="-13" width="3226" height="1746" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2742475" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -439,10 +490,10 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3277592" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.55518395" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20019281" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20019281" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299933" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -474,7 +525,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="14" />
+      <option name="time" value="15" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -809,9 +860,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/tqvj24/michaelcroall/Move.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31771192">
+          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+          <folding>
+            <element signature="e#150#151#0" expanded="true" />
+            <element signature="e#182#183#0" expanded="true" />
+            <element signature="e#482#483#0" expanded="true" />
+            <element signature="e#506#507#0" expanded="true" />
+            <element signature="e#553#554#0" expanded="true" />
+            <element signature="e#577#578#0" expanded="true" />
+            <element signature="e#729#730#0" expanded="true" />
+            <element signature="e#760#761#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/me/tqvj24/michaelcroall/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65802115">
+        <state vertical-scroll-proportion="0.0">
           <caret line="138" column="18" selection-start-line="138" selection-start-column="18" selection-end-line="138" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -831,33 +899,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/me/tqvj24/michaelcroall/GameManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3823247">
-          <caret line="121" column="36" selection-start-line="121" selection-start-column="36" selection-end-line="121" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="127" column="11" selection-start-line="127" selection-start-column="11" selection-end-line="127" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/me/tqvj24/michaelcroall/HumanPlayer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="155" column="34" selection-start-line="155" selection-start-column="34" selection-end-line="155" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/tqvj24/michaelcroall/Move.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31771192">
-          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.72302735">
+          <caret line="71" column="32" selection-start-line="71" selection-start-column="32" selection-end-line="71" selection-end-column="32" />
           <folding>
-            <element signature="e#150#151#0" expanded="true" />
-            <element signature="e#182#183#0" expanded="true" />
-            <element signature="e#482#483#0" expanded="true" />
-            <element signature="e#506#507#0" expanded="true" />
-            <element signature="e#553#554#0" expanded="true" />
-            <element signature="e#577#578#0" expanded="true" />
-            <element signature="e#729#730#0" expanded="true" />
-            <element signature="e#760#761#0" expanded="true" />
+            <element signature="method#getPlayerName#0;class#HumanPlayer#0" expanded="false" />
+            <element signature="method#hasValidMove#0;class#HumanPlayer#0" expanded="false" />
+            <element signature="method#getValidInput#0;class#HumanPlayer#0" expanded="false" />
           </folding>
         </state>
       </provider>

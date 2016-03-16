@@ -4,6 +4,11 @@ import java.util.Scanner;
 
 public class HumanPlayer implements PlayerInterface {
 
+    /**
+     * Colouring output mode uses ANSI escape codes, found here:
+     * https://en.wikipedia.org/wiki/ANSI_escape_code
+     */
+    private static final boolean colourOutput = true; //Colours letters and names, may not work in some environments
     private Piece colour;
 
     public HumanPlayer(){
@@ -62,9 +67,9 @@ public class HumanPlayer implements PlayerInterface {
     @Override
     public boolean finalGameState(GameState state) {
         if (state == GameState.WON) {
-            System.out.println("Congratulations " + colour.name().toLowerCase() + ", you have won!");
+            System.out.println("Congratulations " + getPlayerName() + ", you have won!");
         } else if (state == GameState.LOST) {
-            System.out.println("Unfortunately " + colour.name().toLowerCase() + ", you have lost.");
+            System.out.println("Unfortunately " + getPlayerName() + ", you have lost.");
         }
         return true;
     }
@@ -102,16 +107,31 @@ public class HumanPlayer implements PlayerInterface {
         System.out.println();
     }
 
-    private String getLetter(Piece colour){
-        switch(colour){
+    private String getLetter(Piece colour) {
+        switch (colour) {
             case RED:
-                return "R";
+                if(colourOutput) { return "\u001B[31m" + "R" + "\u001B[0m"; }
+                else { return "R"; }
             case BLUE:
-                return "B";
+                if (colourOutput) { return "\u001B[34m" + "B" + "\u001B[0m"; }
+                else {return "B"; }
             case UNSET:
                 return " ";
             default:
                 return "?";
+        }
+
+    }
+
+    private String getPlayerName(){
+        if(colourOutput){
+            if(colour == Piece.BLUE){
+                return "\u001B[34mblue\u001B[0m";
+            }else{
+                return "\u001B[31mred\u001B[0m";
+            }
+        }else{
+            return colour.name().toLowerCase();
         }
     }
 
@@ -133,7 +153,7 @@ public class HumanPlayer implements PlayerInterface {
 
         while (!valid){
             valid = true;
-            System.out.print("Please enter the move you wish to make, " + colour.name().toLowerCase() + " player.\n\tEnter 'concede' to concede to your opponent\n\tEnter coordinates in the form 'x y' to make a move\nChoice: ");
+            System.out.print("Please enter the move you wish to make, " + getPlayerName() + " player.\n\tEnter 'concede' to concede to your opponent\n\tEnter coordinates in the form 'x y' to make a move\nChoice: ");
             input = scan.nextLine();
             String items[]  = input.trim().toLowerCase().replace(",", " ").replace("'", "").split(" ");
             if (items.length == 1){
