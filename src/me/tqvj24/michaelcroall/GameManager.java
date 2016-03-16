@@ -114,10 +114,10 @@ public class GameManager implements GameManagerInterface {
             System.out.println("There are no valid moves to make!");
         }
 
-        return true; // TODO find out what this return is meant to mean
+        return true;
     }
 
-    public static void main(String[] args){
+    private static void playHumanVsHuman(){
         GameManager g = new GameManager();
         HumanPlayer r = new HumanPlayer();
         HumanPlayer b = new HumanPlayer();
@@ -137,5 +137,32 @@ public class GameManager implements GameManagerInterface {
             System.out.println("That's not a valid board size!");
         }
         g.playGame();
+    }
+
+    private static void playHumanVsComputer(){
+        GameManager g = new GameManager();
+        HumanPlayer r = new HumanPlayer();
+        ComputerPlayer_tqvj24 b = new ComputerPlayer_tqvj24();
+        try {
+            r.setColour(Piece.RED);
+            b.setColour(Piece.BLUE);
+            g.specifyPlayer(r, Piece.RED);
+            g.specifyPlayer(b, Piece.BLUE);
+            g.boardSize(5, 5);
+        } catch (ColourAlreadySetException e) {
+            System.out.println("That colour has already been set!");
+        } catch (InvalidColourException e) {
+            System.out.println("Invalid colour assigned to player!");
+        } catch (BoardAlreadySizedException e) {
+            System.out.println("Board has already been sized!");
+        } catch (InvalidBoardSizeException e) {
+            System.out.println("That's not a valid board size!");
+        }
+        g.playGame();
+    }
+
+    public static void main(String[] args){
+        playHumanVsHuman();
+        //playHumanVsComputer(); //TODO waiting for computer makeMove to be implemented
     }
 }

@@ -8,7 +8,7 @@ public class HumanPlayer implements PlayerInterface {
      * Colouring output mode uses ANSI escape codes, found here:
      * https://en.wikipedia.org/wiki/ANSI_escape_code
      */
-    private static final boolean colourOutput = true; //Colours letters and names, may not work in some environments
+    public static final boolean colourOutput = true; //Colours letters and names, may not work in some environments
 
     private Piece colour;
 
@@ -76,7 +76,7 @@ public class HumanPlayer implements PlayerInterface {
     }
 
     //Non-interface methods
-    //TODO print borders/markers, and
+    //TODO print borders/markers, and optimise
     //Static to allow printing once game has been won
     public static void printBoard(Piece[][] grid){
         //Print top of hexs
