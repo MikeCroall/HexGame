@@ -1,10 +1,15 @@
+import sun.rmi.server.InactiveGroupException;
+
 public class GameManager implements GameManagerInterface {
 
     private PlayerInterface redPlayer, bluePlayer;
     private Board board;
 
     @Override
-    public boolean specifyPlayer(PlayerInterface player, Piece colour) throws ColourAlreadySetException {
+    public boolean specifyPlayer(PlayerInterface player, Piece colour) throws InvalidColourException, ColourAlreadySetException {
+        if (colour == Piece.UNSET){
+            throw new InvalidColourException();
+        }
         if (colour == Piece.RED){
             if (redPlayer != null) {
                 throw new ColourAlreadySetException();

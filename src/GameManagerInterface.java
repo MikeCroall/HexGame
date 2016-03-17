@@ -1,10 +1,11 @@
+
 /**
  * GameManagerInterface provides an abstract interface to a GameManager Class that should be implemented.
  * 
  * DO NOT CHANGE THIS FILE
  * 
  * @author Stephen McGough
- * @version 0.1
+ * @version 0.1.1
  */
 public interface GameManagerInterface
 {
@@ -18,7 +19,7 @@ public interface GameManagerInterface
      * 
      * @throws ColourAlreadySetException  If the colour is alredy allocated to a player
      */
-    public boolean specifyPlayer(PlayerInterface player, Piece colour) throws ColourAlreadySetException;
+    public boolean specifyPlayer(PlayerInterface player, Piece colour) throws InvalidColourException, ColourAlreadySetException;
 
     /**
      * Specifiy the size of the board that we are playing on. Both numbers must be greater than zero
