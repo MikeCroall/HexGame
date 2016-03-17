@@ -5,14 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f778a171-f913-492a-b16f-269dd8982837" name="Default" comment="Removed unused imports">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/me/tqvj24/michaelcroall/Board.java" afterPath="$PROJECT_DIR$/src/Board.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/me/tqvj24/michaelcroall/BoardAlreadySizedException.java" afterPath="$PROJECT_DIR$/src/BoardAlreadySizedException.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/me/tqvj24/michaelcroall/BoardInterface.java" afterPath="$PROJECT_DIR$/src/BoardInterface.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/me/tqvj24/michaelcroall/ColourAlreadySetException.java" afterPath="$PROJECT_DIR$/src/ColourAlreadySetException.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/me/tqvj24/michaelcroall/ComputerPlayer_tqvj24.java" afterPath="$PROJECT_DIR$/src/ComputerPlayer_tqvj24.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/me/tqvj24/michaelcroall/GameManager.java" afterPath="$PROJECT_DIR$/src/GameManager.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/me/tqvj24/michaelcroall/GameManagerInterface.java" afterPath="$PROJECT_DIR$/src/GameManagerInterface.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/me/tqvj24/michaelcroall/GameState.java" afterPath="$PROJECT_DIR$/src/GameState.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/me/tqvj24/michaelcroall/HumanPlayer.java" afterPath="$PROJECT_DIR$/src/HumanPlayer.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/me/tqvj24/michaelcroall/InvalidBoardSizeException.java" afterPath="$PROJECT_DIR$/src/InvalidBoardSizeException.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/me/tqvj24/michaelcroall/InvalidColourException.java" afterPath="$PROJECT_DIR$/src/InvalidColourException.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/me/tqvj24/michaelcroall/InvalidPositionException.java" afterPath="$PROJECT_DIR$/src/InvalidPositionException.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/me/tqvj24/michaelcroall/Move.java" afterPath="$PROJECT_DIR$/src/Move.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/me/tqvj24/michaelcroall/MoveInterface.java" afterPath="$PROJECT_DIR$/src/MoveInterface.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/me/tqvj24/michaelcroall/NoBoardDefinedException.java" afterPath="$PROJECT_DIR$/src/NoBoardDefinedException.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/me/tqvj24/michaelcroall/NoValidMovesException.java" afterPath="$PROJECT_DIR$/src/NoValidMovesException.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/me/tqvj24/michaelcroall/Piece.java" afterPath="$PROJECT_DIR$/src/Piece.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/me/tqvj24/michaelcroall/PlayerInterface.java" afterPath="$PROJECT_DIR$/src/PlayerInterface.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/me/tqvj24/michaelcroall/PositionAlreadyTakenException.java" afterPath="$PROJECT_DIR$/src/PositionAlreadyTakenException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HexGame/me/tqvj24/michaelcroall/ComputerPlayer_tqvj24.class" afterPath="$PROJECT_DIR$/out/production/HexGame/me/tqvj24/michaelcroall/ComputerPlayer_tqvj24.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HexGame/me/tqvj24/michaelcroall/GameManager.class" afterPath="$PROJECT_DIR$/out/production/HexGame/me/tqvj24/michaelcroall/GameManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HexGame/me/tqvj24/michaelcroall/HumanPlayer$1.class" afterPath="$PROJECT_DIR$/out/production/HexGame/me/tqvj24/michaelcroall/HumanPlayer$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HexGame/me/tqvj24/michaelcroall/HumanPlayer.class" afterPath="$PROJECT_DIR$/out/production/HexGame/me/tqvj24/michaelcroall/HumanPlayer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/Mike.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/Mike.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/tqvj24/michaelcroall/ComputerPlayer_tqvj24.java" afterPath="$PROJECT_DIR$/src/me/tqvj24/michaelcroall/ComputerPlayer_tqvj24.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/tqvj24/michaelcroall/GameManager.java" afterPath="$PROJECT_DIR$/src/me/tqvj24/michaelcroall/GameManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/tqvj24/michaelcroall/HumanPlayer.java" afterPath="$PROJECT_DIR$/src/me/tqvj24/michaelcroall/HumanPlayer.java" />
     </list>
     <ignored path="HexGame.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,52 +49,84 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="HumanPlayer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/me/tqvj24/michaelcroall/HumanPlayer.java">
+      <file leaf-file-name="GameManager.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/GameManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="49" selection-start-line="7" selection-start-column="49" selection-end-line="7" selection-end-column="49" />
+            <state vertical-scroll-proportion="0.30806452">
+              <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
               <folding>
-                <element signature="method#makeMove#0;class#HumanPlayer#0" expanded="false" />
-                <element signature="method#setColour#0;class#HumanPlayer#0" expanded="false" />
-                <element signature="method#finalGameState#0;class#HumanPlayer#0" expanded="false" />
-                <element signature="method#printBoard#0;class#HumanPlayer#0" expanded="false" />
-                <element signature="method#getLetter#0;class#HumanPlayer#0" expanded="false" />
-                <element signature="method#getPlayerName#0;class#HumanPlayer#0" expanded="false" />
-                <element signature="method#hasValidMove#0;class#HumanPlayer#0" expanded="false" />
-                <element signature="method#getValidInput#0;class#HumanPlayer#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ComputerPlayer_tqvj24.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/me/tqvj24/michaelcroall/ComputerPlayer_tqvj24.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2184793">
-              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding>
-                <element signature="method#setColour#0;class#ComputerPlayer_tqvj24#0" expanded="false" />
-                <element signature="method#finalGameState#0;class#ComputerPlayer_tqvj24#0" expanded="false" />
-                <element signature="method#getPlayerName#0;class#ComputerPlayer_tqvj24#0" expanded="false" />
-                <element signature="method#hasValidMove#0;class#ComputerPlayer_tqvj24#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GameManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/me/tqvj24/michaelcroall/GameManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="165" column="70" selection-start-line="165" selection-start-column="70" selection-end-line="165" selection-end-column="70" />
-              <folding>
-                <element signature="method#specifyPlayer#0;class#GameManager#0" expanded="false" />
                 <element signature="method#boardSize#0;class#GameManager#0" expanded="false" />
                 <element signature="method#playGame#0;class#GameManager#0" expanded="false" />
+                <element signature="method#takeTurn#0;class#GameManager#0" expanded="false" />
                 <element signature="method#playHumanVsHuman#0;class#GameManager#0" expanded="false" />
                 <element signature="method#playHumanVsComputer#0;class#GameManager#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameManagerInterface.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GameManagerInterface.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameState.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GameState.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Board.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Board.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#setBoardSize#0;class#Board#0" expanded="false" />
+                <element signature="method#getBoardView#0;class#Board#0" expanded="false" />
+                <element signature="method#gameWon#0;class#Board#0" expanded="false" />
+                <element signature="method#isValidSpace#0;class#Board#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BoardAlreadySizedException.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/BoardAlreadySizedException.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BoardInterface.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/BoardInterface.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="24" column="73" selection-start-line="24" selection-start-column="73" selection-end-line="24" selection-end-column="73" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ColourAlreadySetException.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ColourAlreadySetException.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -113,9 +160,12 @@
         <option value="$PROJECT_DIR$/hex print test.txt" />
         <option value="$PROJECT_DIR$/src/me/tqvj24/michaelcroall/Board.java" />
         <option value="$PROJECT_DIR$/src/me/tqvj24/michaelcroall/Move.java" />
-        <option value="$PROJECT_DIR$/src/me/tqvj24/michaelcroall/GameManager.java" />
         <option value="$PROJECT_DIR$/src/me/tqvj24/michaelcroall/ComputerPlayer_tqvj24.java" />
         <option value="$PROJECT_DIR$/src/me/tqvj24/michaelcroall/HumanPlayer.java" />
+        <option value="$PROJECT_DIR$/src/me/tqvj24/michaelcroall/GameManager.java" />
+        <option value="$PROJECT_DIR$/src/InvalidBoardSizeException.java" />
+        <option value="$PROJECT_DIR$/src/PlayerInterface.java" />
+        <option value="$PROJECT_DIR$/src/GameManager.java" />
       </list>
     </option>
   </component>
@@ -188,6 +238,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Problems" />
+      </pane>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -219,18 +273,10 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="michaelcroall" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="Problems" />
-      </pane>
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -240,17 +286,18 @@
     <property name="TODO_SCOPE" value="Project Files" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Mike\IdeaProjects\HexGame\src" />
+      <recent name="C:\Users\Mike\IdeaProjects\HexGame\src\me\tqvj24\michaelcroall" />
+    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="me.tqvj24.michaelcroall" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Mike\IdeaProjects\HexGame\src\me\tqvj24\michaelcroall" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="me.tqvj24.michaelcroall.GameManager" />
+      <option name="MAIN_CLASS_NAME" value="GameManager" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
@@ -492,34 +539,34 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-13" y="-13" width="3226" height="1746" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2765531" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2765531" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32965606" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14113712" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20019281" sideWeight="0.49622643" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299933" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20019281" sideWeight="0.50377357" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32965606" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.52909696" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299933" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2742475" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2765531" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32965606" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -529,10 +576,10 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2909699" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15852843" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20019281" sideWeight="0.49622643" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20019281" sideWeight="0.49622643" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299933" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -561,7 +608,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="16" />
+      <option name="time" value="19" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -570,7 +617,47 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/me/tqvj24/michaelcroall/HumanPlayer.java">
+    <entry file="file://$PROJECT_DIR$/src/HumanPlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="49" selection-start-line="7" selection-start-column="49" selection-end-line="7" selection-end-column="49" />
+          <folding>
+            <element signature="method#makeMove#0;class#HumanPlayer#0" expanded="false" />
+            <element signature="method#setColour#0;class#HumanPlayer#0" expanded="false" />
+            <element signature="method#finalGameState#0;class#HumanPlayer#0" expanded="false" />
+            <element signature="method#getValidInput#0;class#HumanPlayer#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ComputerPlayer_tqvj24.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="method#setColour#0;class#ComputerPlayer_tqvj24#0" expanded="false" />
+            <element signature="method#finalGameState#0;class#ComputerPlayer_tqvj24#0" expanded="false" />
+            <element signature="method#getPlayerName#0;class#ComputerPlayer_tqvj24#0" expanded="false" />
+            <element signature="method#hasValidMove#0;class#ComputerPlayer_tqvj24#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="165" column="70" selection-start-line="165" selection-start-column="70" selection-end-line="165" selection-end-column="70" />
+          <folding>
+            <element signature="method#boardSize#0;class#GameManager#0" expanded="false" />
+            <element signature="method#playGame#0;class#GameManager#0" expanded="false" />
+            <element signature="method#takeTurn#0;class#GameManager#0" expanded="false" />
+            <element signature="method#playHumanVsHuman#0;class#GameManager#0" expanded="false" />
+            <element signature="method#playHumanVsComputer#0;class#GameManager#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/HumanPlayer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -578,16 +665,12 @@
             <element signature="method#makeMove#0;class#HumanPlayer#0" expanded="false" />
             <element signature="method#setColour#0;class#HumanPlayer#0" expanded="false" />
             <element signature="method#finalGameState#0;class#HumanPlayer#0" expanded="false" />
-            <element signature="method#printBoard#0;class#HumanPlayer#0" expanded="false" />
-            <element signature="method#getLetter#0;class#HumanPlayer#0" expanded="false" />
-            <element signature="method#getPlayerName#0;class#HumanPlayer#0" expanded="false" />
-            <element signature="method#hasValidMove#0;class#HumanPlayer#0" expanded="false" />
             <element signature="method#getValidInput#0;class#HumanPlayer#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/tqvj24/michaelcroall/HumanPlayer.java">
+    <entry file="file://$PROJECT_DIR$/src/HumanPlayer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -595,40 +678,40 @@
             <element signature="method#makeMove#0;class#HumanPlayer#0" expanded="false" />
             <element signature="method#setColour#0;class#HumanPlayer#0" expanded="false" />
             <element signature="method#finalGameState#0;class#HumanPlayer#0" expanded="false" />
-            <element signature="method#printBoard#0;class#HumanPlayer#0" expanded="false" />
-            <element signature="method#getLetter#0;class#HumanPlayer#0" expanded="false" />
-            <element signature="method#getPlayerName#0;class#HumanPlayer#0" expanded="false" />
-            <element signature="method#hasValidMove#0;class#HumanPlayer#0" expanded="false" />
             <element signature="method#getValidInput#0;class#HumanPlayer#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/tqvj24/michaelcroall/Board.java">
+    <entry file="file://$PROJECT_DIR$/src/Board.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="138" column="18" selection-start-line="138" selection-start-column="18" selection-end-line="138" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#Board#0;class#Board#0" expanded="false" />
             <element signature="method#setBoardSize#0;class#Board#0" expanded="false" />
             <element signature="method#getBoardView#0;class#Board#0" expanded="false" />
-            <element signature="method#placePiece#0;class#Board#0" expanded="false" />
             <element signature="method#gameWon#0;class#Board#0" expanded="false" />
             <element signature="method#isValidSpace#0;class#Board#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/tqvj24/michaelcroall/GameManager.java">
+    <entry file="file://$PROJECT_DIR$/src/GameManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="127" column="11" selection-start-line="127" selection-start-column="11" selection-end-line="127" selection-end-column="16" />
-          <folding />
+          <folding>
+            <element signature="method#boardSize#0;class#GameManager#0" expanded="false" />
+            <element signature="method#playGame#0;class#GameManager#0" expanded="false" />
+            <element signature="method#takeTurn#0;class#GameManager#0" expanded="false" />
+            <element signature="method#playHumanVsHuman#0;class#GameManager#0" expanded="false" />
+            <element signature="method#playHumanVsComputer#0;class#GameManager#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/tqvj24/michaelcroall/HumanPlayer.java">
+    <entry file="file://$PROJECT_DIR$/src/HumanPlayer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -636,40 +719,40 @@
             <element signature="method#makeMove#0;class#HumanPlayer#0" expanded="false" />
             <element signature="method#setColour#0;class#HumanPlayer#0" expanded="false" />
             <element signature="method#finalGameState#0;class#HumanPlayer#0" expanded="false" />
-            <element signature="method#printBoard#0;class#HumanPlayer#0" expanded="false" />
-            <element signature="method#getLetter#0;class#HumanPlayer#0" expanded="false" />
-            <element signature="method#getPlayerName#0;class#HumanPlayer#0" expanded="false" />
-            <element signature="method#hasValidMove#0;class#HumanPlayer#0" expanded="false" />
             <element signature="method#getValidInput#0;class#HumanPlayer#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/tqvj24/michaelcroall/Board.java">
+    <entry file="file://$PROJECT_DIR$/src/Board.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="138" column="18" selection-start-line="138" selection-start-column="18" selection-end-line="138" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#Board#0;class#Board#0" expanded="false" />
             <element signature="method#setBoardSize#0;class#Board#0" expanded="false" />
             <element signature="method#getBoardView#0;class#Board#0" expanded="false" />
-            <element signature="method#placePiece#0;class#Board#0" expanded="false" />
             <element signature="method#gameWon#0;class#Board#0" expanded="false" />
             <element signature="method#isValidSpace#0;class#Board#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/tqvj24/michaelcroall/GameManager.java">
+    <entry file="file://$PROJECT_DIR$/src/GameManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="127" column="11" selection-start-line="127" selection-start-column="11" selection-end-line="127" selection-end-column="16" />
-          <folding />
+          <folding>
+            <element signature="method#boardSize#0;class#GameManager#0" expanded="false" />
+            <element signature="method#playGame#0;class#GameManager#0" expanded="false" />
+            <element signature="method#takeTurn#0;class#GameManager#0" expanded="false" />
+            <element signature="method#playHumanVsHuman#0;class#GameManager#0" expanded="false" />
+            <element signature="method#playHumanVsComputer#0;class#GameManager#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/tqvj24/michaelcroall/HumanPlayer.java">
+    <entry file="file://$PROJECT_DIR$/src/HumanPlayer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -677,10 +760,6 @@
             <element signature="method#makeMove#0;class#HumanPlayer#0" expanded="false" />
             <element signature="method#setColour#0;class#HumanPlayer#0" expanded="false" />
             <element signature="method#finalGameState#0;class#HumanPlayer#0" expanded="false" />
-            <element signature="method#printBoard#0;class#HumanPlayer#0" expanded="false" />
-            <element signature="method#getLetter#0;class#HumanPlayer#0" expanded="false" />
-            <element signature="method#getPlayerName#0;class#HumanPlayer#0" expanded="false" />
-            <element signature="method#hasValidMove#0;class#HumanPlayer#0" expanded="false" />
             <element signature="method#getValidInput#0;class#HumanPlayer#0" expanded="false" />
           </folding>
         </state>
@@ -694,15 +773,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/tqvj24/michaelcroall/GameManager.java">
+    <entry file="file://$PROJECT_DIR$/src/GameManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="method#boardSize#0;class#GameManager#0" expanded="false" />
+            <element signature="method#playGame#0;class#GameManager#0" expanded="false" />
+            <element signature="method#takeTurn#0;class#GameManager#0" expanded="false" />
+            <element signature="method#playHumanVsHuman#0;class#GameManager#0" expanded="false" />
+            <element signature="method#playHumanVsComputer#0;class#GameManager#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/tqvj24/michaelcroall/HumanPlayer.java">
+    <entry file="file://$PROJECT_DIR$/src/HumanPlayer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -710,16 +795,12 @@
             <element signature="method#makeMove#0;class#HumanPlayer#0" expanded="false" />
             <element signature="method#setColour#0;class#HumanPlayer#0" expanded="false" />
             <element signature="method#finalGameState#0;class#HumanPlayer#0" expanded="false" />
-            <element signature="method#printBoard#0;class#HumanPlayer#0" expanded="false" />
-            <element signature="method#getLetter#0;class#HumanPlayer#0" expanded="false" />
-            <element signature="method#getPlayerName#0;class#HumanPlayer#0" expanded="false" />
-            <element signature="method#hasValidMove#0;class#HumanPlayer#0" expanded="false" />
             <element signature="method#getValidInput#0;class#HumanPlayer#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/tqvj24/michaelcroall/HumanPlayer.java">
+    <entry file="file://$PROJECT_DIR$/src/HumanPlayer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
@@ -727,31 +808,33 @@
             <element signature="method#makeMove#0;class#HumanPlayer#0" expanded="false" />
             <element signature="method#setColour#0;class#HumanPlayer#0" expanded="false" />
             <element signature="method#finalGameState#0;class#HumanPlayer#0" expanded="false" />
-            <element signature="method#printBoard#0;class#HumanPlayer#0" expanded="false" />
-            <element signature="method#getLetter#0;class#HumanPlayer#0" expanded="false" />
-            <element signature="method#getPlayerName#0;class#HumanPlayer#0" expanded="false" />
-            <element signature="method#hasValidMove#0;class#HumanPlayer#0" expanded="false" />
             <element signature="method#getValidInput#0;class#HumanPlayer#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/tqvj24/michaelcroall/PlayerInterface.java">
+    <entry file="file://$PROJECT_DIR$/src/PlayerInterface.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/tqvj24/michaelcroall/GameManager.java">
+    <entry file="file://$PROJECT_DIR$/src/GameManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="method#boardSize#0;class#GameManager#0" expanded="false" />
+            <element signature="method#playGame#0;class#GameManager#0" expanded="false" />
+            <element signature="method#takeTurn#0;class#GameManager#0" expanded="false" />
+            <element signature="method#playHumanVsHuman#0;class#GameManager#0" expanded="false" />
+            <element signature="method#playHumanVsComputer#0;class#GameManager#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/tqvj24/michaelcroall/HumanPlayer.java">
+    <entry file="file://$PROJECT_DIR$/src/HumanPlayer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -759,87 +842,75 @@
             <element signature="method#makeMove#0;class#HumanPlayer#0" expanded="false" />
             <element signature="method#setColour#0;class#HumanPlayer#0" expanded="false" />
             <element signature="method#finalGameState#0;class#HumanPlayer#0" expanded="false" />
-            <element signature="method#printBoard#0;class#HumanPlayer#0" expanded="false" />
-            <element signature="method#getLetter#0;class#HumanPlayer#0" expanded="false" />
-            <element signature="method#getPlayerName#0;class#HumanPlayer#0" expanded="false" />
-            <element signature="method#hasValidMove#0;class#HumanPlayer#0" expanded="false" />
             <element signature="method#getValidInput#0;class#HumanPlayer#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/tqvj24/michaelcroall/PlayerInterface.java">
+    <entry file="file://$PROJECT_DIR$/src/PlayerInterface.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/tqvj24/michaelcroall/Board.java">
+    <entry file="file://$PROJECT_DIR$/src/Board.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#Board#0;class#Board#0" expanded="false" />
             <element signature="method#setBoardSize#0;class#Board#0" expanded="false" />
             <element signature="method#getBoardView#0;class#Board#0" expanded="false" />
-            <element signature="method#placePiece#0;class#Board#0" expanded="false" />
             <element signature="method#gameWon#0;class#Board#0" expanded="false" />
             <element signature="method#isValidSpace#0;class#Board#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/tqvj24/michaelcroall/BoardInterface.java">
+    <entry file="file://$PROJECT_DIR$/src/BoardInterface.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="40" column="61" selection-start-line="40" selection-start-column="61" selection-end-line="40" selection-end-column="61" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/tqvj24/michaelcroall/Board.java">
+    <entry file="file://$PROJECT_DIR$/src/Board.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#Board#0;class#Board#0" expanded="false" />
             <element signature="method#setBoardSize#0;class#Board#0" expanded="false" />
             <element signature="method#getBoardView#0;class#Board#0" expanded="false" />
-            <element signature="method#placePiece#0;class#Board#0" expanded="false" />
             <element signature="method#gameWon#0;class#Board#0" expanded="false" />
             <element signature="method#isValidSpace#0;class#Board#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/tqvj24/michaelcroall/Board.java">
+    <entry file="file://$PROJECT_DIR$/src/Board.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#Board#0;class#Board#0" expanded="false" />
             <element signature="method#setBoardSize#0;class#Board#0" expanded="false" />
             <element signature="method#getBoardView#0;class#Board#0" expanded="false" />
-            <element signature="method#placePiece#0;class#Board#0" expanded="false" />
             <element signature="method#gameWon#0;class#Board#0" expanded="false" />
             <element signature="method#isValidSpace#0;class#Board#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/tqvj24/michaelcroall/Board.java">
+    <entry file="file://$PROJECT_DIR$/src/Board.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#Board#0;class#Board#0" expanded="false" />
             <element signature="method#setBoardSize#0;class#Board#0" expanded="false" />
             <element signature="method#getBoardView#0;class#Board#0" expanded="false" />
-            <element signature="method#placePiece#0;class#Board#0" expanded="false" />
             <element signature="method#gameWon#0;class#Board#0" expanded="false" />
             <element signature="method#isValidSpace#0;class#Board#0" expanded="false" />
           </folding>
@@ -853,16 +924,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/tqvj24/michaelcroall/Board.java">
+    <entry file="file://$PROJECT_DIR$/src/Board.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#Board#0;class#Board#0" expanded="false" />
             <element signature="method#setBoardSize#0;class#Board#0" expanded="false" />
             <element signature="method#getBoardView#0;class#Board#0" expanded="false" />
-            <element signature="method#placePiece#0;class#Board#0" expanded="false" />
             <element signature="method#gameWon#0;class#Board#0" expanded="false" />
             <element signature="method#isValidSpace#0;class#Board#0" expanded="false" />
           </folding>
@@ -876,45 +945,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/tqvj24/michaelcroall/ColourAlreadySetException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/tqvj24/michaelcroall/GameState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22044088">
-          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/tqvj24/michaelcroall/BoardInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="73" selection-start-line="26" selection-start-column="73" selection-end-line="26" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/tqvj24/michaelcroall/MoveInterface.java">
+    <entry file="file://$PROJECT_DIR$/src/MoveInterface.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/tqvj24/michaelcroall/MoveInterface.java">
+    <entry file="file://$PROJECT_DIR$/src/MoveInterface.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.15850145">
           <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/tqvj24/michaelcroall/GameManagerInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23823246">
-          <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -940,17 +981,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/tqvj24/michaelcroall/Piece.java">
+    <entry file="file://$PROJECT_DIR$/src/Piece.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.49253732">
           <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/tqvj24/michaelcroall/PlayerInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3326226">
-          <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -961,79 +995,129 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/tqvj24/michaelcroall/Move.java">
+    <entry file="file://$PROJECT_DIR$/src/Move.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.31771192">
           <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
           <folding>
-            <element signature="e#150#151#0" expanded="true" />
-            <element signature="e#182#183#0" expanded="true" />
-            <element signature="e#482#483#0" expanded="true" />
-            <element signature="e#506#507#0" expanded="true" />
-            <element signature="e#553#554#0" expanded="true" />
-            <element signature="e#577#578#0" expanded="true" />
-            <element signature="e#729#730#0" expanded="true" />
-            <element signature="e#760#761#0" expanded="true" />
+            <element signature="e#116#117#0" expanded="true" />
+            <element signature="e#148#149#0" expanded="true" />
+            <element signature="e#448#449#0" expanded="true" />
+            <element signature="e#472#473#0" expanded="true" />
+            <element signature="e#519#520#0" expanded="true" />
+            <element signature="e#543#544#0" expanded="true" />
+            <element signature="e#695#696#0" expanded="true" />
+            <element signature="e#726#727#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/tqvj24/michaelcroall/Board.java">
+    <entry file="file://$PROJECT_DIR$/src/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.556196">
-          <caret line="138" column="18" selection-start-line="138" selection-start-column="18" selection-end-line="138" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#Board#0;class#Board#0" expanded="false" />
             <element signature="method#setBoardSize#0;class#Board#0" expanded="false" />
             <element signature="method#getBoardView#0;class#Board#0" expanded="false" />
-            <element signature="method#placePiece#0;class#Board#0" expanded="false" />
             <element signature="method#gameWon#0;class#Board#0" expanded="false" />
             <element signature="method#isValidSpace#0;class#Board#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/tqvj24/michaelcroall/GameManager.java">
+    <entry file="file://$PROJECT_DIR$/src/BoardAlreadySizedException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="165" column="70" selection-start-line="165" selection-start-column="70" selection-end-line="165" selection-end-column="70" />
-          <folding>
-            <element signature="method#specifyPlayer#0;class#GameManager#0" expanded="false" />
-            <element signature="method#boardSize#0;class#GameManager#0" expanded="false" />
-            <element signature="method#playGame#0;class#GameManager#0" expanded="false" />
-            <element signature="method#playHumanVsHuman#0;class#GameManager#0" expanded="false" />
-            <element signature="method#playHumanVsComputer#0;class#GameManager#0" expanded="false" />
-          </folding>
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/tqvj24/michaelcroall/HumanPlayer.java">
+    <entry file="file://$PROJECT_DIR$/src/BoardInterface.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="49" selection-start-line="7" selection-start-column="49" selection-end-line="7" selection-end-column="49" />
+          <caret line="24" column="73" selection-start-line="24" selection-start-column="73" selection-end-line="24" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ColourAlreadySetException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameManagerInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/InvalidBoardSizeException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/HumanPlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.7660484">
+          <caret line="132" column="14" selection-start-line="132" selection-start-column="14" selection-end-line="132" selection-end-column="14" />
           <folding>
             <element signature="method#makeMove#0;class#HumanPlayer#0" expanded="false" />
             <element signature="method#setColour#0;class#HumanPlayer#0" expanded="false" />
             <element signature="method#finalGameState#0;class#HumanPlayer#0" expanded="false" />
-            <element signature="method#printBoard#0;class#HumanPlayer#0" expanded="false" />
-            <element signature="method#getLetter#0;class#HumanPlayer#0" expanded="false" />
-            <element signature="method#getPlayerName#0;class#HumanPlayer#0" expanded="false" />
-            <element signature="method#hasValidMove#0;class#HumanPlayer#0" expanded="false" />
             <element signature="method#getValidInput#0;class#HumanPlayer#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/tqvj24/michaelcroall/ComputerPlayer_tqvj24.java">
+    <entry file="file://$PROJECT_DIR$/src/ComputerPlayer_tqvj24.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2184793">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state vertical-scroll-proportion="1.2239658">
+          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
           <folding>
             <element signature="method#setColour#0;class#ComputerPlayer_tqvj24#0" expanded="false" />
             <element signature="method#finalGameState#0;class#ComputerPlayer_tqvj24#0" expanded="false" />
             <element signature="method#getPlayerName#0;class#ComputerPlayer_tqvj24#0" expanded="false" />
             <element signature="method#hasValidMove#0;class#ComputerPlayer_tqvj24#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PlayerInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.71884984">
+          <caret line="39" column="51" selection-start-line="39" selection-start-column="51" selection-end-line="39" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30806452">
+          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+          <folding>
+            <element signature="method#boardSize#0;class#GameManager#0" expanded="false" />
+            <element signature="method#playGame#0;class#GameManager#0" expanded="false" />
+            <element signature="method#takeTurn#0;class#GameManager#0" expanded="false" />
+            <element signature="method#playHumanVsHuman#0;class#GameManager#0" expanded="false" />
+            <element signature="method#playHumanVsComputer#0;class#GameManager#0" expanded="false" />
           </folding>
         </state>
       </provider>
