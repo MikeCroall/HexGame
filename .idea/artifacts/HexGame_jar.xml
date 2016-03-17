@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="HexGame:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/HexGame_jar</output-path>
+    <root id="archive" name="HexGame.jar">
+      <element id="module-output" name="HexGame" />
+    </root>
+  </artifact>
+</component>
