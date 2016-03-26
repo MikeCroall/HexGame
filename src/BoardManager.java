@@ -48,6 +48,18 @@ public class BoardManager {
         return (grid != null && x >= 0 && x < grid[0].length && y >= 0 && y < grid.length);
     }
 
+    public static int nonemptySpaces(Piece[][] grid){
+        int count = 0;
+        for (int y = 0; y < grid.length; y++) {
+            for (int x = 0; x < grid[0].length; x++) {
+                if (grid[y][x] != Piece.UNSET){
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+
     private static String getLetter(Piece colour) {
         switch (colour) {
             case RED:
