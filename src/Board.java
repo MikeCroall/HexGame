@@ -124,7 +124,7 @@ public class Board implements BoardInterface {
     }
 
     private void checkNeighbour(Point p, ArrayList<Point> neighbours, ArrayList<Point> closed, Piece colour) {
-        if (isValidSpace(p.x, p.y) && grid[p.y][p.x] == colour && !closed.contains(p)) {
+        if (isValidSpace(p.x, p.y) && grid[p.y][p.x] == colour && !closed.contains(p) && ! neighbours.contains(p)) {
             neighbours.add(p);
         }
     }

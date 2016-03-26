@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class ComputerPlayer_tqvj24 implements PlayerInterface{
 
     private Piece colour;
@@ -8,8 +10,23 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface{
     public MoveInterface makeMove(Piece[][] boardView) throws NoValidMovesException {
         if (!hasValidMove(boardView)){ throw new NoValidMovesException(); }
 
-        return null;
-        //TODO implement makeMove method
+        Random r = new Random();
+        int x = r.nextInt(boardView[0].length), y = r.nextInt(boardView.length);
+        //For now, random moves
+        while(boardView[y][x] != Piece.UNSET){
+            x = r.nextInt(boardView[0].length);
+            y = r.nextInt(boardView.length);
+        }
+
+        MoveInterface myMove = new Move();
+        try {
+            myMove.setPosition(x, y);
+        } catch (InvalidPositionException e) {
+            System.out.println("Computer player somehow chose an invalid move");
+        }
+
+        return myMove;
+        //TODO improve makeMove method
     }
 
     @Override

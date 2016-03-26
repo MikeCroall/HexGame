@@ -99,7 +99,7 @@ public class GameManager implements GameManagerInterface {
         return conceded ? Piece.BLUE : board.gameWon();
     }
 
-    private static void playHumanVsHuman(){
+    private static void playHumanVsHuman(int boardWidth, int boardHeight){
         GameManager g = new GameManager();
         HumanPlayer r = new HumanPlayer();
         HumanPlayer b = new HumanPlayer();
@@ -108,7 +108,7 @@ public class GameManager implements GameManagerInterface {
             b.setColour(Piece.BLUE);
             g.specifyPlayer(r, Piece.RED);
             g.specifyPlayer(b, Piece.BLUE);
-            g.boardSize(5, 5);
+            g.boardSize(boardWidth, boardHeight);
         } catch (ColourAlreadySetException e) {
             System.out.println("That colour has already been set!");
         } catch (InvalidColourException e) {
@@ -121,16 +121,45 @@ public class GameManager implements GameManagerInterface {
         g.playGame();
     }
 
-    private static void playHumanVsComputer(){
+    private static void playHumanVsComputer(int boardWidth, int boardHeight, boolean humanAsRed){
         GameManager g = new GameManager();
-        HumanPlayer r = new HumanPlayer();
+        HumanPlayer h = new HumanPlayer();
+        ComputerPlayer_tqvj24 c = new ComputerPlayer_tqvj24();
+        try {
+            if(humanAsRed) {
+                h.setColour(Piece.RED);
+                c.setColour(Piece.BLUE);
+                g.specifyPlayer(h, Piece.RED);
+                g.specifyPlayer(c, Piece.BLUE);
+            }else{
+                h.setColour(Piece.BLUE);
+                c.setColour(Piece.RED);
+                g.specifyPlayer(h, Piece.BLUE);
+                g.specifyPlayer(c, Piece.RED);
+            }
+            g.boardSize(boardWidth, boardHeight);
+        } catch (ColourAlreadySetException e) {
+            System.out.println("That colour has already been set!");
+        } catch (InvalidColourException e) {
+            System.out.println("Invalid colour assigned to player!");
+        } catch (BoardAlreadySizedException e) {
+            System.out.println("Board has already been sized!");
+        } catch (InvalidBoardSizeException e) {
+            System.out.println("That's not a valid board size!");
+        }
+        g.playGame();
+    }
+
+    private static void playComputerVsComputer(int boardWidth, int boardHeight){
+        GameManager g = new GameManager();
+        ComputerPlayer_tqvj24 r = new ComputerPlayer_tqvj24();
         ComputerPlayer_tqvj24 b = new ComputerPlayer_tqvj24();
         try {
             r.setColour(Piece.RED);
             b.setColour(Piece.BLUE);
             g.specifyPlayer(r, Piece.RED);
             g.specifyPlayer(b, Piece.BLUE);
-            g.boardSize(5, 5);
+            g.boardSize(boardWidth, boardHeight);
         } catch (ColourAlreadySetException e) {
             System.out.println("That colour has already been set!");
         } catch (InvalidColourException e) {
@@ -144,7 +173,8 @@ public class GameManager implements GameManagerInterface {
     }
 
     public static void main(String[] args){
-        playHumanVsHuman();
-        //playHumanVsComputer(); //TODO waiting for computer makeMove to be implemented
+        //playHumanVsHuman(5,5);
+        //playHumanVsComputer(5,5);
+        playComputerVsComputer(5,5);
     }
 }

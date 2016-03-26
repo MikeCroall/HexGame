@@ -6,6 +6,7 @@ public class HumanPlayer implements PlayerInterface {
      * Colouring output mode uses ANSI escape codes, found here:
      * https://en.wikipedia.org/wiki/ANSI_escape_code
      */
+    //TODO remove all colour output entirely for final (assignment) release
     public static final boolean colourOutput = true; //Colours letters and names, may not work in some environments
 
     private Piece colour;
@@ -98,7 +99,7 @@ public class HumanPlayer implements PlayerInterface {
             }
             System.out.print("|\n" + leftPadding);
 
-            //Close off hex (and top of next row, if exists)
+            //Close off hex (is also top of next row, if exists)
             for (int x = 0; x < grid[y].length; x++) {
                 System.out.print((x == 0 ? "  " : " /") + " \\");
             }
