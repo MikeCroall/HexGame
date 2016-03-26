@@ -52,7 +52,7 @@ public class GameManager implements GameManagerInterface {
                 }
             }
             //Game finished, show the final board state
-            HumanPlayer.printBoard(board.getBoardView());
+            BoardPrinter.printBoard(board.getBoardView());
 
             if (winner == Piece.RED) {
                 redPlayer.finalGameState(GameState.WON);

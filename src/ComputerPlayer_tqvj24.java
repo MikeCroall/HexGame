@@ -25,6 +25,10 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface{
             System.out.println("Computer player somehow chose an invalid move");
         }
 
+
+        //Piece currentPlayer = colour;
+
+
         return myMove;
         //TODO improve makeMove method
     }
@@ -45,15 +49,7 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface{
 
     //Non-interface methods
     private String getPlayerName(){
-        if(HumanPlayer.colourOutput){
-            if(colour == Piece.BLUE){
-                return "\u001B[34mblue\u001B[0m";
-            }else{
-                return "\u001B[31mred\u001B[0m";
-            }
-        }else{
-            return colour.name().toLowerCase();
-        }
+        return colour.name().toLowerCase();
     }
 
     private boolean hasValidMove(Piece[][] grid){
