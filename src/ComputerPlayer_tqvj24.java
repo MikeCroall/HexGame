@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.util.Random;
 
 public class ComputerPlayer_tqvj24 implements PlayerInterface{
@@ -25,12 +26,13 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface{
             System.out.println("Computer player somehow chose an invalid move");
         }
 
-
-        //Piece currentPlayer = colour;
-
+        //TODO actually use minimax
+        /*
+        Point p = getNextMove();
+        //Use point to create move
+        */
 
         return myMove;
-        //TODO improve makeMove method
     }
 
     @Override
@@ -61,6 +63,27 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface{
             }
         }
         return false;
+    }
+
+    //Below - methods for minimax solving
+    private Point getNextMove(Piece[][] grid){
+        Piece player = colour;
+        Point choice = new Point();
+        int maxScore = grid.length * grid[0].length;
+
+        minimax(grid, 0, choice, player, maxScore);
+
+        return choice;
+    }
+
+    private int minimax(Piece[][] grid, int depth, Point choice, Piece player, int maxScore) {
+        if (BoardManager.winner(grid) != Piece.UNSET) {
+            return score(grid, depth, player, maxScore);
+        }
+    }
+
+    private int score(Piece[][] grid, int depth, Piece player, int maxScore) {
+        //TODO
     }
 
 }

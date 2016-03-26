@@ -1,5 +1,3 @@
-import sun.rmi.server.InactiveGroupException;
-
 public class GameManager implements GameManagerInterface {
 
     private PlayerInterface redPlayer, bluePlayer;
@@ -52,7 +50,7 @@ public class GameManager implements GameManagerInterface {
                 }
             }
             //Game finished, show the final board state
-            BoardPrinter.printBoard(board.getBoardView());
+            BoardManager.printBoard(board.getBoardView());
 
             if (winner == Piece.RED) {
                 redPlayer.finalGameState(GameState.WON);
