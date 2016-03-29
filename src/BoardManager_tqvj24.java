@@ -1,7 +1,7 @@
 import java.awt.*;
 import java.util.ArrayList;
 
-public class BoardManager {
+public class BoardManager_tqvj24 {
 
     private static Piece wentFirst = Piece.RED; //red assumed, later figured out
 
@@ -73,6 +73,34 @@ public class BoardManager {
         }
     }
 
+    public static ArrayList<Point> getEmptyNeighbours(int x, int y, Piece[][] grid){
+        ArrayList<Point> neighbours = new ArrayList<Point>();
+
+        if (isValidSpace(x-1, y, grid) && isFreeSpace(x-1, y, grid)) { neighbours.add(new Point(x - 1, y)); } //left
+        if (isValidSpace(x+1, y, grid) && isFreeSpace(x+1, y, grid)) { neighbours.add(new Point(x + 1, y)); } //right
+        if (isValidSpace(x, y-1, grid) && isFreeSpace(x, y-1, grid)) { neighbours.add(new Point(x, y - 1)); } //upleft
+        if (isValidSpace(x+1, y-1, grid) && isFreeSpace(x+1, y-1, grid)) { neighbours.add(new Point(x + 1, y - 1)); }  //upright
+        if (isValidSpace(x-1, y+1, grid) && isFreeSpace(x-1, y+1, grid)) { neighbours.add(new Point(x - 1, y + 1)); } //downleft
+        if (isValidSpace(x, y+1, grid) && isFreeSpace(x, y+1, grid)) { neighbours.add(new Point(x, y + 1)); } //downright
+
+        return neighbours;
+    }
+
+    public static boolean moreThanXEmpties(Piece[][] grid, int x){
+        int count = 0;
+        for (Piece[] row : grid){
+            for (Piece piece : row){
+                if (piece == Piece.UNSET){
+                    count++;
+                    if (count > x) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
     private static String getLetter(Piece colour) {
         switch (colour) {
             case RED:
@@ -89,6 +117,7 @@ public class BoardManager {
 
     }
 
+    //BELOW: win checking
     private static boolean hasWon(Piece colour, Piece[][] grid) {
         //Red starts at top, finds bottom
         //Blue starts at left, finds right
@@ -112,7 +141,7 @@ public class BoardManager {
         }
 
         for(Point p : closed) {
-            open.addAll(neighboursOf(p, closed, grid));
+            open.addAll(checkNeighboursOf(p, closed, grid));
         }
 
         boolean found = false;
@@ -123,7 +152,7 @@ public class BoardManager {
             closed.addAll(open);
             ArrayList<Point> openNeighbours = new ArrayList<Point>();
             for (Point p : open) {
-                openNeighbours.addAll(neighboursOf(p, closed, grid));
+                openNeighbours.addAll(checkNeighboursOf(p, closed, grid));
             }
             open = new ArrayList<Point>(openNeighbours);
         }
@@ -131,7 +160,7 @@ public class BoardManager {
         return found;
     }
 
-    private static ArrayList<Point> neighboursOf(Point p, ArrayList<Point> closed, Piece[][] grid) {
+    private static ArrayList<Point> checkNeighboursOf(Point p, ArrayList<Point> closed, Piece[][] grid) {
         Piece colour = grid[p.y][p.x];
         ArrayList<Point> neighbours = new ArrayList<Point>();
 

@@ -17,7 +17,7 @@ public class HumanPlayer implements PlayerInterface {
         Move move = new Move();
         boolean validPosition = false;
 
-        BoardManager.printBoard(boardView);
+        BoardManager_tqvj24.printBoard(boardView);
 
         while(!validPosition) {
             validPosition = true;

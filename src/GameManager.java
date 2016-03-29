@@ -50,7 +50,7 @@ public class GameManager implements GameManagerInterface {
                 }
             }
             //Game finished, show the final board state
-            BoardManager.printBoard(board.getBoardView());
+            BoardManager_tqvj24.printBoard(board.getBoardView());
 
             if (winner == Piece.RED) {
                 redPlayer.finalGameState(GameState.WON);
@@ -99,8 +99,6 @@ public class GameManager implements GameManagerInterface {
 
 
     //BELOW is for testing purposes only
-
-
     private static void playHumanVsHuman(int boardWidth, int boardHeight){
         GameManager g = new GameManager();
         HumanPlayer r = new HumanPlayer();
@@ -176,7 +174,7 @@ public class GameManager implements GameManagerInterface {
 
     public static void main(String[] args){
         //playHumanVsHuman(5,5);
-        playHumanVsComputer(4,4, true);
-        //playComputerVsComputer(3,3);
+        //playHumanVsComputer(4,4, true);
+        playComputerVsComputer(11,11);
     }
 }

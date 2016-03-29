@@ -34,9 +34,9 @@ public class Board implements BoardInterface {
     public boolean placePiece(Piece colour, MoveInterface move) throws PositionAlreadyTakenException, InvalidPositionException, InvalidColourException {
         if (colour == lastMove || colour == Piece.UNSET)
         { throw new InvalidColourException(); }
-        if (!BoardManager.isValidSpace(move.getXPosition(), move.getYPosition(), grid))
+        if (!BoardManager_tqvj24.isValidSpace(move.getXPosition(), move.getYPosition(), grid))
         { throw new InvalidPositionException(); }
-        if (!BoardManager.isFreeSpace(move.getXPosition(), move.getYPosition(), grid))
+        if (!BoardManager_tqvj24.isFreeSpace(move.getXPosition(), move.getYPosition(), grid))
         { throw new PositionAlreadyTakenException(); }
 
         grid[move.getYPosition()][move.getXPosition()] = colour;
@@ -51,7 +51,7 @@ public class Board implements BoardInterface {
             throw new NoBoardDefinedException();
         }
 
-        return BoardManager.winner(grid);
+        return BoardManager_tqvj24.winner(grid);
     }
 
 }
