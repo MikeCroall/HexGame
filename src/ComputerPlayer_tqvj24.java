@@ -1,7 +1,6 @@
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Random;
 
 public class ComputerPlayer_tqvj24 implements PlayerInterface{
 
@@ -81,7 +80,7 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface{
     private Point getNextMove(Piece[][] grid){
         Piece player = colour;
         nextChoice = new Point(-1 ,-1);
-        int maxScore = grid.length * grid[0].length;
+        int maxScore = grid.length * grid[0].length + 1;
 
         minimax(grid, 0, player, maxScore);
 
@@ -89,33 +88,36 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface{
     }
 
     private int minimax(Piece[][] grid, int depth, Piece player, int maxScore) {
+        /*
+        //TODO note here about adapting my naughts and crosses minimax
+         */
         if (BoardManager.winner(grid) != Piece.UNSET) {
             return score(grid, depth, player, maxScore);
         }
-        depth += 1;
 
         ArrayList<Integer> scores = new ArrayList<Integer>();
         ArrayList<Point> moves = new ArrayList<Point>();
 
+        //TODO modify to only look next to placed pieces
         for (int y = 0; y < grid.length; y++) {
             for (int x = 0; x < grid[0].length; x++) {
                 if (grid[y][x] == Piece.UNSET){
-                    //All available moves in here
-                    grid[y][x] = (BoardManager.nonemptySpaces(grid) % 2 == 0) ? Piece.RED : Piece.BLUE;
-                    scores.add(minimax(grid, depth, player, maxScore));
+                    //All available moves are in here
+                    grid[y][x] = BoardManager.whoseGo(grid);
+                    scores.add(minimax(grid, depth + 1, player, maxScore));
                     moves.add(new Point(x, y));
                     grid[y][x] = Piece.UNSET;
                 }
             }
         }
 
-        int scoreIndex = -1;
-        if (((BoardManager.nonemptySpaces(grid) % 2 == 0) ? Piece.RED : Piece.BLUE) == player){
+        int scoreIndex;
+        if (BoardManager.whoseGo(grid) == player){
             //If the next turn is ours
-            scoreIndex = scores.indexOf(Collections.max(scores)); //max
+            scoreIndex = scores.indexOf(Collections.max(scores)); //we want max score
         }else{
             //If the next turn is not ours
-            scoreIndex = scores.indexOf(Collections.min(scores)); //min
+            scoreIndex = scores.indexOf(Collections.min(scores)); //opponent wants min score
         }
         nextChoice = moves.get(scoreIndex);
         return scores.get(scoreIndex);

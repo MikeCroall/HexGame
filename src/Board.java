@@ -11,6 +11,7 @@ public class Board implements BoardInterface {
     //Interface methods
     @Override
     public boolean setBoardSize(int sizeX, int sizeY) throws InvalidBoardSizeException, BoardAlreadySizedException {
+        //TODO refactor EVERYTHING to make grid = Piece[x][y], not Piece[y][x]
         if (grid != null) { throw new BoardAlreadySizedException(); }
         if (sizeX < 2 || sizeY < 2) { throw new InvalidBoardSizeException(); }
 
@@ -35,7 +36,7 @@ public class Board implements BoardInterface {
         { throw new InvalidColourException(); }
         if (!BoardManager.isValidSpace(move.getXPosition(), move.getYPosition(), grid))
         { throw new InvalidPositionException(); }
-        if (!isFreeSpace(move.getXPosition(), move.getYPosition()))
+        if (!BoardManager.isFreeSpace(move.getXPosition(), move.getYPosition(), grid))
         { throw new PositionAlreadyTakenException(); }
 
         grid[move.getYPosition()][move.getXPosition()] = colour;
@@ -51,12 +52,6 @@ public class Board implements BoardInterface {
         }
 
         return BoardManager.winner(grid);
-    }
-
-    //Non-interface methods
-
-    private boolean isFreeSpace(int x, int y) {
-        return (grid != null && grid[y][x] == Piece.UNSET);
     }
 
 }

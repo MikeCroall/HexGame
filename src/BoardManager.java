@@ -3,6 +3,8 @@ import java.util.ArrayList;
 
 public class BoardManager {
 
+    private static Piece wentFirst = Piece.RED; //red assumed, later figured out
+
     //TODO remove all colour output entirely for final (assignment) release
     private static final boolean colourOutput = true; //Colours do not work in some environments
 
@@ -48,16 +50,27 @@ public class BoardManager {
         return (grid != null && x >= 0 && x < grid[0].length && y >= 0 && y < grid.length);
     }
 
-    public static int nonemptySpaces(Piece[][] grid){
-        int count = 0;
-        for (int y = 0; y < grid.length; y++) {
-            for (int x = 0; x < grid[0].length; x++) {
-                if (grid[y][x] != Piece.UNSET){
-                    count++;
-                }
+    public static boolean isFreeSpace(int x, int y, Piece[][] grid) {
+        return (grid != null && grid[y][x] == Piece.UNSET);
+    }
+
+    public static Piece whoseGo(Piece[][] grid) {
+        int red = 0, blue = 0;
+        for (Piece[] row : grid){
+            for (Piece piece : row){
+                if (piece == Piece.RED){ red++; }
+                else if (piece == Piece.BLUE) { blue++; }
             }
         }
-        return count;
+        if (red == blue){
+            return wentFirst;
+        }else if (red > blue){
+            wentFirst = Piece.RED; //one more red than blue, red was first and blues turn
+            return Piece.BLUE;
+        }else{ //blue > red
+            wentFirst = Piece.BLUE; //opposite to above
+            return Piece.RED;
+        }
     }
 
     private static String getLetter(Piece colour) {
