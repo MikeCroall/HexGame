@@ -12,8 +12,9 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface{
 
     @Override
     public MoveInterface makeMove(Piece[][] boardView) throws NoValidMovesException {
-        if (!hasValidMove(boardView)){ throw new NoValidMovesException(); }
+        if (!BoardManager_tqvj24.hasValidMove(boardView)){ throw new NoValidMovesException(); }
 
+        //TODO remove timer for production
         long startTime = System.currentTimeMillis();
         System.out.println("Computer player is thinking...");
         Point p = getNextMove(boardView);
@@ -39,7 +40,7 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface{
 
     @Override
     public boolean finalGameState(GameState state) {
-        System.out.println("Computer player " + getPlayerName() + (state == GameState.WON ? " won!" : " lost."));
+        System.out.println("Computer player tqvj24" + getPlayerName() + (state == GameState.WON ? " won!" : " lost."));
         return true;
     }
 
@@ -48,35 +49,23 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface{
         return colour.name().toLowerCase();
     }
 
-    private boolean hasValidMove(Piece[][] grid){
-        for (Piece[] row : grid) {
-            for (Piece piece : row) {
-                if (piece == Piece.UNSET) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
     //Below - methods for minimax solving
     private Point getNextMove(Piece[][] grid){
         if (BoardManager_tqvj24.moreThanXEmpties(grid, 9)){
             //TODO Improve non-minimax to be not random
-            int x = (int)grid[0].length / 2;
-            int y = (int)grid.length / 2;
+            int x = (int)grid.length / 2;
+            int y = (int)grid[0].length / 2;
             Random r = new Random();
             while(!BoardManager_tqvj24.isFreeSpace(x, y, grid)){
-                x = r.nextInt(grid[0].length);
-                y = r.nextInt(grid.length);
+                x = r.nextInt(grid.length);
+                y = r.nextInt(grid[0].length);
             }
             return new Point(x,y);
         }else {
-            Piece player = colour;
             nextChoice = new Point(-1, -1);
             int maxScore = grid.length * grid[0].length + 1;
 
-            minimax(grid, 0, player, maxScore);
+            minimax(grid, 0, colour, maxScore); //sets nextChoice
 
             return nextChoice;
         }
@@ -94,34 +83,35 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface{
         ArrayList<Point> moves = new ArrayList<Point>();
 
         ArrayList<Point> checked = new ArrayList<Point>();
-        for (int y = 0; y < grid.length; y++) {
-            for (int x = 0; x < grid[0].length; x++) {
-                if (grid[y][x] != Piece.UNSET) {
+        for (int x = 0; x < grid.length; x++) {
+            for (int y = 0; y < grid[0].length; y++) {
+                if (grid[x][y] != Piece.UNSET) {
                     //All placed pieces here
                     for (Point p : BoardManager_tqvj24.getEmptyNeighbours(x, y, grid)) {
                         //All empty neighbours of placed pieces
                         if (!checked.contains(p)) {
                             checked.add(p);
-                            grid[p.y][p.x] = BoardManager_tqvj24.whoseGo(grid);
+                            //TODO check if can just use moves instead of checked
+                            grid[p.x][p.y] = BoardManager_tqvj24.whoseGo(grid);
                             scores.add(minimax(grid, depth + 1, player, maxScore));
                             moves.add(p);
-                            grid[p.y][p.x] = Piece.UNSET;
+                            grid[p.x][p.y] = Piece.UNSET;
                         }
                     }
                 }
             }
         }
 
-        if (moves.isEmpty()){
-            int x = (int)grid[0].length / 2;
-            int y = (int)grid.length / 2;
+        if (moves.isEmpty()){ //essentially only ever when computer player is playing an EMPTY grid
+            int x = (int)grid.length / 2;
+            int y = (int)grid[0].length / 2;
             Random r = new Random();
             while(!BoardManager_tqvj24.isFreeSpace(x, y, grid)){
-                x = r.nextInt(grid[0].length);
-                y = r.nextInt(grid.length);
+                x = r.nextInt(grid.length);
+                y = r.nextInt(grid[0].length);
             }
             nextChoice = new Point(x,y);
-            return 0;
+            return 0; //value forgotten anyway in this case
         }
 
         int scoreIndex;

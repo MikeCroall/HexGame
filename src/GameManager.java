@@ -82,19 +82,22 @@ public class GameManager implements GameManagerInterface {
                 } else {
                     moveMade = board.placePiece(colour, move);
                     if(moveMade) {
-                        System.out.println("Move completed");
+                        System.out.println("Move made successfully");
                     }
                 }
             } catch (PositionAlreadyTakenException e) {
-                System.out.println("That position is already taken!");
+                System.out.println("That position is already taken!\n\nPlease try again!");
             } catch (InvalidPositionException e) {
                 System.out.println("That is not a valid position!\n\nPlease try again!");
             } catch (InvalidColourException e) {
-                System.out.println("Invalid colour given (likely internal error)");
+                System.out.println("Invalid colour given to place");
             }
             //These catches are here, as they can be retried, and do not mean the game is currently unplayable
         }
-        return conceded ? Piece.BLUE : board.gameWon();
+        if(conceded) {
+            if (colour == Piece.RED) { return Piece.BLUE; }
+            else { return Piece.RED; }
+        } else { return board.gameWon(); }
     }
 
 
@@ -173,8 +176,8 @@ public class GameManager implements GameManagerInterface {
     }
 
     public static void main(String[] args){
-        //playHumanVsHuman(5,5);
+        playHumanVsHuman(5,10);
         //playHumanVsComputer(4,4, true);
-        playComputerVsComputer(11,11);
+        //playComputerVsComputer(11,11);
     }
 }

@@ -11,13 +11,13 @@ public class BoardManager_tqvj24 {
     //TODO print borders/markers, and optimise
     public static void printBoard(Piece[][] grid){
         //Print top of hexs
-        System.out.print("\n\n  ");
-        for (int x = 0; x < grid[0].length; x++) {
+        System.out.print("\n  ");
+        for (int x = 0; x < grid.length; x++) {
             System.out.print(" / \\");
         }
         System.out.println();
 
-        for (int y = 0; y < grid.length; y++) {
+        for (int y = 0; y < grid[0].length; y++) {
             //Start at the correct position
             String leftPadding = "";
             for (int spaces = 0; spaces < 2 * y; spaces++) {
@@ -26,16 +26,16 @@ public class BoardManager_tqvj24 {
             System.out.print(leftPadding + "  ");
 
             //Top of hex is present, print middle row
-            for (int x = 0; x < grid[y].length; x++) {
-                System.out.print("| " + getLetter(grid[y][x]) + " ");
+            for (int x = 0; x < grid.length; x++) {
+                System.out.print("| " + getLetter(grid[x][y]) + " ");
             }
             System.out.print("|\n" + leftPadding);
 
             //Close off hex (is also top of next row, if exists)
-            for (int x = 0; x < grid[y].length; x++) {
+            for (int x = 0; x < grid.length; x++) {
                 System.out.print((x == 0 ? "  " : " /") + " \\");
             }
-            System.out.println(" /" + (y < grid.length - 1 ? " \\" : ""));
+            System.out.println(" /" + (y < grid[0].length - 1 ? " \\" : ""));
         }
         System.out.println();
     }
@@ -47,17 +47,17 @@ public class BoardManager_tqvj24 {
     }
 
     public static boolean isValidSpace(int x, int y, Piece[][] grid) {
-        return (grid != null && x >= 0 && x < grid[0].length && y >= 0 && y < grid.length);
+        return (grid != null && x >= 0 && x < grid.length && y >= 0 && y < grid[0].length);
     }
 
     public static boolean isFreeSpace(int x, int y, Piece[][] grid) {
-        return (grid != null && grid[y][x] == Piece.UNSET);
+        return (grid != null && grid[x][y] == Piece.UNSET);
     }
 
     public static Piece whoseGo(Piece[][] grid) {
         int red = 0, blue = 0;
-        for (Piece[] row : grid){
-            for (Piece piece : row){
+        for (Piece[] column : grid){
+            for (Piece piece : column){
                 if (piece == Piece.RED){ red++; }
                 else if (piece == Piece.BLUE) { blue++; }
             }
@@ -88,13 +88,24 @@ public class BoardManager_tqvj24 {
 
     public static boolean moreThanXEmpties(Piece[][] grid, int x){
         int count = 0;
-        for (Piece[] row : grid){
-            for (Piece piece : row){
+        for (Piece[] column : grid){
+            for (Piece piece : column){
                 if (piece == Piece.UNSET){
                     count++;
                     if (count > x) {
                         return true;
                     }
+                }
+            }
+        }
+        return false;
+    }
+
+    public static boolean hasValidMove(Piece[][] grid){
+        for (Piece[] column : grid) {
+            for (Piece piece : column) {
+                if (piece == Piece.UNSET) {
+                    return true;
                 }
             }
         }
@@ -127,14 +138,14 @@ public class BoardManager_tqvj24 {
         ArrayList<Point> open = new ArrayList<Point>();
 
         if (topToBottom) {
-            for (int x = 0; x < grid[0].length; x++) {
-                if (grid[0][x] == colour) {
+            for (int x = 0; x < grid.length; x++) {
+                if (grid[x][0] == colour) {
                     closed.add(new Point(x, 0));
                 }
             }
         } else {
-            for (int y = 0; y < grid.length; y++) {
-                if (grid[y][0] == colour) {
+            for (int y = 0; y < grid[0].length; y++) {
+                if (grid[0][y] == colour) {
                     closed.add(new Point(0, y));
                 }
             }
@@ -161,7 +172,7 @@ public class BoardManager_tqvj24 {
     }
 
     private static ArrayList<Point> checkNeighboursOf(Point p, ArrayList<Point> closed, Piece[][] grid) {
-        Piece colour = grid[p.y][p.x];
+        Piece colour = grid[p.x][p.y];
         ArrayList<Point> neighbours = new ArrayList<Point>();
 
         checkNeighbour(new Point(p.x - 1, p.y), neighbours, closed, colour, grid);      //left
@@ -175,17 +186,14 @@ public class BoardManager_tqvj24 {
     }
 
     private static void checkNeighbour(Point p, ArrayList<Point> neighbours, ArrayList<Point> closed, Piece colour, Piece[][] grid) {
-        if (isValidSpace(p.x, p.y, grid) && grid[p.y][p.x] == colour && !closed.contains(p) && ! neighbours.contains(p)) {
+        if (isValidSpace(p.x, p.y, grid) && grid[p.x][p.y] == colour && !closed.contains(p) && ! neighbours.contains(p)) {
             neighbours.add(p);
         }
     }
 
     private static boolean foundOppositeEdge(boolean topToBottom, ArrayList<Point> open, Piece[][] grid) {
         for (Point p : open) {
-            if(topToBottom && p.y == grid.length - 1) {
-                return true;
-            }
-            else if(!topToBottom && p.x == grid[0].length - 1) {
+            if((topToBottom && p.y == grid[0].length - 1) || (!topToBottom && p.x == grid.length - 1)) {
                 return true;
             }
         }

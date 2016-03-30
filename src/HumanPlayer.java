@@ -21,7 +21,7 @@ public class HumanPlayer implements PlayerInterface {
 
         while(!validPosition) {
             validPosition = true;
-            String choice = getValidInput();
+            String choice = getValidInput(); //TODO getValidInput return array to check, instead of re-parsing input
             String[] items = choice.split(" ");
 
             if (items.length == 1) {
@@ -73,8 +73,8 @@ public class HumanPlayer implements PlayerInterface {
     }
 
     private boolean hasValidMove(Piece[][] grid){
-        for (Piece[] row : grid) {
-            for (Piece piece : row) {
+        for (Piece[] column : grid) {
+            for (Piece piece : column) {
                 if (piece == Piece.UNSET) {
                     return true;
                 }
@@ -92,14 +92,12 @@ public class HumanPlayer implements PlayerInterface {
             valid = true;
             System.out.print("Please enter the move you wish to make, " + getPlayerName() + " player.\n\tEnter 'concede' to concede to your opponent\n\tEnter coordinates in the form 'x y' to make a move\nChoice: ");
             input = scan.nextLine();
-            String items[]  = input.trim().toLowerCase().replace(",", " ").replace("'", "").split(" ");
-            if (items.length == 1){
-                //Probably conceding, double check
+            String items[]  = input.toLowerCase().replace(",", " ").replace("'", "").replace("(","").replace(")","").trim().split(" ");
+            if (items.length == 1){ //Probably conceding, double check
                 if (items[0].equals("concede")) {
                     output = items[0];
                 } else { valid = false; }
-            } else if (items.length == 2){
-                //Probably coordinates, double check
+            } else if (items.length == 2){ //Probably coordinates, double check
                 int x, y;
                 Scanner numCheck = new Scanner(items[0]);
                 if (numCheck.hasNextInt()){

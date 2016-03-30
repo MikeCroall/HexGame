@@ -11,14 +11,14 @@ public class Board implements BoardInterface {
     //Interface methods
     @Override
     public boolean setBoardSize(int sizeX, int sizeY) throws InvalidBoardSizeException, BoardAlreadySizedException {
-        //TODO refactor EVERYTHING to make grid = Piece[x][y], not Piece[y][x]
         if (grid != null) { throw new BoardAlreadySizedException(); }
         if (sizeX < 2 || sizeY < 2) { throw new InvalidBoardSizeException(); }
 
-        grid = new Piece[sizeY][sizeX];
-        for (int y = 0; y < sizeY; y++) {
-            for (int x = 0; x < sizeX; x++) {
-                grid[y][x] = Piece.UNSET;
+        grid = new Piece[sizeX][sizeY];
+
+        for (int x = 0; x < sizeX; x++) {
+            for (int y = 0; y < sizeY; y++) {
+                grid[x][y] = Piece.UNSET;
             }
         }
         return true;
@@ -39,7 +39,7 @@ public class Board implements BoardInterface {
         if (!BoardManager_tqvj24.isFreeSpace(move.getXPosition(), move.getYPosition(), grid))
         { throw new PositionAlreadyTakenException(); }
 
-        grid[move.getYPosition()][move.getXPosition()] = colour;
+        grid[move.getXPosition()][move.getYPosition()] = colour;
         lastMove = colour;
 
         return true;
