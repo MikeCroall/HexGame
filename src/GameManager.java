@@ -176,8 +176,8 @@ public class GameManager implements GameManagerInterface {
     }
 
     public static void main(String[] args){
-        playHumanVsHuman(5,10);
-        //playHumanVsComputer(4,4, true);
+        //playHumanVsHuman(5,5);
+        playHumanVsComputer(4,4, true);
         //playComputerVsComputer(11,11);
     }
 }

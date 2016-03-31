@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.util.Scanner;
 
 public class HumanPlayer implements PlayerInterface {
@@ -21,18 +22,13 @@ public class HumanPlayer implements PlayerInterface {
 
         while(!validPosition) {
             validPosition = true;
-            String choice = getValidInput(); //TODO getValidInput return array to check, instead of re-parsing input
-            String[] items = choice.split(" ");
+            Point choice = getValidInput();
 
-            if (items.length == 1) {
+            if (choice == null) {
                 move.setConceded();
             } else {
-                //length is 2, items are int, getValidInput ensures this
-                int x = Integer.parseInt(items[0]);
-                int y = Integer.parseInt(items[1]);
-
                 try {
-                    move.setPosition(x, y);
+                    move.setPosition(choice.x, choice.y);
                 } catch (InvalidPositionException ex) {
                     validPosition = false;
                     System.out.println("That is not a valid position");
@@ -83,9 +79,10 @@ public class HumanPlayer implements PlayerInterface {
         return false;
     }
 
-    private String getValidInput(){
+    private Point getValidInput(){
         Scanner scan = new Scanner(System.in);
-        String input, output = "";
+        String input = "";
+        Point output = null;
         boolean valid = false;
 
         while (!valid){
@@ -95,7 +92,7 @@ public class HumanPlayer implements PlayerInterface {
             String items[]  = input.toLowerCase().replace(",", " ").replace("'", "").replace("(","").replace(")","").trim().split(" ");
             if (items.length == 1){ //Probably conceding, double check
                 if (items[0].equals("concede")) {
-                    output = items[0];
+                    output = null;
                 } else { valid = false; }
             } else if (items.length == 2){ //Probably coordinates, double check
                 int x, y;
@@ -105,7 +102,7 @@ public class HumanPlayer implements PlayerInterface {
                     numCheck = new Scanner(items[1]);
                     if (numCheck.hasNextInt()){
                         y = numCheck.nextInt();
-                        output = "" + x + " " + y;
+                        output = new Point(x, y);
                     } else { valid = false; }
                 } else {valid = false; }
             } else {valid = false; }

@@ -18,7 +18,7 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface{
         long startTime = System.currentTimeMillis();
         System.out.println("Computer player is thinking...");
         Point p = getNextMove(boardView);
-        System.out.println("Computer decided in " + (System.currentTimeMillis() - startTime) + "ms");
+        System.out.println("Computer decided in " + (System.currentTimeMillis() - startTime)/1000 + "s");
 
         MoveInterface myMove = new Move();
         try {
@@ -40,7 +40,7 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface{
 
     @Override
     public boolean finalGameState(GameState state) {
-        System.out.println("Computer player tqvj24" + getPlayerName() + (state == GameState.WON ? " won!" : " lost."));
+        System.out.println("Computer player tqvj24 " + getPlayerName() + (state == GameState.WON ? " won!" : " lost."));
         return true;
     }
 
@@ -73,7 +73,15 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface{
 
     private int minimax(Piece[][] grid, int depth, Piece player, int maxScore) {
         /*
-        //TODO note here about adapting my naughts and crosses minimax
+        This minimax algorithm was written by adapting a previous C# project of mine, using minimax to play
+        naughts and crosses. That original project was written with help of a blog post at:
+        http://neverstopbuilding.com/minimax
+
+        The algorithm in my original naughts and crosses minimax project was written by myself,
+        after reading the blog post's explanation and python code to understand the algorithm.
+
+        This minimax algorithm was then written by looking at my previous C# algorithm and re-writing it
+        for the java and HexGame environment.
          */
         if (BoardManager_tqvj24.winner(grid) != Piece.UNSET) {
             return score(grid, depth, player, maxScore);
@@ -82,16 +90,13 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface{
         ArrayList<Integer> scores = new ArrayList<Integer>();
         ArrayList<Point> moves = new ArrayList<Point>();
 
-        ArrayList<Point> checked = new ArrayList<Point>();
         for (int x = 0; x < grid.length; x++) {
             for (int y = 0; y < grid[0].length; y++) {
                 if (grid[x][y] != Piece.UNSET) {
                     //All placed pieces here
                     for (Point p : BoardManager_tqvj24.getEmptyNeighbours(x, y, grid)) {
                         //All empty neighbours of placed pieces
-                        if (!checked.contains(p)) {
-                            checked.add(p);
-                            //TODO check if can just use moves instead of checked
+                        if (!moves.contains(p)) {
                             grid[p.x][p.y] = BoardManager_tqvj24.whoseGo(grid);
                             scores.add(minimax(grid, depth + 1, player, maxScore));
                             moves.add(p);
