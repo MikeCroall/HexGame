@@ -100,7 +100,6 @@ public class GameManager implements GameManagerInterface {
         } else { return board.gameWon(); }
     }
 
-
     //BELOW is for testing purposes only
     private static void playHumanVsHuman(int boardWidth, int boardHeight){
         GameManager g = new GameManager();
@@ -177,7 +176,7 @@ public class GameManager implements GameManagerInterface {
 
     public static void main(String[] args){
         //playHumanVsHuman(5,5);
-        playHumanVsComputer(4,4, true);
+        playHumanVsComputer(5,5, false);
         //playComputerVsComputer(11,11);
     }
 }

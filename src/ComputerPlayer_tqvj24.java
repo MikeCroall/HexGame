@@ -7,6 +7,7 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface{
 
     private Piece colour;
     private Point nextChoice;
+    private Piece[][] prevGrid;
 
     public ComputerPlayer_tqvj24(){ colour = Piece.UNSET; }
 
@@ -14,10 +15,10 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface{
     public MoveInterface makeMove(Piece[][] boardView) throws NoValidMovesException {
         if (!BoardManager_tqvj24.hasValidMove(boardView)){ throw new NoValidMovesException(); }
 
-        //TODO remove timer for production
+        //TODO remove timer for production?
         long startTime = System.currentTimeMillis();
         System.out.println("Computer player is thinking...");
-        Point p = getNextMove(boardView);
+        Point p = chooseNextMove(boardView);
         System.out.println("Computer decided in " + (System.currentTimeMillis() - startTime)/1000 + "s");
 
         MoveInterface myMove = new Move();
@@ -50,24 +51,64 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface{
     }
 
     //Below - methods for minimax solving
-    private Point getNextMove(Piece[][] grid){
+    private Point chooseNextMove(Piece[][] grid){
         if (BoardManager_tqvj24.moreThanXEmpties(grid, 9)){
-            //TODO Improve non-minimax to be not random
-            int x = (int)grid.length / 2;
-            int y = (int)grid[0].length / 2;
-            Random r = new Random();
-            while(!BoardManager_tqvj24.isFreeSpace(x, y, grid)){
-                x = r.nextInt(grid.length);
-                y = r.nextInt(grid[0].length);
+            System.out.println("Not using minimax");
+            Piece target = colour == Piece.RED ? Piece.BLUE : Piece.RED;
+            nextChoice = new Point(-1, -1);
+
+            if (prevGrid == null) {
+                nextChoice = randomChoice(grid);
+            } else {
+                Point lastMove = lastMove(prevGrid, grid, target);
+                if (lastMove.x == -1) {
+                    surroundExisting(grid, target);
+                }else { //TODO selective direction based filtering of 'surround' choice lists
+                    surroundLastMove(grid, target, lastMove);
+                }
             }
-            return new Point(x,y);
+            prevGrid = actualCopy(grid);
+            return nextChoice;
         }else {
+            System.out.println("Using minimax");
             nextChoice = new Point(-1, -1);
             int maxScore = grid.length * grid[0].length + 1;
 
             minimax(grid, 0, colour, maxScore); //sets nextChoice
 
             return nextChoice;
+        }
+    }
+
+    private void surroundLastMove(Piece[][] grid, Piece target, Point lastMove) {
+
+        ArrayList<Point> choices = BoardManager_tqvj24.getEmptyNeighbours(lastMove.x, lastMove.y, grid);
+
+        if (choices.size() == 0) {
+            surroundExisting(grid, target);
+        }else {
+            Random r = new Random();
+            nextChoice = choices.get(r.nextInt(choices.size()));
+        }
+    }
+
+    private void surroundExisting(Piece[][] grid, Piece target) {
+        ArrayList<Point> choices = new ArrayList<Point>();
+
+        for (int x = 0; x < grid.length; x++) {
+            for (int y = 0; y < grid[0].length; y++) {
+                if (grid[x][y] == target){
+                    choices.addAll(BoardManager_tqvj24.getEmptyNeighbours(x,y,grid));
+                    //TODO experiment with only left or right neighbours, not all ie. make it better
+                }
+            }
+        }
+
+        if (choices.size() == 0) {
+            nextChoice = randomChoice(grid);
+        }else{
+            Random r = new Random();
+            nextChoice = choices.get(r.nextInt(choices.size()));
         }
     }
 
@@ -141,5 +182,37 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface{
             return 0;
         }
     }
+    
+    private Point lastMove(Piece[][] lastGrid, Piece[][] grid, Piece target){
+        for (int x = 0; x < grid.length; x++) {
+            for (int y = 0; y < grid[0].length; y++) {
+                if (lastGrid[x][y] != grid[x][y] && grid[x][y] == target){
+                    return new Point(x,y);
+                }
+            }
+        }
+        System.out.println("Last move not found");
+        return new Point(-1, -1);
+    }
 
+    private Point randomChoice(Piece[][] grid){
+        int x = (int) grid.length / 2;
+        int y = (int) grid[0].length / 2;
+        Random r = new Random();
+        while (!BoardManager_tqvj24.isFreeSpace(x, y, grid)) {
+            x = r.nextInt(grid.length);
+            y = r.nextInt(grid[0].length);
+        }
+        return new Point(x,y);
+    }
+
+    private Piece[][] actualCopy(Piece[][] grid){
+        Piece[][] newGrid = new Piece[grid.length][grid[0].length];
+        for (int x = 0; x < grid.length; x++) {
+            for (int y = 0; y < grid[0].length; y++) {
+                newGrid[x][y] = grid[x][y];
+            }
+        }
+        return newGrid;
+    }
 }

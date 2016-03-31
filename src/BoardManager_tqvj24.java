@@ -8,8 +8,12 @@ public class BoardManager_tqvj24 {
     //TODO remove all colour output entirely for final (assignment) release
     private static final boolean colourOutput = true; //Colours do not work in some environments
 
-    //TODO print borders/markers, and optimise
+    //TODO optimise print
     public static void printBoard(Piece[][] grid){
+        //Print top border
+        System.out.print("\n      ");
+        for (int x = 0; x < grid.length - 1; x++) { System.out.print("R   "); }
+
         //Print top of hexs
         System.out.print("\n  ");
         for (int x = 0; x < grid.length; x++) {
@@ -29,7 +33,7 @@ public class BoardManager_tqvj24 {
             for (int x = 0; x < grid.length; x++) {
                 System.out.print("| " + getLetter(grid[x][y]) + " ");
             }
-            System.out.print("|\n" + leftPadding);
+            System.out.print("|" + (y < grid[0].length - 1 ? " B" : "") + "\n" + leftPadding);
 
             //Close off hex (is also top of next row, if exists)
             for (int x = 0; x < grid.length; x++) {
