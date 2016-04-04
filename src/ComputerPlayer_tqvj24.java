@@ -53,7 +53,6 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface{
     //Below - methods for minimax solving
     private Point chooseNextMove(Piece[][] grid){
         if (BoardManager_tqvj24.moreThanXEmpties(grid, 9)){
-            System.out.println("Not using minimax");
             Piece target = colour == Piece.RED ? Piece.BLUE : Piece.RED;
             nextChoice = new Point(-1, -1);
 
@@ -63,14 +62,13 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface{
                 Point lastMove = lastMove(prevGrid, grid, target);
                 if (lastMove.x == -1) {
                     surroundExisting(grid, target);
-                }else { //TODO selective direction based filtering of 'surround' choice lists
+                }else {
                     surroundLastMove(grid, target, lastMove);
                 }
             }
             prevGrid = actualCopy(grid);
             return nextChoice;
         }else {
-            System.out.println("Using minimax");
             nextChoice = new Point(-1, -1);
             int maxScore = grid.length * grid[0].length + 1;
 
@@ -87,9 +85,38 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface{
         if (choices.size() == 0) {
             surroundExisting(grid, target);
         }else {
+            choices = directionFilter(choices, lastMove, target);
             Random r = new Random();
             nextChoice = choices.get(r.nextInt(choices.size()));
         }
+    }
+
+    private ArrayList<Point> directionFilter(ArrayList<Point> choices, Point lastMove, Piece target) {
+        ArrayList<Point> result = new ArrayList<Point>();
+        /*
+        if target is red, block top to bottom (topleft to bottomright when rotated)
+            -choose:
+                all that are different y
+
+        if target is blue, block left to right (bottomleft to topright when rotated)
+            -choose:
+                all that are different x
+         */
+        for (Point p : choices){
+            if (target == Piece.RED){
+                if(p.y != lastMove.y) {
+                    result.add(p);
+                }
+            }else{
+                if(p.x != lastMove.x){
+                    result.add(p);
+                }
+            }
+        }
+        if (result.size() == 0){
+            return choices;
+        }
+        return result;
     }
 
     private void surroundExisting(Piece[][] grid, Piece target) {
@@ -99,7 +126,6 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface{
             for (int y = 0; y < grid[0].length; y++) {
                 if (grid[x][y] == target){
                     choices.addAll(BoardManager_tqvj24.getEmptyNeighbours(x,y,grid));
-                    //TODO experiment with only left or right neighbours, not all ie. make it better
                 }
             }
         }
