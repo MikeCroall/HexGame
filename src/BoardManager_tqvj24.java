@@ -116,6 +116,16 @@ public class BoardManager_tqvj24 {
         return false;
     }
 
+    public static Piece[][] actualCopy(Piece[][] grid){
+        Piece[][] newGrid = new Piece[grid.length][grid[0].length];
+        for (int x = 0; x < grid.length; x++) {
+            for (int y = 0; y < grid[0].length; y++) {
+                newGrid[x][y] = grid[x][y];
+            }
+        }
+        return newGrid;
+    }
+
     private static String getLetter(Piece colour) {
         switch (colour) {
             case RED:

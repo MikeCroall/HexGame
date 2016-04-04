@@ -27,7 +27,7 @@ public class Board implements BoardInterface {
     @Override
     public Piece[][] getBoardView() throws NoBoardDefinedException {
         if (grid == null) { throw new NoBoardDefinedException(); }
-        return grid;
+        return BoardManager_tqvj24.actualCopy(grid);
     }
 
     @Override

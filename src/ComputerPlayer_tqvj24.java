@@ -66,7 +66,7 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface{
                     surroundLastMove(grid, target, lastMove);
                 }
             }
-            prevGrid = actualCopy(grid);
+            prevGrid = BoardManager_tqvj24.actualCopy(grid);
             return nextChoice;
         }else {
             nextChoice = new Point(-1, -1);
@@ -232,13 +232,4 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface{
         return new Point(x,y);
     }
 
-    private Piece[][] actualCopy(Piece[][] grid){
-        Piece[][] newGrid = new Piece[grid.length][grid[0].length];
-        for (int x = 0; x < grid.length; x++) {
-            for (int y = 0; y < grid[0].length; y++) {
-                newGrid[x][y] = grid[x][y];
-            }
-        }
-        return newGrid;
-    }
 }
