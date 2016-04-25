@@ -10,22 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f778a171-f913-492a-b16f-269dd8982837" name="Default" comment="Removed unused imports">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/BoardAlreadySizedException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/BoardInterface.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ColourAlreadySetException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/GameManagerInterface.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/GameState.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/InvalidBoardSizeException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/InvalidColourException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/InvalidPositionException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/MoveInterface.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/NoBoardDefinedException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/NoValidMovesException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Piece.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PlayerInterface.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PositionAlreadyTakenException.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main_tqvj24.java" afterPath="$PROJECT_DIR$/src/Main_tqvj24.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Board.java" afterPath="$PROJECT_DIR$/src/Board.java" />
     </list>
     <ignored path="HexGame.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,7 +36,7 @@
       <file leaf-file-name="GameManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GameManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-165">
+            <state relative-caret-position="165">
               <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
               <folding>
                 <element signature="method#specifyPlayer#0;class#GameManager#0" expanded="false" />
@@ -61,11 +47,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Board.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Board.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1419">
-              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+            <state relative-caret-position="363">
+              <caret line="36" column="25" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -85,7 +71,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ComputerPlayer_tqvj24.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ComputerPlayer_tqvj24.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ComputerPlayer_tqvj24.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="429">
@@ -100,30 +86,34 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="BoardInterface.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/BoardInterface.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-284">
+              <caret line="24" column="73" selection-start-line="24" selection-start-column="73" selection-end-line="24" selection-end-column="73" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="BoardManager_tqvj24.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BoardManager_tqvj24.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="891">
               <caret line="127" column="0" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="false" />
                 <element signature="method#printBoard#0;class#BoardManager_tqvj24#0" expanded="false" />
                 <element signature="method#winner#0;class#BoardManager_tqvj24#0" expanded="false" />
                 <element signature="method#isValidSpace#0;class#BoardManager_tqvj24#0" expanded="false" />
                 <element signature="method#isFreeSpace#0;class#BoardManager_tqvj24#0" expanded="false" />
                 <element signature="method#whoseGo#0;class#BoardManager_tqvj24#0" expanded="false" />
                 <element signature="method#getEmptyNeighbours#0;class#BoardManager_tqvj24#0" expanded="false" />
-                <element signature="e#2942#2949#0" expanded="false" />
                 <element signature="method#moreThanXEmpties#0;class#BoardManager_tqvj24#0" expanded="false" />
                 <element signature="method#hasValidMove#0;class#BoardManager_tqvj24#0" expanded="false" />
                 <element signature="method#actualCopy#0;class#BoardManager_tqvj24#0" expanded="false" />
                 <element signature="method#getLetter#0;class#BoardManager_tqvj24#0" expanded="false" />
                 <element signature="method#hasWon#0;class#BoardManager_tqvj24#0" expanded="false" />
-                <element signature="e#5488#5495#0" expanded="false" />
-                <element signature="e#5544#5551#0" expanded="false" />
-                <element signature="e#6342#6349#0" expanded="false" />
                 <element signature="method#checkNeighboursOf#0;class#BoardManager_tqvj24#0" expanded="false" />
-                <element signature="e#6770#6777#0" expanded="false" />
                 <element signature="method#checkNeighbour#0;class#BoardManager_tqvj24#0" expanded="false" />
                 <element signature="method#foundOppositeEdge#0;class#BoardManager_tqvj24#0" expanded="false" />
               </folding>
@@ -171,10 +161,10 @@
         <option value="$PROJECT_DIR$/src/HumanPlayer.java" />
         <option value="$PROJECT_DIR$/src/BoardManager_tqvj24.java" />
         <option value="$PROJECT_DIR$/src/ComputerPlayer_tqvj24.java" />
-        <option value="$PROJECT_DIR$/src/Board.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/GameManager.java" />
         <option value="$PROJECT_DIR$/src/Main_tqvj24.java" />
+        <option value="$PROJECT_DIR$/src/Board.java" />
       </list>
     </option>
   </component>
@@ -247,10 +237,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope">
-        <subPane subId="Problems" />
-      </pane>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -285,7 +272,10 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope">
+        <subPane subId="Problems" />
+      </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -561,13 +551,11 @@
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27867746" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329097" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2725451" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44080266" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20019281" sideWeight="0.49622643" order="0" side_tool="false" content_ui="combo" />
@@ -576,12 +564,14 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20019281" sideWeight="0.50377357" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44214046" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329097" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44080266" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44214046" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -885,13 +875,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BoardInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="24" column="73" selection-start-line="24" selection-start-column="73" selection-end-line="24" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ColourAlreadySetException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
@@ -968,35 +951,21 @@
         <state relative-caret-position="891">
           <caret line="127" column="0" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="false" />
             <element signature="method#printBoard#0;class#BoardManager_tqvj24#0" expanded="false" />
             <element signature="method#winner#0;class#BoardManager_tqvj24#0" expanded="false" />
             <element signature="method#isValidSpace#0;class#BoardManager_tqvj24#0" expanded="false" />
             <element signature="method#isFreeSpace#0;class#BoardManager_tqvj24#0" expanded="false" />
             <element signature="method#whoseGo#0;class#BoardManager_tqvj24#0" expanded="false" />
             <element signature="method#getEmptyNeighbours#0;class#BoardManager_tqvj24#0" expanded="false" />
-            <element signature="e#2942#2949#0" expanded="false" />
             <element signature="method#moreThanXEmpties#0;class#BoardManager_tqvj24#0" expanded="false" />
             <element signature="method#hasValidMove#0;class#BoardManager_tqvj24#0" expanded="false" />
             <element signature="method#actualCopy#0;class#BoardManager_tqvj24#0" expanded="false" />
             <element signature="method#getLetter#0;class#BoardManager_tqvj24#0" expanded="false" />
             <element signature="method#hasWon#0;class#BoardManager_tqvj24#0" expanded="false" />
-            <element signature="e#5488#5495#0" expanded="false" />
-            <element signature="e#5544#5551#0" expanded="false" />
-            <element signature="e#6342#6349#0" expanded="false" />
             <element signature="method#checkNeighboursOf#0;class#BoardManager_tqvj24#0" expanded="false" />
-            <element signature="e#6770#6777#0" expanded="false" />
             <element signature="method#checkNeighbour#0;class#BoardManager_tqvj24#0" expanded="false" />
             <element signature="method#foundOppositeEdge#0;class#BoardManager_tqvj24#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Board.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1419">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1014,7 +983,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GameManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-165">
+        <state relative-caret-position="165">
           <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
           <folding>
             <element signature="method#specifyPlayer#0;class#GameManager#0" expanded="false" />
@@ -1034,6 +1003,22 @@
             <element signature="method#lastMove#0;class#ComputerPlayer_tqvj24#0" expanded="false" />
             <element signature="method#randomChoice#0;class#ComputerPlayer_tqvj24#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BoardInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-284">
+          <caret line="24" column="73" selection-start-line="24" selection-start-column="73" selection-end-line="24" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Board.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="36" column="25" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>

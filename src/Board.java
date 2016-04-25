@@ -31,9 +31,11 @@ public class Board implements BoardInterface {
     }
 
     @Override
-    public boolean placePiece(Piece colour, MoveInterface move) throws PositionAlreadyTakenException, InvalidPositionException, InvalidColourException {
+    public boolean placePiece(Piece colour, MoveInterface move) throws PositionAlreadyTakenException, InvalidPositionException, InvalidColourException, NoBoardDefinedException {
         if (colour == lastMove || colour == Piece.UNSET)
         { throw new InvalidColourException(); }
+        if (grid == null)
+        { throw new NoBoardDefinedException(); }
         if (!BoardManager_tqvj24.isValidSpace(move.getXPosition(), move.getYPosition(), grid))
         { throw new InvalidPositionException(); }
         if (!BoardManager_tqvj24.isFreeSpace(move.getXPosition(), move.getYPosition(), grid))
