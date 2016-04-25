@@ -14,12 +14,16 @@ public class Board implements BoardInterface {
         if (grid != null) { throw new BoardAlreadySizedException(); }
         if (sizeX < 2 || sizeY < 2) { throw new InvalidBoardSizeException(); }
 
-        grid = new Piece[sizeX][sizeY];
+        try {
+            grid = new Piece[sizeX][sizeY];
 
-        for (int x = 0; x < sizeX; x++) {
-            for (int y = 0; y < sizeY; y++) {
-                grid[x][y] = Piece.UNSET;
+            for (int x = 0; x < sizeX; x++) {
+                for (int y = 0; y < sizeY; y++) {
+                    grid[x][y] = Piece.UNSET;
+                }
             }
+        }catch(Exception e){
+            return false; // so that the boolean return actually has meaning
         }
         return true;
     }
@@ -41,9 +45,12 @@ public class Board implements BoardInterface {
         if (!BoardManager_tqvj24.isFreeSpace(move.getXPosition(), move.getYPosition(), grid))
         { throw new PositionAlreadyTakenException(); }
 
-        grid[move.getXPosition()][move.getYPosition()] = colour;
-        lastMove = colour;
-
+        try {
+            grid[move.getXPosition()][move.getYPosition()] = colour;
+            lastMove = colour;
+        }catch(Exception e){
+            return false;
+        }
         return true;
     }
 

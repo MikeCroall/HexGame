@@ -13,13 +13,12 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface{
 
     @Override
     public MoveInterface makeMove(Piece[][] boardView) throws NoValidMovesException {
-        if (!BoardManager_tqvj24.hasValidMove(boardView)){ throw new NoValidMovesException(); }
+        if (colour == null || !BoardManager_tqvj24.hasValidMove(boardView)){
+            throw new NoValidMovesException();
+        }
 
-        //TODO remove timer for production?
-        long startTime = System.currentTimeMillis();
-        System.out.println("Computer player is thinking...");
+        System.out.println("Computer player tqvj24 is thinking...");
         Point p = chooseNextMove(boardView);
-        System.out.println("Computer decided in " + (System.currentTimeMillis() - startTime)/1000 + "s");
 
         MoveInterface myMove = new Move();
         try {
@@ -35,13 +34,21 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface{
     public boolean setColour(Piece colour) throws InvalidColourException, ColourAlreadySetException {
         if (colour == Piece.UNSET){ throw new InvalidColourException(); }
         if (this.colour != Piece.UNSET){ throw new ColourAlreadySetException(); }
-        this.colour = colour;
+        try {
+            this.colour = colour;
+        }catch(Exception e){
+            return false;
+        }
         return true;
     }
 
     @Override
     public boolean finalGameState(GameState state) {
-        System.out.println("Computer player tqvj24 " + getPlayerName() + (state == GameState.WON ? " won!" : " lost."));
+        try {
+            System.out.println("Computer player tqvj24 " + getPlayerName() + (state == GameState.WON ? " won!" : " lost."));
+        }catch(Exception e){
+            return false;
+        }
         return true;
     }
 

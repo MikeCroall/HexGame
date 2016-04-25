@@ -34,14 +34,17 @@ public class GameManager implements GameManagerInterface {
         if(sizeX < 1 || sizeY < 1) {
             throw new InvalidBoardSizeException();
         }
-        board = new Board();
-        board.setBoardSize(sizeX, sizeY);
+        try {
+            board = new Board();
+            board.setBoardSize(sizeX, sizeY);
+        }catch(Exception e){
+            return false;
+        }
         return true;
     }
 
     @Override
     public boolean playGame() {
-        boolean succesfulGame = true;
         try {
             Piece winner = Piece.UNSET;
             while (winner == Piece.UNSET){
@@ -65,12 +68,14 @@ public class GameManager implements GameManagerInterface {
 
         } catch(NoBoardDefinedException noBoardEx){
             System.out.println("No board has been defined!");
-            succesfulGame = false;
+            return false;
         } catch(NoValidMovesException noMovesEx){
             System.out.println("There are no valid moves to make!");
-            succesfulGame = false;
+            return false;
+        } catch(Exception e){
+            return false;
         }
-        return succesfulGame;
+        return true;
     }
 
     //Non-interface methods

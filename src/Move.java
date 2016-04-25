@@ -12,10 +12,12 @@ public class Move implements MoveInterface {
         if (x < 0 || y < 0) {
             throw new InvalidPositionException();
         }
-
-        this.x = x;
-        this.y = y;
-
+        try {
+            this.x = x;
+            this.y = y;
+        }catch(Exception e){
+            return false;
+        }
         return true;
     }
 
@@ -31,7 +33,11 @@ public class Move implements MoveInterface {
 
     @Override
     public boolean setConceded() {
-        conceded = true;
+        try {
+            conceded = true;
+        }catch(Exception e) {
+            return false;
+        }
         return true;
     }
 

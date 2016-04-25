@@ -11,7 +11,7 @@ public class HumanPlayer implements PlayerInterface {
 
     @Override
     public MoveInterface makeMove(Piece[][] boardView) throws NoValidMovesException {
-        if (!hasValidMove(boardView)) {
+        if (colour == null || !BoardManager_tqvj24.hasValidMove(boardView)) {
             throw new NoValidMovesException();
         }
 
@@ -42,23 +42,29 @@ public class HumanPlayer implements PlayerInterface {
     @Override
     public boolean setColour(Piece colour) throws InvalidColourException, ColourAlreadySetException {
         if (this.colour != Piece.UNSET) {
-            {
-                throw new ColourAlreadySetException();
-            }
+            throw new ColourAlreadySetException();
         }
         if(colour == Piece.UNSET) {
             throw new InvalidColourException();
         }
-        this.colour = colour;
+        try {
+            this.colour = colour;
+        }catch(Exception e){
+            return false;
+        }
         return true;
     }
 
     @Override
     public boolean finalGameState(GameState state) {
-        if (state == GameState.WON) {
-            System.out.println("Congratulations " + getPlayerName() + ", you have won!");
-        } else if (state == GameState.LOST) {
-            System.out.println("Unfortunately " + getPlayerName() + ", you have lost.");
+        try {
+            if (state == GameState.WON) {
+                System.out.println("Congratulations " + getPlayerName() + ", you have won!");
+            } else if (state == GameState.LOST) {
+                System.out.println("Unfortunately " + getPlayerName() + ", you have lost.");
+            } else { return false; }
+        }catch(Exception e){
+            return false;
         }
         return true;
     }
@@ -66,17 +72,6 @@ public class HumanPlayer implements PlayerInterface {
     //Non-interface methods
     private String getPlayerName(){
         return colour.name().toLowerCase();
-    }
-
-    private boolean hasValidMove(Piece[][] grid){
-        for (Piece[] column : grid) {
-            for (Piece piece : column) {
-                if (piece == Piece.UNSET) {
-                    return true;
-                }
-            }
-        }
-        return false;
     }
 
     private Point getValidInput(){
