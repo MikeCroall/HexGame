@@ -6,12 +6,17 @@ public class Main_tqvj24 {
         HumanPlayer b = new HumanPlayer();
         boolean ready = false;
         try {
-            r.setColour(Piece.RED);
-            b.setColour(Piece.BLUE);
-            g.specifyPlayer(r, Piece.RED);
-            g.specifyPlayer(b, Piece.BLUE);
-            g.boardSize(boardWidth, boardHeight);
-            ready = true;
+            if(r.setColour(Piece.RED)) {
+                if(b.setColour(Piece.BLUE)) {
+                    if(g.specifyPlayer(r, Piece.RED)) {
+                        if(g.specifyPlayer(b, Piece.BLUE)) {
+                            if(g.boardSize(boardWidth, boardHeight)) {
+                                ready = true;
+                            }
+                        }
+                    }
+                }
+            }
         } catch (ColourAlreadySetException e) {
             System.out.println("That colour has already been set!");
         } catch (InvalidColourException e) {
@@ -33,18 +38,29 @@ public class Main_tqvj24 {
         boolean ready = false;
         try {
             if(humanAsRed) {
-                h.setColour(Piece.RED);
-                c.setColour(Piece.BLUE);
-                g.specifyPlayer(h, Piece.RED);
-                g.specifyPlayer(c, Piece.BLUE);
+                if(h.setColour(Piece.RED)) {
+                    if (c.setColour(Piece.BLUE)) {
+                        if (g.specifyPlayer(h, Piece.RED)) {
+                            if (g.specifyPlayer(c, Piece.BLUE)) {
+                                ready = true;
+                            }
+                        }
+                    }
+                }
             }else{
-                h.setColour(Piece.BLUE);
-                c.setColour(Piece.RED);
-                g.specifyPlayer(h, Piece.BLUE);
-                g.specifyPlayer(c, Piece.RED);
+                if(h.setColour(Piece.BLUE)) {
+                    if (c.setColour(Piece.RED)) {
+                        if (g.specifyPlayer(h, Piece.BLUE)) {
+                            if (g.specifyPlayer(c, Piece.RED)) {
+                                ready = true;
+                            }
+                        }
+                    }
+                }
             }
-            g.boardSize(boardWidth, boardHeight);
-            ready = true;
+            if(!g.boardSize(boardWidth, boardHeight)){
+                ready = false;
+            }
         } catch (ColourAlreadySetException e) {
             System.out.println("That colour has already been set!");
         } catch (InvalidColourException e) {
@@ -65,12 +81,17 @@ public class Main_tqvj24 {
         ComputerPlayer_tqvj24 b = new ComputerPlayer_tqvj24();
         boolean ready = false;
         try {
-            r.setColour(Piece.RED);
-            b.setColour(Piece.BLUE);
-            g.specifyPlayer(r, Piece.RED);
-            g.specifyPlayer(b, Piece.BLUE);
-            g.boardSize(boardWidth, boardHeight);
-            ready = true;
+            if(r.setColour(Piece.RED)) {
+                if(b.setColour(Piece.BLUE)) {
+                    if(g.specifyPlayer(r, Piece.RED)) {
+                        if(g.specifyPlayer(b, Piece.BLUE)){
+                            if(g.boardSize(boardWidth, boardHeight)){
+                                ready = true;
+                            }
+                        }
+                    }
+                }
+            }
         } catch (ColourAlreadySetException e) {
             System.out.println("That colour has already been set!");
         } catch (InvalidColourException e) {

@@ -3,8 +3,6 @@ public class GameManager implements GameManagerInterface {
     private PlayerInterface redPlayer, bluePlayer;
     private Board board;
 
-    //todo check that methods return boolean correctly, and check the returns when calling methods
-
     @Override
     public boolean specifyPlayer(PlayerInterface player, Piece colour) throws InvalidColourException, ColourAlreadySetException {
         if (colour == Piece.UNSET){
@@ -23,6 +21,7 @@ public class GameManager implements GameManagerInterface {
             bluePlayer = player;
             return true;
         }
+        System.out.println("Error: Failed to specify player");
         return false;
     }
 
@@ -36,8 +35,12 @@ public class GameManager implements GameManagerInterface {
         }
         try {
             board = new Board();
-            board.setBoardSize(sizeX, sizeY);
+            if(!board.setBoardSize(sizeX, sizeY)){
+                System.out.println("Error: Failed to set board size");
+                return false;
+            }
         }catch(Exception e){
+            System.out.println("Error: Failed to set board size");
             return false;
         }
         return true;
@@ -59,11 +62,11 @@ public class GameManager implements GameManagerInterface {
             BoardManager_tqvj24.printBoard(board.getBoardView());
 
             if (winner == Piece.RED) {
-                redPlayer.finalGameState(GameState.WON);
-                bluePlayer.finalGameState(GameState.LOST);
+                if(!redPlayer.finalGameState(GameState.WON)){ System.out.println("Error: Failed to send red player their final game state"); }
+                if(!bluePlayer.finalGameState(GameState.LOST)) { System.out.println("Error: Failed to send blue player their final game state"); }
             } else {
-                redPlayer.finalGameState(GameState.LOST);
-                bluePlayer.finalGameState(GameState.WON);
+                if(!redPlayer.finalGameState(GameState.LOST)) { System.out.println("Error: Failed to send red player their final game state"); }
+                if(!bluePlayer.finalGameState(GameState.WON)) { System.out.println("Error: Failed to send Blue player their final game state"); }
             }
 
         } catch(NoBoardDefinedException noBoardEx){
@@ -73,6 +76,7 @@ public class GameManager implements GameManagerInterface {
             System.out.println("There are no valid moves to make!");
             return false;
         } catch(Exception e){
+            System.out.println("Game ended unexpectedly");
             return false;
         }
         return true;
@@ -92,6 +96,8 @@ public class GameManager implements GameManagerInterface {
                     moveMade = board.placePiece(colour, move);
                     if(moveMade) {
                         System.out.println("Move made successfully");
+                    }else{
+                        System.out.println("Error: Piece failed to place");
                     }
                 }
             } catch (PositionAlreadyTakenException e) {

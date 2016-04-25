@@ -25,7 +25,10 @@ public class HumanPlayer implements PlayerInterface {
             Point choice = getValidInput();
 
             if (choice == null) {
-                move.setConceded();
+                if(!move.setConceded()){
+                    System.out.println("Error: Failed to set conceded");
+                    validPosition = false;
+                }
             } else {
                 try {
                     move.setPosition(choice.x, choice.y);

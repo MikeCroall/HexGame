@@ -22,7 +22,9 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface{
 
         MoveInterface myMove = new Move();
         try {
-            myMove.setPosition(p.x, p.y);
+            if(!myMove.setPosition(p.x, p.y)){
+                System.out.println("Error: Setting position of moved failed!");
+            }
         } catch (InvalidPositionException e) {
             System.out.println("Computer player somehow chose an invalid move");
         }
