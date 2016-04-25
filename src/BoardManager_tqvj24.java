@@ -3,16 +3,15 @@ import java.util.ArrayList;
 
 public class BoardManager_tqvj24 {
 
-    private static Piece wentFirst = Piece.RED; //red assumed, later figured out
+    private static Piece wentFirst = Piece.RED; //red assumed, later figured out if wrong
 
-    //TODO remove all colour output entirely for final (assignment) release
-    private static final boolean colourOutput = true; //Colours do not work in some environments
+    private static final boolean colourOutput = false; //Colours have been turned OFF for assignment release
 
-    //TODO optimise print
+    //TODO make print method better
     public static void printBoard(Piece[][] grid){
         //Print top border
         System.out.print("\n      ");
-        for (int x = 0; x < grid.length - 1; x++) { System.out.print("R   "); }
+        for (int x = 0; x < grid.length - 1; x++) { System.out.print("r   "); }
 
         //Print top of hexs
         System.out.print("\n  ");
@@ -33,7 +32,7 @@ public class BoardManager_tqvj24 {
             for (int x = 0; x < grid.length; x++) {
                 System.out.print("| " + getLetter(grid[x][y]) + " ");
             }
-            System.out.print("|" + (y < grid[0].length - 1 ? " B" : "") + "\n" + leftPadding);
+            System.out.print("|" + (y < grid[0].length - 1 ? " b" : "") + "\n" + leftPadding);
 
             //Close off hex (is also top of next row, if exists)
             for (int x = 0; x < grid.length; x++) {
@@ -127,13 +126,14 @@ public class BoardManager_tqvj24 {
     }
 
     private static String getLetter(Piece colour) {
+        //Board is more easily readable when lowercase is used.
         switch (colour) {
             case RED:
-                if(colourOutput) { return "\u001B[31m" + "R" + "\u001B[0m"; }
-                else { return "R"; }
+                if(colourOutput) { return "\u001B[31m" + "r" + "\u001B[0m"; }
+                else { return "r"; }
             case BLUE:
-                if (colourOutput) { return "\u001B[34m" + "B" + "\u001B[0m"; }
-                else {return "B"; }
+                if (colourOutput) { return "\u001B[34m" + "b" + "\u001B[0m"; }
+                else {return "b"; }
             case UNSET:
                 return " ";
             default:

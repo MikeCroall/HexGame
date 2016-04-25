@@ -3,6 +3,8 @@ public class GameManager implements GameManagerInterface {
     private PlayerInterface redPlayer, bluePlayer;
     private Board board;
 
+    //TODO go back through FAQs and ensure all are satisfied
+
     @Override
     public boolean specifyPlayer(PlayerInterface player, Piece colour) throws InvalidColourException, ColourAlreadySetException {
         if (colour == Piece.UNSET){
@@ -70,13 +72,13 @@ public class GameManager implements GameManagerInterface {
             }
 
         } catch(NoBoardDefinedException noBoardEx){
-            System.out.println("No board has been defined!");
+            System.out.println("Error: No board has been defined!");
             return false;
         } catch(NoValidMovesException noMovesEx){
-            System.out.println("There are no valid moves to make!");
+            System.out.println("Error: There are no valid moves to make!");
             return false;
         } catch(Exception e){
-            System.out.println("Game ended unexpectedly");
+            System.out.println("Error: Game ended unexpectedly");
             return false;
         }
         return true;
@@ -101,11 +103,11 @@ public class GameManager implements GameManagerInterface {
                     }
                 }
             } catch (PositionAlreadyTakenException e) {
-                System.out.println("That position is already taken!\n\nPlease try again!");
+                System.out.println("That position is already taken!\nPlease try again!");
             } catch (InvalidPositionException e) {
-                System.out.println("That is not a valid position!\n\nPlease try again!");
+                System.out.println("That is not a valid position!\nPlease try again!");
             } catch (InvalidColourException e) {
-                System.out.println("Invalid colour given to place");
+                System.out.println("Error: Invalid colour given to place");
             }
             //These catches are here, as they can be retried, and do not mean the game is currently unplayable
         }
