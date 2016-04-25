@@ -1,3 +1,4 @@
+
 /**
  * This interface represents a player within the game of Hex and the methods that a player should make
  * 

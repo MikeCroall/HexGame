@@ -1,3 +1,4 @@
+
 /**
  * Enumeration class Piece - defines the three different states of a Piece or position on the board
  * these can be:

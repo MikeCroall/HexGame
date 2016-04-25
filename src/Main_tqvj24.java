@@ -86,9 +86,6 @@ public class Main_tqvj24 {
     }
 
     public static void main(String[] args){
-
-        //todo ask what game wants to be played and at what size
-
         //playHumanVsHuman(5,5);
         //playHumanVsComputer(5,5, false);
         playComputerVsComputer(11,11);
