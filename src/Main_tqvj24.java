@@ -1,16 +1,16 @@
 public class Main_tqvj24 {
 
-    private static void playHumanVsHuman(int boardWidth, int boardHeight){
+    private static void playHumanVsHuman(int boardWidth, int boardHeight) {
         GameManager g = new GameManager();
         HumanPlayer r = new HumanPlayer();
         HumanPlayer b = new HumanPlayer();
         boolean ready = false;
         try {
-            if(r.setColour(Piece.RED)) {
-                if(b.setColour(Piece.BLUE)) {
-                    if(g.specifyPlayer(r, Piece.RED)) {
-                        if(g.specifyPlayer(b, Piece.BLUE)) {
-                            if(g.boardSize(boardWidth, boardHeight)) {
+            if (r.setColour(Piece.RED)) {
+                if (b.setColour(Piece.BLUE)) {
+                    if (g.specifyPlayer(r, Piece.RED)) {
+                        if (g.specifyPlayer(b, Piece.BLUE)) {
+                            if (g.boardSize(boardWidth, boardHeight)) {
                                 ready = true;
                             }
                         }
@@ -26,19 +26,19 @@ public class Main_tqvj24 {
         } catch (InvalidBoardSizeException e) {
             System.out.println("That's not a valid board size!");
         }
-        if(ready) {
+        if (ready) {
             g.playGame();
         }
     }
 
-    private static void playHumanVsComputer(int boardWidth, int boardHeight, boolean humanAsRed){
+    private static void playHumanVsComputer(int boardWidth, int boardHeight, boolean humanAsRed) {
         GameManager g = new GameManager();
         HumanPlayer h = new HumanPlayer();
         ComputerPlayer_tqvj24 c = new ComputerPlayer_tqvj24();
         boolean ready = false;
         try {
-            if(humanAsRed) {
-                if(h.setColour(Piece.RED)) {
+            if (humanAsRed) {
+                if (h.setColour(Piece.RED)) {
                     if (c.setColour(Piece.BLUE)) {
                         if (g.specifyPlayer(h, Piece.RED)) {
                             if (g.specifyPlayer(c, Piece.BLUE)) {
@@ -47,8 +47,8 @@ public class Main_tqvj24 {
                         }
                     }
                 }
-            }else{
-                if(h.setColour(Piece.BLUE)) {
+            } else {
+                if (h.setColour(Piece.BLUE)) {
                     if (c.setColour(Piece.RED)) {
                         if (g.specifyPlayer(h, Piece.BLUE)) {
                             if (g.specifyPlayer(c, Piece.RED)) {
@@ -58,7 +58,7 @@ public class Main_tqvj24 {
                     }
                 }
             }
-            if(!g.boardSize(boardWidth, boardHeight)){
+            if (!g.boardSize(boardWidth, boardHeight)) {
                 ready = false;
             }
         } catch (ColourAlreadySetException e) {
@@ -70,22 +70,22 @@ public class Main_tqvj24 {
         } catch (InvalidBoardSizeException e) {
             System.out.println("That's not a valid board size!");
         }
-        if(ready) {
+        if (ready) {
             g.playGame();
         }
     }
 
-    private static void playComputerVsComputer(int boardWidth, int boardHeight){
+    private static void playComputerVsComputer(int boardWidth, int boardHeight) {
         GameManager g = new GameManager();
         ComputerPlayer_tqvj24 r = new ComputerPlayer_tqvj24();
         ComputerPlayer_tqvj24 b = new ComputerPlayer_tqvj24();
         boolean ready = false;
         try {
-            if(r.setColour(Piece.RED)) {
-                if(b.setColour(Piece.BLUE)) {
-                    if(g.specifyPlayer(r, Piece.RED)) {
-                        if(g.specifyPlayer(b, Piece.BLUE)){
-                            if(g.boardSize(boardWidth, boardHeight)){
+            if (r.setColour(Piece.RED)) {
+                if (b.setColour(Piece.BLUE)) {
+                    if (g.specifyPlayer(r, Piece.RED)) {
+                        if (g.specifyPlayer(b, Piece.BLUE)) {
+                            if (g.boardSize(boardWidth, boardHeight)) {
                                 ready = true;
                             }
                         }
@@ -101,14 +101,14 @@ public class Main_tqvj24 {
         } catch (InvalidBoardSizeException e) {
             System.out.println("That's not a valid board size!");
         }
-        if(ready) {
+        if (ready) {
             g.playGame();
         }
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         //playHumanVsHuman(5,5);
-        //playHumanVsComputer(5,5, false);
-        playComputerVsComputer(11,11);
+        playHumanVsComputer(5,5, false);
+        //playComputerVsComputer(11, 11);
     }
 }

@@ -3,17 +3,19 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
-public class ComputerPlayer_tqvj24 implements PlayerInterface{
+public class ComputerPlayer_tqvj24 implements PlayerInterface {
 
     private Piece colour;
     private Point nextChoice;
     private Piece[][] prevGrid;
 
-    public ComputerPlayer_tqvj24(){ colour = Piece.UNSET; }
+    public ComputerPlayer_tqvj24() {
+        colour = Piece.UNSET;
+    }
 
     @Override
     public MoveInterface makeMove(Piece[][] boardView) throws NoValidMovesException {
-        if (colour == null || !BoardManager_tqvj24.hasValidMove(boardView)){
+        if (colour == Piece.UNSET || !BoardManager_tqvj24.hasValidMove(boardView)) {
             throw new NoValidMovesException();
         }
 
@@ -22,7 +24,7 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface{
 
         MoveInterface myMove = new Move();
         try {
-            if(!myMove.setPosition(p.x, p.y)){
+            if (!myMove.setPosition(p.x, p.y)) {
                 System.out.println("Error: Setting position of moved failed!");
             }
         } catch (InvalidPositionException e) {
@@ -34,11 +36,15 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface{
 
     @Override
     public boolean setColour(Piece colour) throws InvalidColourException, ColourAlreadySetException {
-        if (colour == Piece.UNSET){ throw new InvalidColourException(); }
-        if (this.colour != Piece.UNSET){ throw new ColourAlreadySetException(); }
+        if (colour == Piece.UNSET) {
+            throw new InvalidColourException();
+        }
+        if (this.colour != Piece.UNSET) {
+            throw new ColourAlreadySetException();
+        }
         try {
             this.colour = colour;
-        }catch(Exception e){
+        } catch (Exception e) {
             return false;
         }
         return true;
@@ -48,20 +54,20 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface{
     public boolean finalGameState(GameState state) {
         try {
             System.out.println("Computer player tqvj24 " + getPlayerName() + (state == GameState.WON ? " won!" : " lost."));
-        }catch(Exception e){
+        } catch (Exception e) {
             return false;
         }
         return true;
     }
 
     //Non-interface methods
-    private String getPlayerName(){
+    private String getPlayerName() {
         return colour.name().toLowerCase();
     }
 
     //Below - methods for minimax solving
-    private Point chooseNextMove(Piece[][] grid){
-        if (BoardManager_tqvj24.moreThanXEmpties(grid, 9)){
+    private Point chooseNextMove(Piece[][] grid) {
+        if (BoardManager_tqvj24.moreThanXEmpties(grid, 9)) {
             Piece target = colour == Piece.RED ? Piece.BLUE : Piece.RED;
             nextChoice = new Point(-1, -1);
 
@@ -71,13 +77,13 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface{
                 Point lastMove = lastMove(prevGrid, grid, target);
                 if (lastMove.x == -1) {
                     surroundExisting(grid, target);
-                }else {
+                } else {
                     surroundLastMove(grid, target, lastMove);
                 }
             }
             prevGrid = BoardManager_tqvj24.actualCopy(grid);
             return nextChoice;
-        }else {
+        } else {
             nextChoice = new Point(-1, -1);
             int maxScore = grid.length * grid[0].length + 1;
 
@@ -93,7 +99,7 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface{
 
         if (choices.size() == 0) {
             surroundExisting(grid, target);
-        }else {
+        } else {
             choices = directionFilter(choices, lastMove, target);
             Random r = new Random();
             nextChoice = choices.get(r.nextInt(choices.size()));
@@ -110,19 +116,20 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface{
         if target is blue, block left to right (bottomleft to topright when rotated)
             -choose:
                 all that are different x
+        TODO favour the direction towards the nearest edge
          */
-        for (Point p : choices){
-            if (target == Piece.RED){
-                if(p.y != lastMove.y) {
+        for (Point p : choices) {
+            if (target == Piece.RED) {
+                if (p.y != lastMove.y) {
                     result.add(p);
                 }
-            }else{
-                if(p.x != lastMove.x){
+            } else {
+                if (p.x != lastMove.x) {
                     result.add(p);
                 }
             }
         }
-        if (result.size() == 0){
+        if (result.isEmpty()) {
             return choices;
         }
         return result;
@@ -133,15 +140,15 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface{
 
         for (int x = 0; x < grid.length; x++) {
             for (int y = 0; y < grid[0].length; y++) {
-                if (grid[x][y] == target){
-                    choices.addAll(BoardManager_tqvj24.getEmptyNeighbours(x,y,grid));
+                if (grid[x][y] == target) {
+                    choices.addAll(BoardManager_tqvj24.getEmptyNeighbours(x, y, grid));
                 }
             }
         }
 
         if (choices.size() == 0) {
             nextChoice = randomChoice(grid);
-        }else{
+        } else {
             Random r = new Random();
             nextChoice = choices.get(r.nextInt(choices.size()));
         }
@@ -183,23 +190,23 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface{
             }
         }
 
-        if (moves.isEmpty()){ //essentially only ever when computer player is playing an EMPTY grid
-            int x = (int)grid.length / 2;
-            int y = (int)grid[0].length / 2;
+        if (moves.isEmpty()) { //essentially only ever when computer player is playing an EMPTY grid
+            int x = (int) grid.length / 2;
+            int y = (int) grid[0].length / 2;
             Random r = new Random();
-            while(!BoardManager_tqvj24.isFreeSpace(x, y, grid)){
+            while (!BoardManager_tqvj24.isFreeSpace(x, y, grid)) {
                 x = r.nextInt(grid.length);
                 y = r.nextInt(grid[0].length);
             }
-            nextChoice = new Point(x,y);
+            nextChoice = new Point(x, y);
             return 0; //value forgotten anyway in this case
         }
 
         int scoreIndex;
-        if (BoardManager_tqvj24.whoseGo(grid) == player){
+        if (BoardManager_tqvj24.whoseGo(grid) == player) {
             //If the next turn is ours
             scoreIndex = scores.indexOf(Collections.max(scores)); //we want max score
-        }else{
+        } else {
             //If the next turn is not ours
             scoreIndex = scores.indexOf(Collections.min(scores)); //opponent wants min score
         }
@@ -209,20 +216,20 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface{
 
     private int score(Piece[][] grid, int depth, Piece player, int maxScore) {
         Piece winner = BoardManager_tqvj24.winner(grid);
-        if (player == winner){
+        if (player == winner) {
             return maxScore - depth;
-        }else if(winner != Piece.UNSET){ //opponent wins
+        } else if (winner != Piece.UNSET) { //opponent wins
             return depth - maxScore;
-        }else{
+        } else {
             return 0;
         }
     }
-    
-    private Point lastMove(Piece[][] lastGrid, Piece[][] grid, Piece target){
+
+    private Point lastMove(Piece[][] lastGrid, Piece[][] grid, Piece target) {
         for (int x = 0; x < grid.length; x++) {
             for (int y = 0; y < grid[0].length; y++) {
-                if (lastGrid[x][y] != grid[x][y] && grid[x][y] == target){
-                    return new Point(x,y);
+                if (lastGrid[x][y] != grid[x][y] && grid[x][y] == target) {
+                    return new Point(x, y);
                 }
             }
         }
@@ -230,7 +237,7 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface{
         return new Point(-1, -1);
     }
 
-    private Point randomChoice(Piece[][] grid){
+    private Point randomChoice(Piece[][] grid) {
         int x = (int) grid.length / 2;
         int y = (int) grid[0].length / 2;
         Random r = new Random();
@@ -238,7 +245,7 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface{
             x = r.nextInt(grid.length);
             y = r.nextInt(grid[0].length);
         }
-        return new Point(x,y);
+        return new Point(x, y);
     }
 
 }

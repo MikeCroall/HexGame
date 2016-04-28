@@ -8,10 +8,12 @@ public class BoardManager_tqvj24 {
     private static final boolean colourOutput = false; //Colours have been turned OFF for assignment release
 
     //TODO make print method better
-    public static void printBoard(Piece[][] grid){
+    public static void printBoard(Piece[][] grid) {
         //Print top border
         System.out.print("\n      ");
-        for (int x = 0; x < grid.length - 1; x++) { System.out.print("r   "); }
+        for (int x = 0; x < grid.length - 1; x++) {
+            System.out.print("r   ");
+        }
 
         //Print top of hexs
         System.out.print("\n  ");
@@ -29,8 +31,8 @@ public class BoardManager_tqvj24 {
             System.out.print(leftPadding + "  ");
 
             //Top of hex is present, print middle row
-            for (int x = 0; x < grid.length; x++) {
-                System.out.print("| " + getLetter(grid[x][y]) + " ");
+            for (Piece[] column : grid) {
+                System.out.print("| " + getLetter(column[y]) + " ");
             }
             System.out.print("|" + (y < grid[0].length - 1 ? " b" : "") + "\n" + leftPadding);
 
@@ -43,10 +45,14 @@ public class BoardManager_tqvj24 {
         System.out.println();
     }
 
-    public static Piece winner(Piece[][] grid){
-        if(hasWon(Piece.RED, grid)) { return Piece.RED; }
-        else if(hasWon(Piece.BLUE, grid)) { return Piece.BLUE; }
-        else { return Piece.UNSET; }
+    public static Piece winner(Piece[][] grid) {
+        if (hasWon(Piece.RED, grid)) {
+            return Piece.RED;
+        } else if (hasWon(Piece.BLUE, grid)) {
+            return Piece.BLUE;
+        } else {
+            return Piece.UNSET;
+        }
     }
 
     public static boolean isValidSpace(int x, int y, Piece[][] grid) {
@@ -59,41 +65,56 @@ public class BoardManager_tqvj24 {
 
     public static Piece whoseGo(Piece[][] grid) {
         int red = 0, blue = 0;
-        for (Piece[] column : grid){
-            for (Piece piece : column){
-                if (piece == Piece.RED){ red++; }
-                else if (piece == Piece.BLUE) { blue++; }
+        for (Piece[] column : grid) {
+            for (Piece piece : column) {
+                if (piece == Piece.RED) {
+                    red++;
+                } else if (piece == Piece.BLUE) {
+                    blue++;
+                }
             }
         }
-        if (red == blue){
+        if (red == blue) {
             return wentFirst;
-        }else if (red > blue){
+        } else if (red > blue) {
             wentFirst = Piece.RED; //one more red than blue, red was first and blues turn
             return Piece.BLUE;
-        }else{ //blue > red
+        } else { //blue > red
             wentFirst = Piece.BLUE; //opposite to above
             return Piece.RED;
         }
     }
 
-    public static ArrayList<Point> getEmptyNeighbours(int x, int y, Piece[][] grid){
+    public static ArrayList<Point> getEmptyNeighbours(int x, int y, Piece[][] grid) {
         ArrayList<Point> neighbours = new ArrayList<Point>();
 
-        if (isValidSpace(x-1, y, grid) && isFreeSpace(x-1, y, grid)) { neighbours.add(new Point(x - 1, y)); } //left
-        if (isValidSpace(x+1, y, grid) && isFreeSpace(x+1, y, grid)) { neighbours.add(new Point(x + 1, y)); } //right
-        if (isValidSpace(x, y-1, grid) && isFreeSpace(x, y-1, grid)) { neighbours.add(new Point(x, y - 1)); } //upleft
-        if (isValidSpace(x+1, y-1, grid) && isFreeSpace(x+1, y-1, grid)) { neighbours.add(new Point(x + 1, y - 1)); }  //upright
-        if (isValidSpace(x-1, y+1, grid) && isFreeSpace(x-1, y+1, grid)) { neighbours.add(new Point(x - 1, y + 1)); } //downleft
-        if (isValidSpace(x, y+1, grid) && isFreeSpace(x, y+1, grid)) { neighbours.add(new Point(x, y + 1)); } //downright
+        if (isValidSpace(x - 1, y, grid) && isFreeSpace(x - 1, y, grid)) {
+            neighbours.add(new Point(x - 1, y));
+        } //left
+        if (isValidSpace(x + 1, y, grid) && isFreeSpace(x + 1, y, grid)) {
+            neighbours.add(new Point(x + 1, y));
+        } //right
+        if (isValidSpace(x, y - 1, grid) && isFreeSpace(x, y - 1, grid)) {
+            neighbours.add(new Point(x, y - 1));
+        } //upleft
+        if (isValidSpace(x + 1, y - 1, grid) && isFreeSpace(x + 1, y - 1, grid)) {
+            neighbours.add(new Point(x + 1, y - 1));
+        }  //upright
+        if (isValidSpace(x - 1, y + 1, grid) && isFreeSpace(x - 1, y + 1, grid)) {
+            neighbours.add(new Point(x - 1, y + 1));
+        } //downleft
+        if (isValidSpace(x, y + 1, grid) && isFreeSpace(x, y + 1, grid)) {
+            neighbours.add(new Point(x, y + 1));
+        } //downright
 
         return neighbours;
     }
 
-    public static boolean moreThanXEmpties(Piece[][] grid, int x){
+    public static boolean moreThanXEmpties(Piece[][] grid, int x) {
         int count = 0;
-        for (Piece[] column : grid){
-            for (Piece piece : column){
-                if (piece == Piece.UNSET){
+        for (Piece[] column : grid) {
+            for (Piece piece : column) {
+                if (piece == Piece.UNSET) {
                     count++;
                     if (count > x) {
                         return true;
@@ -104,7 +125,7 @@ public class BoardManager_tqvj24 {
         return false;
     }
 
-    public static boolean hasValidMove(Piece[][] grid){
+    public static boolean hasValidMove(Piece[][] grid) {
         for (Piece[] column : grid) {
             for (Piece piece : column) {
                 if (piece == Piece.UNSET) {
@@ -115,7 +136,7 @@ public class BoardManager_tqvj24 {
         return false;
     }
 
-    public static Piece[][] actualCopy(Piece[][] grid){
+    public static Piece[][] actualCopy(Piece[][] grid) {
         Piece[][] newGrid = new Piece[grid.length][grid[0].length];
         for (int x = 0; x < grid.length; x++) {
             for (int y = 0; y < grid[0].length; y++) {
@@ -129,11 +150,17 @@ public class BoardManager_tqvj24 {
         //Board is more easily readable when lowercase is used.
         switch (colour) {
             case RED:
-                if(colourOutput) { return "\u001B[31m" + "r" + "\u001B[0m"; }
-                else { return "r"; }
+                if (colourOutput) {
+                    return "\u001B[31m" + "r" + "\u001B[0m";
+                } else {
+                    return "r";
+                }
             case BLUE:
-                if (colourOutput) { return "\u001B[34m" + "b" + "\u001B[0m"; }
-                else {return "b"; }
+                if (colourOutput) {
+                    return "\u001B[34m" + "b" + "\u001B[0m";
+                } else {
+                    return "b";
+                }
             case UNSET:
                 return " ";
             default:
@@ -165,14 +192,15 @@ public class BoardManager_tqvj24 {
             }
         }
 
-        for(Point p : closed) {
+        for (Point p : closed) {
             open.addAll(checkNeighboursOf(p, closed, grid));
         }
 
         boolean found = false;
         while (!open.isEmpty()) {
             if (foundOppositeEdge(topToBottom, open, grid)) {
-                found = true; break;
+                found = true;
+                break;
             }
             closed.addAll(open);
             ArrayList<Point> openNeighbours = new ArrayList<Point>();
@@ -200,14 +228,14 @@ public class BoardManager_tqvj24 {
     }
 
     private static void checkNeighbour(Point p, ArrayList<Point> neighbours, ArrayList<Point> closed, Piece colour, Piece[][] grid) {
-        if (isValidSpace(p.x, p.y, grid) && grid[p.x][p.y] == colour && !closed.contains(p) && ! neighbours.contains(p)) {
+        if (isValidSpace(p.x, p.y, grid) && grid[p.x][p.y] == colour && !closed.contains(p) && !neighbours.contains(p)) {
             neighbours.add(p);
         }
     }
 
     private static boolean foundOppositeEdge(boolean topToBottom, ArrayList<Point> open, Piece[][] grid) {
         for (Point p : open) {
-            if((topToBottom && p.y == grid[0].length - 1) || (!topToBottom && p.x == grid.length - 1)) {
+            if ((topToBottom && p.y == grid[0].length - 1) || (!topToBottom && p.x == grid.length - 1)) {
                 return true;
             }
         }

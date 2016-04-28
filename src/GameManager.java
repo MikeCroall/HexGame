@@ -3,7 +3,7 @@ public class GameManager implements GameManagerInterface {
     private PlayerInterface redPlayer, bluePlayer;
     private Board board;
 
-    //TODO go back through FAQs and ensure all are satisfied
+    // TODO go back through FAQs and ensure all are satisfied
 
     @Override
     public boolean specifyPlayer(PlayerInterface player, Piece colour) throws InvalidColourException, ColourAlreadySetException {

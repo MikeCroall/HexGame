@@ -3,7 +3,7 @@ public class Move implements MoveInterface {
     private int x, y;
     private boolean conceded;
 
-    public Move(){
+    public Move() {
         conceded = false;
     }
 
@@ -15,7 +15,7 @@ public class Move implements MoveInterface {
         try {
             this.x = x;
             this.y = y;
-        }catch(Exception e){
+        } catch (Exception e) {
             return false;
         }
         return true;
@@ -35,7 +35,7 @@ public class Move implements MoveInterface {
     public boolean setConceded() {
         try {
             conceded = true;
-        }catch(Exception e) {
+        } catch (Exception e) {
             return false;
         }
         return true;
