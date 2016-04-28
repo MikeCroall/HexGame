@@ -9,10 +9,10 @@ public class BoardManager_tqvj24 {
 
     //TODO make print method better
     public static void printBoard(Piece[][] grid) {
-        //Print top border
-        System.out.print("\n      ");
-        for (int x = 0; x < grid.length - 1; x++) {
-            System.out.print("r   ");
+        //Print top coordinates
+        System.out.print("\n    ");
+        for (int x = 0; x < grid.length; x++) {
+            System.out.print(x + "   ");
         }
 
         //Print top of hexs
@@ -22,17 +22,19 @@ public class BoardManager_tqvj24 {
         }
         System.out.println();
 
+        String leftPadding = "";
         for (int y = 0; y < grid[0].length; y++) {
+            leftPadding = "";
             //Start at the correct position
-            String leftPadding = "";
             for (int spaces = 0; spaces < 2 * y; spaces++) {
                 leftPadding += " ";
             }
-            System.out.print(leftPadding + "  ");
+            //print left coordinates
+            System.out.print(leftPadding + y + " ");
 
             //Top of hex is present, print middle row
-            for (Piece[] column : grid) {
-                System.out.print("| " + getLetter(column[y]) + " ");
+            for (int x = 0; x < grid.length; x++) {
+                System.out.print("| " + getLetter(grid[x][y]) + " ");
             }
             System.out.print("|" + (y < grid[0].length - 1 ? " b" : "") + "\n" + leftPadding);
 
@@ -41,6 +43,11 @@ public class BoardManager_tqvj24 {
                 System.out.print((x == 0 ? "  " : " /") + " \\");
             }
             System.out.println(" /" + (y < grid[0].length - 1 ? " \\" : ""));
+        }
+        //Print r along bottom
+        System.out.print(leftPadding + "   ");
+        for (int x = 0; x < grid.length - 1; x++) {
+            System.out.print("   r");
         }
         System.out.println();
     }
