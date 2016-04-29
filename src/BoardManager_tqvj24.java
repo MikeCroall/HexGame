@@ -7,7 +7,7 @@ public class BoardManager_tqvj24 {
 
     private static final boolean colourOutput = false; //Colours have been turned OFF for assignment release
 
-    //TODO make print method better
+    //TODO ensure print method is optimised (already printing beautifully)
     public static void printBoard(Piece[][] grid) {
         //Print top coordinates
         System.out.print("\n    ");

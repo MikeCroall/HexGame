@@ -100,39 +100,58 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface {
         if (choices.size() == 0) {
             surroundExisting(grid, target);
         } else {
-            choices = directionFilter(choices, lastMove, target);
+            choices = directionFilter(choices, lastMove, target, grid, 0);
             Random r = new Random();
             nextChoice = choices.get(r.nextInt(choices.size()));
         }
     }
 
-    private ArrayList<Point> directionFilter(ArrayList<Point> choices, Point lastMove, Piece target) {
+    private ArrayList<Point> directionFilter(ArrayList<Point> choices, Point lastMove, Piece target, Piece[][] grid, int pass) {
+        if(pass == 2){
+            return choices;
+        }
         ArrayList<Point> result = new ArrayList<Point>();
-        /*
-        if target is red, block top to bottom (topleft to bottomright when rotated)
-            -choose:
-                all that are different y
-
-        if target is blue, block left to right (bottomleft to topright when rotated)
-            -choose:
-                all that are different x
-        TODO favour the direction towards the nearest edge
-         */
-        for (Point p : choices) {
-            if (target == Piece.RED) {
-                if (p.y != lastMove.y) {
-                    result.add(p);
+        if (pass == 0) { //ignore choices same distance from objectives
+            for (Point p : choices) {
+                if (target == Piece.RED) {
+                    if (p.y != lastMove.y) {
+                        result.add(p);
+                    }
+                } else {
+                    if (p.x != lastMove.x) {
+                        result.add(p);
+                    }
                 }
-            } else {
-                if (p.x != lastMove.x) {
-                    result.add(p);
+            }
+        } else if (pass == 1) { //ignore choices further away from closest objectives
+            for (Point p : choices) {
+                if (target == Piece.RED) {
+                    if (lastMove.y <= grid[0].length / 2) {
+                        if (p.y < lastMove.y) {
+                            result.add(p);
+                        }
+                    } else {
+                        if (p.y > lastMove.y) {
+                            result.add(p);
+                        }
+                    }
+                } else {
+                    if (lastMove.x <= grid.length / 2) {
+                        if (p.x < lastMove.x) {
+                            result.add(p);
+                        }
+                    } else {
+                        if (p.x > lastMove.x) {
+                            result.add(p);
+                        }
+                    }
                 }
             }
         }
         if (result.isEmpty()) {
             return choices;
         }
-        return result;
+        return directionFilter(result, lastMove, target, grid, pass + 1);
     }
 
     private void surroundExisting(Piece[][] grid, Piece target) {
