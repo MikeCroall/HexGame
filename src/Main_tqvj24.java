@@ -6,14 +6,10 @@ public class Main_tqvj24 {
         HumanPlayer b = new HumanPlayer();
         boolean ready = false;
         try {
-            if (r.setColour(Piece.RED)) {
-                if (b.setColour(Piece.BLUE)) {
-                    if (g.specifyPlayer(r, Piece.RED)) {
-                        if (g.specifyPlayer(b, Piece.BLUE)) {
-                            if (g.boardSize(boardWidth, boardHeight)) {
-                                ready = true;
-                            }
-                        }
+            if (g.specifyPlayer(r, Piece.RED)) {
+                if (g.specifyPlayer(b, Piece.BLUE)) {
+                    if (g.boardSize(boardWidth, boardHeight)) {
+                        ready = true;
                     }
                 }
             }
@@ -38,23 +34,15 @@ public class Main_tqvj24 {
         boolean ready = false;
         try {
             if (humanAsRed) {
-                if (h.setColour(Piece.RED)) {
-                    if (c.setColour(Piece.BLUE)) {
-                        if (g.specifyPlayer(h, Piece.RED)) {
-                            if (g.specifyPlayer(c, Piece.BLUE)) {
-                                ready = true;
-                            }
-                        }
+                if (g.specifyPlayer(h, Piece.RED)) {
+                    if (g.specifyPlayer(c, Piece.BLUE)) {
+                        ready = true;
                     }
                 }
             } else {
-                if (h.setColour(Piece.BLUE)) {
-                    if (c.setColour(Piece.RED)) {
-                        if (g.specifyPlayer(h, Piece.BLUE)) {
-                            if (g.specifyPlayer(c, Piece.RED)) {
-                                ready = true;
-                            }
-                        }
+                if (g.specifyPlayer(h, Piece.BLUE)) {
+                    if (g.specifyPlayer(c, Piece.RED)) {
+                        ready = true;
                     }
                 }
             }
@@ -75,20 +63,16 @@ public class Main_tqvj24 {
         }
     }
 
-    private static void playComputerVsComputer(int boardWidth, int boardHeight) {
+    private static Piece playComputerVsComputer(int boardWidth, int boardHeight) {
         GameManager g = new GameManager();
-        ComputerPlayer_tqvj24 r = new ComputerPlayer_tqvj24();
+        RandomPlayer_tqvj24 r = new RandomPlayer_tqvj24();
         ComputerPlayer_tqvj24 b = new ComputerPlayer_tqvj24();
         boolean ready = false;
         try {
-            if (r.setColour(Piece.RED)) {
-                if (b.setColour(Piece.BLUE)) {
-                    if (g.specifyPlayer(r, Piece.RED)) {
-                        if (g.specifyPlayer(b, Piece.BLUE)) {
-                            if (g.boardSize(boardWidth, boardHeight)) {
-                                ready = true;
-                            }
-                        }
+            if (g.specifyPlayer(r, Piece.RED)) {
+                if (g.specifyPlayer(b, Piece.BLUE)) {
+                    if (g.boardSize(boardWidth, boardHeight)) {
+                        ready = true;
                     }
                 }
             }
@@ -103,12 +87,37 @@ public class Main_tqvj24 {
         }
         if (ready) {
             g.playGame();
+            if (r.getFinalGameState() == GameState.WON){
+                return Piece.RED;
+            }else if(b.getFinalGameState() == GameState.WON){
+                return Piece.BLUE;
+            }else{
+                return Piece.UNSET;
+            }
         }
+        return null;
+    }
+
+    private static void playMultiple(int games){
+        int redWin = 0, blueWin = 0, noWin = 0;
+        for (int game = 1; game < games + 1; game++) {
+            Piece winner = playComputerVsComputer(12, 12);
+            if (winner == Piece.RED) {
+                redWin++;
+            }else if(winner == Piece.BLUE){
+                blueWin++;
+            }else{
+                noWin++;
+            }
+            System.out.println("Game " + game + " completed");
+        }
+        System.out.println("\nRed win: " + redWin + "\nBlue win: " + blueWin + "\nNo win: " + noWin);
     }
 
     public static void main(String[] args) {
         //playHumanVsHuman(5,5);
-        playHumanVsComputer(5,5, false);
-        //playComputerVsComputer(11, 11);
+        //playHumanVsComputer(5,5, false);
+        //playComputerVsComputer(15, 15);
+        playMultiple(1000);
     }
 }

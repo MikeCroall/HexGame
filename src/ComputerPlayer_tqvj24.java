@@ -8,9 +8,11 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface {
     private Piece colour;
     private Point nextChoice;
     private Piece[][] prevGrid;
+    private GameState finalGameState;
 
     public ComputerPlayer_tqvj24() {
         colour = Piece.UNSET;
+        finalGameState = null;
     }
 
     @Override
@@ -19,7 +21,6 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface {
             throw new NoValidMovesException();
         }
 
-        System.out.println("Computer player tqvj24 is thinking...");
         Point p = chooseNextMove(boardView);
 
         MoveInterface myMove = new Move();
@@ -53,6 +54,7 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface {
     @Override
     public boolean finalGameState(GameState state) {
         try {
+            finalGameState = state;
             System.out.println("Computer player tqvj24 " + getPlayerName() + (state == GameState.WON ? " won!" : " lost."));
         } catch (Exception e) {
             return false;
@@ -61,6 +63,10 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface {
     }
 
     //Non-interface methods
+    public GameState getFinalGameState(){
+        return finalGameState;
+    }
+
     private String getPlayerName() {
         return colour.name().toLowerCase();
     }

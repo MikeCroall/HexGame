@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class BoardManager_tqvj24 {
@@ -10,9 +11,9 @@ public class BoardManager_tqvj24 {
     //TODO ensure print method is optimised (already printing beautifully)
     public static void printBoard(Piece[][] grid) {
         //Print top coordinates
-        System.out.print("\n    ");
-        for (int x = 0; x < grid.length; x++) {
-            System.out.print(x + "   ");
+        System.out.print("\n ");
+        for (int x = 0; x < Math.min(grid.length, 13); x++) {
+            System.out.print("   " + (x < 10 ? x : "."));
         }
 
         //Print top of hexs
@@ -29,8 +30,13 @@ public class BoardManager_tqvj24 {
             for (int spaces = 0; spaces < 2 * y; spaces++) {
                 leftPadding += " ";
             }
+
             //print left coordinates
-            System.out.print(leftPadding + y + " ");
+            if (y == 0) {
+                System.out.print(leftPadding + y + " ");
+            } else {
+                System.out.print(leftPadding.substring(0, leftPadding.length() - (int) Math.log10(y)) + y + " ");
+            }
 
             //Top of hex is present, print middle row
             for (int x = 0; x < grid.length; x++) {
@@ -68,6 +74,18 @@ public class BoardManager_tqvj24 {
 
     public static boolean isFreeSpace(int x, int y, Piece[][] grid) {
         return (grid != null && grid[x][y] == Piece.UNSET);
+    }
+
+    public static ArrayList<Point> getFreeSpaces(Piece[][] grid) {
+        ArrayList<Point> result = new ArrayList<Point>();
+        for (int x = 0; x < grid.length; x++) {
+            for (int y = 0; y < grid[0].length; y++) {
+                if (isFreeSpace(x, y, grid)) {
+                    result.add(new Point(x, y));
+                }
+            }
+        }
+        return result;
     }
 
     public static Piece whoseGo(Piece[][] grid) {

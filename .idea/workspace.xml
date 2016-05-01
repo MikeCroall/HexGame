@@ -10,9 +10,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f778a171-f913-492a-b16f-269dd8982837" name="Default" comment="Removed unused imports">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/HexGame_jar/HexGame.jar" afterPath="$PROJECT_DIR$/out/artifacts/HexGame_jar/HexGame.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HexGame/BoardManager_tqvj24$1.class" afterPath="$PROJECT_DIR$/out/production/HexGame/BoardManager_tqvj24$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HexGame/BoardManager_tqvj24.class" afterPath="$PROJECT_DIR$/out/production/HexGame/BoardManager_tqvj24.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HexGame/ComputerPlayer_tqvj24.class" afterPath="$PROJECT_DIR$/out/production/HexGame/ComputerPlayer_tqvj24.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HexGame/GameManager.class" afterPath="$PROJECT_DIR$/out/production/HexGame/GameManager.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HexGame/Main_tqvj24.class" afterPath="$PROJECT_DIR$/out/production/HexGame/Main_tqvj24.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HexGame/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/out/production/HexGame/META-INF/MANIFEST.MF" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BoardManager_tqvj24.java" afterPath="$PROJECT_DIR$/src/BoardManager_tqvj24.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ComputerPlayer_tqvj24.java" afterPath="$PROJECT_DIR$/src/ComputerPlayer_tqvj24.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GameManager.java" afterPath="$PROJECT_DIR$/src/GameManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main_tqvj24.java" afterPath="$PROJECT_DIR$/src/Main_tqvj24.java" />
     </list>
     <ignored path="HexGame.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,16 +43,46 @@
     <favorites_list name="HexGame" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
+    <leaf>
+      <file leaf-file-name="Main_tqvj24.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Main_tqvj24.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="528">
+              <caret line="75" column="21" selection-start-line="75" selection-start-column="21" selection-end-line="75" selection-end-column="21" />
+              <folding>
+                <element signature="method#playHumanVsHuman#0;class#Main_tqvj24#0" expanded="false" />
+                <element signature="method#playHumanVsComputer#0;class#Main_tqvj24#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RandomPlayer_tqvj24.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/RandomPlayer_tqvj24.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="995">
+              <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+              <folding>
+                <element signature="method#makeMove#0;class#RandomPlayer_tqvj24#0" expanded="false" />
+                <element signature="method#setColour#0;class#RandomPlayer_tqvj24#0" expanded="false" />
+                <element signature="method#finalGameState#0;class#RandomPlayer_tqvj24#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="BoardManager_tqvj24.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BoardManager_tqvj24.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="9" column="74" selection-start-line="9" selection-start-column="74" selection-end-line="9" selection-end-column="74" />
+            <state relative-caret-position="561">
+              <caret line="78" column="65" selection-start-line="78" selection-start-column="65" selection-end-line="78" selection-end-column="65" />
               <folding>
+                <element signature="method#printBoard#0;class#BoardManager_tqvj24#0" expanded="false" />
                 <element signature="method#winner#0;class#BoardManager_tqvj24#0" expanded="false" />
                 <element signature="method#isValidSpace#0;class#BoardManager_tqvj24#0" expanded="false" />
                 <element signature="method#isFreeSpace#0;class#BoardManager_tqvj24#0" expanded="false" />
+                <element signature="method#getFreeSpaces#0;class#BoardManager_tqvj24#0" expanded="false" />
+                <element signature="e#2839#2846#0" expanded="true" />
                 <element signature="method#whoseGo#0;class#BoardManager_tqvj24#0" expanded="false" />
                 <element signature="method#getEmptyNeighbours#0;class#BoardManager_tqvj24#0" expanded="false" />
                 <element signature="method#moreThanXEmpties#0;class#BoardManager_tqvj24#0" expanded="false" />
@@ -58,31 +98,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ComputerPlayer_tqvj24.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ComputerPlayer_tqvj24.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ComputerPlayer_tqvj24.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="135" column="25" selection-start-line="135" selection-start-column="25" selection-end-line="135" selection-end-column="25" />
+            <state relative-caret-position="528">
+              <caret line="50" column="20" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
               <folding>
+                <element signature="method#makeMove#0;class#ComputerPlayer_tqvj24#0" expanded="false" />
                 <element signature="method#chooseNextMove#0;class#ComputerPlayer_tqvj24#0" expanded="false" />
                 <element signature="method#surroundLastMove#0;class#ComputerPlayer_tqvj24#0" expanded="false" />
-                <element signature="e#3636#3643#0" expanded="true" />
+                <element signature="method#directionFilter#0;class#ComputerPlayer_tqvj24#0" expanded="false" />
                 <element signature="method#surroundExisting#0;class#ComputerPlayer_tqvj24#0" expanded="false" />
                 <element signature="method#minimax#0;class#ComputerPlayer_tqvj24#0" expanded="false" />
                 <element signature="method#score#0;class#ComputerPlayer_tqvj24#0" expanded="false" />
                 <element signature="method#lastMove#0;class#ComputerPlayer_tqvj24#0" expanded="false" />
                 <element signature="method#randomChoice#0;class#ComputerPlayer_tqvj24#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GameManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GameManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -128,10 +159,12 @@
         <option value="$PROJECT_DIR$/src/Board.java" />
         <option value="$PROJECT_DIR$/src/HumanPlayer.java" />
         <option value="$PROJECT_DIR$/src/Move.java" />
+        <option value="$PROJECT_DIR$/src/Main_ryan.java" />
         <option value="$PROJECT_DIR$/src/GameManager.java" />
-        <option value="$PROJECT_DIR$/src/Main_tqvj24.java" />
-        <option value="$PROJECT_DIR$/src/BoardManager_tqvj24.java" />
         <option value="$PROJECT_DIR$/src/ComputerPlayer_tqvj24.java" />
+        <option value="$PROJECT_DIR$/src/BoardManager_tqvj24.java" />
+        <option value="$PROJECT_DIR$/src/RandomPlayer_tqvj24.java" />
+        <option value="$PROJECT_DIR$/src/Main_tqvj24.java" />
       </list>
     </option>
   </component>
@@ -204,9 +237,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Problems" />
-      </pane>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -273,8 +304,10 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope">
+        <subPane subId="Problems" />
+      </pane>
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -288,12 +321,12 @@
     <property name="SearchEverywhereHistoryKey" value=".copy&#9;PSI&#9;JAVA://ComputerPlayer_tqvj24#actualCopy&#10;position&#9;PSI&#9;JAVA://PositionAlreadyTakenException" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="me.tqvj24.michaelcroall" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Mike\IdeaProjects\HexGame\src" />
       <recent name="C:\Users\Mike\IdeaProjects\HexGame\src\me\tqvj24\michaelcroall" />
-    </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="me.tqvj24.michaelcroall" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -555,20 +588,19 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-13" y="-13" width="3226" height="1746" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26020068" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905406" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329097" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3658863" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19665551" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15424165" sideWeight="0.49622643" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297659" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -579,6 +611,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932532" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -624,7 +657,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="54" />
+      <option name="time" value="55" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -637,45 +670,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/HumanPlayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="7" column="49" selection-start-line="7" selection-start-column="49" selection-end-line="7" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ComputerPlayer_tqvj24.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="method#chooseNextMove#0;class#ComputerPlayer_tqvj24#0" expanded="false" />
-            <element signature="method#surroundLastMove#0;class#ComputerPlayer_tqvj24#0" expanded="false" />
-            <element signature="e#3636#3643#0" expanded="true" />
-            <element signature="method#surroundExisting#0;class#ComputerPlayer_tqvj24#0" expanded="false" />
-            <element signature="method#minimax#0;class#ComputerPlayer_tqvj24#0" expanded="false" />
-            <element signature="method#score#0;class#ComputerPlayer_tqvj24#0" expanded="false" />
-            <element signature="method#lastMove#0;class#ComputerPlayer_tqvj24#0" expanded="false" />
-            <element signature="method#randomChoice#0;class#ComputerPlayer_tqvj24#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GameManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="165" column="70" selection-start-line="165" selection-start-column="70" selection-end-line="165" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/HumanPlayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/HumanPlayer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -937,7 +931,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1651">
           <caret line="61" column="25" selection-start-line="61" selection-start-column="25" selection-end-line="61" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -959,10 +952,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="83" column="20" selection-start-line="83" selection-start-column="20" selection-end-line="83" selection-end-column="20" />
-          <folding>
-            <element signature="e#153#154#0" expanded="false" />
-            <element signature="e#2267#2268#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -980,14 +969,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/BirdCage.java" />
+    <entry file="file://$PROJECT_DIR$/src/Main_ryan.java" />
+    <entry file="file://$PROJECT_DIR$/src/ComputerPlayer_gcdk35.java" />
+    <entry file="file://$PROJECT_DIR$/src/GameManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/BoardManager_tqvj24.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="9" column="74" selection-start-line="9" selection-start-column="74" selection-end-line="9" selection-end-column="74" />
+        <state relative-caret-position="561">
+          <caret line="78" column="65" selection-start-line="78" selection-start-column="65" selection-end-line="78" selection-end-column="65" />
           <folding>
+            <element signature="method#printBoard#0;class#BoardManager_tqvj24#0" expanded="false" />
             <element signature="method#winner#0;class#BoardManager_tqvj24#0" expanded="false" />
             <element signature="method#isValidSpace#0;class#BoardManager_tqvj24#0" expanded="false" />
             <element signature="method#isFreeSpace#0;class#BoardManager_tqvj24#0" expanded="false" />
+            <element signature="method#getFreeSpaces#0;class#BoardManager_tqvj24#0" expanded="false" />
+            <element signature="e#2839#2846#0" expanded="true" />
             <element signature="method#whoseGo#0;class#BoardManager_tqvj24#0" expanded="false" />
             <element signature="method#getEmptyNeighbours#0;class#BoardManager_tqvj24#0" expanded="false" />
             <element signature="method#moreThanXEmpties#0;class#BoardManager_tqvj24#0" expanded="false" />
@@ -1002,35 +1005,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GameManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main_tqvj24.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="89" column="29" selection-start-line="89" selection-start-column="29" selection-end-line="89" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ComputerPlayer_tqvj24.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="135" column="25" selection-start-line="135" selection-start-column="25" selection-end-line="135" selection-end-column="25" />
+        <state relative-caret-position="528">
+          <caret line="50" column="20" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
           <folding>
+            <element signature="method#makeMove#0;class#ComputerPlayer_tqvj24#0" expanded="false" />
             <element signature="method#chooseNextMove#0;class#ComputerPlayer_tqvj24#0" expanded="false" />
             <element signature="method#surroundLastMove#0;class#ComputerPlayer_tqvj24#0" expanded="false" />
-            <element signature="e#3636#3643#0" expanded="true" />
+            <element signature="method#directionFilter#0;class#ComputerPlayer_tqvj24#0" expanded="false" />
             <element signature="method#surroundExisting#0;class#ComputerPlayer_tqvj24#0" expanded="false" />
             <element signature="method#minimax#0;class#ComputerPlayer_tqvj24#0" expanded="false" />
             <element signature="method#score#0;class#ComputerPlayer_tqvj24#0" expanded="false" />
             <element signature="method#lastMove#0;class#ComputerPlayer_tqvj24#0" expanded="false" />
             <element signature="method#randomChoice#0;class#ComputerPlayer_tqvj24#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main_tqvj24.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="75" column="21" selection-start-line="75" selection-start-column="21" selection-end-line="75" selection-end-column="21" />
+          <folding>
+            <element signature="method#playHumanVsHuman#0;class#Main_tqvj24#0" expanded="false" />
+            <element signature="method#playHumanVsComputer#0;class#Main_tqvj24#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RandomPlayer_tqvj24.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="995">
+          <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+          <folding>
+            <element signature="method#makeMove#0;class#RandomPlayer_tqvj24#0" expanded="false" />
+            <element signature="method#setColour#0;class#RandomPlayer_tqvj24#0" expanded="false" />
+            <element signature="method#finalGameState#0;class#RandomPlayer_tqvj24#0" expanded="false" />
           </folding>
         </state>
       </provider>

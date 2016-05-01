@@ -5,6 +5,10 @@ public class GameManager implements GameManagerInterface {
 
     // TODO go back through FAQs and ensure all are satisfied
 
+    // TODO Make sure all objects are of type XXXXInterface, not XXXX
+
+    // TODO read through EVERYTHING
+
     @Override
     public boolean specifyPlayer(PlayerInterface player, Piece colour) throws InvalidColourException, ColourAlreadySetException {
         if (colour == Piece.UNSET){
@@ -15,12 +19,14 @@ public class GameManager implements GameManagerInterface {
                 throw new ColourAlreadySetException();
             }
             redPlayer = player;
+            redPlayer.setColour(Piece.RED);
             return true;
         } else if(colour == Piece.BLUE){
             if (bluePlayer != null) {
                 throw new ColourAlreadySetException();
             }
             bluePlayer = player;
+            bluePlayer.setColour(Piece.BLUE);
             return true;
         }
         System.out.println("Error: Failed to specify player");
@@ -96,9 +102,7 @@ public class GameManager implements GameManagerInterface {
                     System.out.println("Conceding to opponent acknowledged");
                 } else {
                     moveMade = board.placePiece(colour, move);
-                    if(moveMade) {
-                        System.out.println("Move made successfully");
-                    }else{
+                    if(!moveMade) {
                         System.out.println("Error: Piece failed to place");
                     }
                 }
@@ -116,5 +120,4 @@ public class GameManager implements GameManagerInterface {
             else { return Piece.RED; }
         } else { return board.gameWon(); }
     }
-
 }
