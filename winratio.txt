@@ -7,5 +7,15 @@ How often ComputerPlayer_tqvj24 beats a purely random choice of move on a 12x12 
 	83.2% won when going first
 	82% won when going second
 
+
 Against ryan
 
+100 runs:
+	43% won when going first
+	30% won when going second
+1,000 runs:
+	39.6% won when going first
+	34.0% won when going second
+
+
+Against ____
