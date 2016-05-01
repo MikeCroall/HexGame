@@ -92,7 +92,7 @@ public class Main_tqvj24 {
 
     public static void main(String[] args) {
         //playHumanVsHuman(8, 8);
-        //playHumanVsComputer(8, 8, true);
-        playComputerVsComputer(15, 15);
+        playHumanVsComputer(12, 12, true);
+        //playComputerVsComputer(15, 15);
     }
 }

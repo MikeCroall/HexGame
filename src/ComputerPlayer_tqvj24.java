@@ -73,6 +73,16 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface {
 
     //Below - methods for minimax solving
     private Point chooseNextMove(Piece[][] grid) {
+        if (prevGrid == null){
+            int width = grid.length;
+            int height = grid[0].length;
+            prevGrid = new Piece[width][height];
+            for (int x = 0; x < width; x++) {
+                for (int y = 0; y < height; y++) {
+                    prevGrid[x][y] = Piece.UNSET;
+                }
+            }
+        }
         if (BoardManager_tqvj24.moreThanXEmpties(grid, 9)) {
             Piece target = colour == Piece.RED ? Piece.BLUE : Piece.RED;
             nextChoice = new Point(-1, -1);
