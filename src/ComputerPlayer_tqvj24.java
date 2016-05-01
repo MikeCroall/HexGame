@@ -8,11 +8,11 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface {
     private Piece colour;
     private Point nextChoice;
     private Piece[][] prevGrid;
-    private GameState finalGameState;
+    private GameState currentGameState;
 
     public ComputerPlayer_tqvj24() {
         colour = Piece.UNSET;
-        finalGameState = null;
+        currentGameState = GameState.INCOMPLETE;
     }
 
     @Override
@@ -54,7 +54,7 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface {
     @Override
     public boolean finalGameState(GameState state) {
         try {
-            finalGameState = state;
+            currentGameState = state;
             System.out.println("Computer player tqvj24 " + getPlayerName() + (state == GameState.WON ? " won!" : " lost."));
         } catch (Exception e) {
             return false;
@@ -63,8 +63,8 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface {
     }
 
     //Non-interface methods
-    public GameState getFinalGameState(){
-        return finalGameState;
+    public GameState getCurrentGameState(){
+        return currentGameState;
     }
 
     private String getPlayerName() {
@@ -258,7 +258,7 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface {
                 }
             }
         }
-        System.out.println("Last move not found");
+        //Not found - return a point with x = -1 to signal this fact
         return new Point(-1, -1);
     }
 

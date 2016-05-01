@@ -1,9 +1,9 @@
 public class Main_tqvj24 {
 
     private static void playHumanVsHuman(int boardWidth, int boardHeight) {
-        GameManager g = new GameManager();
-        HumanPlayer r = new HumanPlayer();
-        HumanPlayer b = new HumanPlayer();
+        GameManagerInterface g = new GameManager();
+        PlayerInterface r = new HumanPlayer();
+        PlayerInterface b = new HumanPlayer();
         boolean ready = false;
         try {
             if (g.specifyPlayer(r, Piece.RED)) {
@@ -28,9 +28,9 @@ public class Main_tqvj24 {
     }
 
     private static void playHumanVsComputer(int boardWidth, int boardHeight, boolean humanAsRed) {
-        GameManager g = new GameManager();
-        HumanPlayer h = new HumanPlayer();
-        ComputerPlayer_tqvj24 c = new ComputerPlayer_tqvj24();
+        GameManagerInterface g = new GameManager();
+        PlayerInterface h = new HumanPlayer();
+        PlayerInterface c = new ComputerPlayer_tqvj24();
         boolean ready = false;
         try {
             if (humanAsRed) {
@@ -64,9 +64,9 @@ public class Main_tqvj24 {
     }
 
     private static void playComputerVsComputer(int boardWidth, int boardHeight) {
-        GameManager g = new GameManager();
-        ComputerPlayer_tqvj24 r = new ComputerPlayer_tqvj24();
-        ComputerPlayer_tqvj24 b = new ComputerPlayer_tqvj24();
+        GameManagerInterface g = new GameManager();
+        PlayerInterface r = new ComputerPlayer_tqvj24();
+        PlayerInterface b = new ComputerPlayer_tqvj24();
         boolean ready = false;
         try {
             if (g.specifyPlayer(r, Piece.RED)) {
@@ -92,7 +92,7 @@ public class Main_tqvj24 {
 
     public static void main(String[] args) {
         //playHumanVsHuman(8, 8);
-        playHumanVsComputer(8, 8, true);
-        //playComputerVsComputer(15, 15);
+        //playHumanVsComputer(8, 8, true);
+        playComputerVsComputer(15, 15);
     }
 }

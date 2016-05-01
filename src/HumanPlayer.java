@@ -15,7 +15,7 @@ public class HumanPlayer implements PlayerInterface {
             throw new NoValidMovesException();
         }
 
-        Move move = new Move();
+        MoveInterface move = new Move();
         boolean validPosition = false;
 
         BoardManager_tqvj24.printBoard(boardView);

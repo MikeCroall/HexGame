@@ -8,12 +8,11 @@ public class BoardManager_tqvj24 {
 
     private static final boolean colourOutput = false; //Colours have been turned OFF for assignment release
 
-    //TODO ensure print method is optimised (already printing beautifully)
     public static void printBoard(Piece[][] grid) {
         //Print top coordinates
         System.out.print("\n ");
         for (int x = 0; x < Math.min(grid.length, 13); x++) {
-            System.out.print("   " + (x < 10 ? x : "."));
+            System.out.print("   " + (x < 10 ? x : ".")); //Print coordinates until 9, then ellipses, before nothing
         }
 
         //Print top of hexs
@@ -27,12 +26,12 @@ public class BoardManager_tqvj24 {
         for (int y = 0; y < grid[0].length; y++) {
             leftPadding = "";
             //Start at the correct position
-            for (int spaces = 0; spaces < 2 * y; spaces++) {
+            for (int space = 0; space < 2 * y; space++) {
                 leftPadding += " ";
             }
 
             //print left coordinates
-            if (y == 0) {
+            if (y == 0) { //Avoid maths log10(0) error
                 System.out.print(leftPadding + y + " ");
             } else {
                 System.out.print(leftPadding.substring(0, leftPadding.length() - (int) Math.log10(y)) + y + " ");
@@ -42,7 +41,13 @@ public class BoardManager_tqvj24 {
             for (int x = 0; x < grid.length; x++) {
                 System.out.print("| " + getLetter(grid[x][y]) + " ");
             }
-            System.out.print("|" + (y < grid[0].length - 1 ? " b" : "") + "\n" + leftPadding);
+            System.out.print("|");
+
+            //Print right side colour guide
+            if (y < grid[0].length - 1) {
+                System.out.print(" b");
+            }
+            System.out.print("\n" + leftPadding);
 
             //Close off hex (is also top of next row, if exists)
             for (int x = 0; x < grid.length; x++) {
@@ -50,7 +55,8 @@ public class BoardManager_tqvj24 {
             }
             System.out.println(" /" + (y < grid[0].length - 1 ? " \\" : ""));
         }
-        //Print r along bottom
+
+        //Print bottom side colour guide
         System.out.print(leftPadding + "   ");
         for (int x = 0; x < grid.length - 1; x++) {
             System.out.print("   r");
@@ -73,10 +79,10 @@ public class BoardManager_tqvj24 {
     }
 
     public static boolean isFreeSpace(int x, int y, Piece[][] grid) {
-        return (grid != null && grid[x][y] == Piece.UNSET);
+        return (isValidSpace(x, y, grid) && grid[x][y] == Piece.UNSET);
     }
 
-    public static ArrayList<Point> getFreeSpaces(Piece[][] grid) {
+    public static ArrayList<Point> getFreeSpaces(Piece[][] grid) { //TODO use this for randomChoice in ComputerPlayer_tqvj24
         ArrayList<Point> result = new ArrayList<Point>();
         for (int x = 0; x < grid.length; x++) {
             for (int y = 0; y < grid[0].length; y++) {
@@ -113,22 +119,22 @@ public class BoardManager_tqvj24 {
     public static ArrayList<Point> getEmptyNeighbours(int x, int y, Piece[][] grid) {
         ArrayList<Point> neighbours = new ArrayList<Point>();
 
-        if (isValidSpace(x - 1, y, grid) && isFreeSpace(x - 1, y, grid)) {
+        if (isFreeSpace(x - 1, y, grid)) {
             neighbours.add(new Point(x - 1, y));
         } //left
-        if (isValidSpace(x + 1, y, grid) && isFreeSpace(x + 1, y, grid)) {
+        if (isFreeSpace(x + 1, y, grid)) {
             neighbours.add(new Point(x + 1, y));
         } //right
-        if (isValidSpace(x, y - 1, grid) && isFreeSpace(x, y - 1, grid)) {
+        if (isFreeSpace(x, y - 1, grid)) {
             neighbours.add(new Point(x, y - 1));
         } //upleft
-        if (isValidSpace(x + 1, y - 1, grid) && isFreeSpace(x + 1, y - 1, grid)) {
+        if (isFreeSpace(x + 1, y - 1, grid)) {
             neighbours.add(new Point(x + 1, y - 1));
         }  //upright
-        if (isValidSpace(x - 1, y + 1, grid) && isFreeSpace(x - 1, y + 1, grid)) {
+        if (isFreeSpace(x - 1, y + 1, grid)) {
             neighbours.add(new Point(x - 1, y + 1));
         } //downleft
-        if (isValidSpace(x, y + 1, grid) && isFreeSpace(x, y + 1, grid)) {
+        if (isFreeSpace(x, y + 1, grid)) {
             neighbours.add(new Point(x, y + 1));
         } //downright
 
