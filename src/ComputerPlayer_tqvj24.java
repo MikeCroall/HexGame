@@ -17,10 +17,11 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface {
 
     @Override
     public MoveInterface makeMove(Piece[][] boardView) throws NoValidMovesException {
-        if (colour == Piece.UNSET || !BoardManager_tqvj24.hasValidMove(boardView)) {
+        if (colour == Piece.UNSET || currentGameState != GameState.INCOMPLETE || !BoardManager_tqvj24.hasValidMove(boardView)) {
             throw new NoValidMovesException();
         }
 
+        System.out.println("Computer player tqvj (" + getPlayerName() + ") is thinking...");
         Point p = chooseNextMove(boardView);
 
         MoveInterface myMove = new Move();
@@ -273,12 +274,13 @@ public class ComputerPlayer_tqvj24 implements PlayerInterface {
     }
 
     private Point randomChoice(Piece[][] grid) {
+        //Chooses center piece, unless already taken, then is random
         int x = (int) grid.length / 2;
         int y = (int) grid[0].length / 2;
         Random r = new Random();
-        while (!BoardManager_tqvj24.isFreeSpace(x, y, grid)) {
-            x = r.nextInt(grid.length);
-            y = r.nextInt(grid[0].length);
+        if (!BoardManager_tqvj24.isFreeSpace(x, y, grid)) {
+            ArrayList<Point> empties = BoardManager_tqvj24.getFreeSpaces(grid);
+            return empties.get(r.nextInt(empties.size()));
         }
         return new Point(x, y);
     }

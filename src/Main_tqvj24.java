@@ -27,23 +27,15 @@ public class Main_tqvj24 {
         }
     }
 
-    private static void playHumanVsComputer(int boardWidth, int boardHeight, boolean humanAsRed) {
+    private static void playHumanVsComputer(int boardWidth, int boardHeight) {
         GameManagerInterface g = new GameManager();
         PlayerInterface h = new HumanPlayer();
         PlayerInterface c = new ComputerPlayer_tqvj24();
         boolean ready = false;
         try {
-            if (humanAsRed) {
-                if (g.specifyPlayer(h, Piece.RED)) {
-                    if (g.specifyPlayer(c, Piece.BLUE)) {
-                        ready = true;
-                    }
-                }
-            } else {
-                if (g.specifyPlayer(h, Piece.BLUE)) {
-                    if (g.specifyPlayer(c, Piece.RED)) {
-                        ready = true;
-                    }
+            if (g.specifyPlayer(h, Piece.RED)) {
+                if (g.specifyPlayer(c, Piece.BLUE)) {
+                    ready = true;
                 }
             }
             if (!g.boardSize(boardWidth, boardHeight)) {
@@ -92,7 +84,7 @@ public class Main_tqvj24 {
 
     public static void main(String[] args) {
         //playHumanVsHuman(8, 8);
-        playHumanVsComputer(12, 12, true);
-        //playComputerVsComputer(15, 15);
+        //playHumanVsComputer(5, 5);
+        playComputerVsComputer(11, 5);
     }
 }

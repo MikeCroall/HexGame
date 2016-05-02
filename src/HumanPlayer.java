@@ -4,14 +4,16 @@ import java.util.Scanner;
 public class HumanPlayer implements PlayerInterface {
 
     private Piece colour;
+    private GameState currentGameState;
 
     public HumanPlayer() {
         colour = Piece.UNSET;
+        currentGameState = GameState.INCOMPLETE;
     }
 
     @Override
     public MoveInterface makeMove(Piece[][] boardView) throws NoValidMovesException {
-        if (colour == Piece.UNSET || !BoardManager_tqvj24.hasValidMove(boardView)) {
+        if (colour == Piece.UNSET || currentGameState != GameState.INCOMPLETE|| !BoardManager_tqvj24.hasValidMove(boardView)) {
             throw new NoValidMovesException();
         }
 
@@ -61,6 +63,7 @@ public class HumanPlayer implements PlayerInterface {
     @Override
     public boolean finalGameState(GameState state) {
         try {
+            currentGameState = state;
             if (state == GameState.WON) {
                 System.out.println("Congratulations " + getPlayerName() + ", you have won!");
             } else if (state == GameState.LOST) {
@@ -75,6 +78,10 @@ public class HumanPlayer implements PlayerInterface {
     }
 
     //Non-interface methods
+    public GameState getCurrentGameState(){
+        return currentGameState;
+    }
+
     private String getPlayerName() {
         return colour.name().toLowerCase();
     }
