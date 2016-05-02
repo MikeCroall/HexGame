@@ -3,7 +3,7 @@ public class GameManager implements GameManagerInterface {
     private PlayerInterface redPlayer, bluePlayer;
     private BoardInterface board;
 
-    // TODO go back through FAQs and ensure all are satisfied
+    // TODO go back through FAQs and ensure all are satisfied (start from q33)
 
     // TODO read through EVERYTHING
 
@@ -15,14 +15,14 @@ public class GameManager implements GameManagerInterface {
             throw new InvalidColourException();
         }
         if (colour == Piece.RED) {
-            if (redPlayer != null) {
+            if (redPlayer != null){
                 throw new ColourAlreadySetException();
             }
             redPlayer = player;
             redPlayer.setColour(Piece.RED);
             return true;
         } else if (colour == Piece.BLUE) {
-            if (bluePlayer != null) {
+            if(bluePlayer != null){
                 throw new ColourAlreadySetException();
             }
             bluePlayer = player;
@@ -57,34 +57,37 @@ public class GameManager implements GameManagerInterface {
     @Override
     public boolean playGame() {
         try {
-            Piece winner = Piece.UNSET;
-            while (winner == Piece.UNSET) {
-                //Red move first
-                winner = takeTurn(redPlayer, Piece.RED);
-                //Ensure Red hasn't won before letting Blue take a turn
-                if (winner == Piece.UNSET) {
-                    winner = takeTurn(bluePlayer, Piece.BLUE);
-                }
-            }
-            //Game finished, show the final board state
-            BoardManager_tqvj24.printBoard(board.getBoardView());
-
-            if (winner == Piece.RED) {
-                if (!redPlayer.finalGameState(GameState.WON)) {
-                    System.out.println("Error: Failed to send red player their final game state");
-                }
-                if (!bluePlayer.finalGameState(GameState.LOST)) {
-                    System.out.println("Error: Failed to send blue player their final game state");
-                }
+            if (redPlayer == null || bluePlayer == null) {
+                System.out.println("Error: At least one player object has not been specified, and so the game cannot play.");
             } else {
-                if (!redPlayer.finalGameState(GameState.LOST)) {
-                    System.out.println("Error: Failed to send red player their final game state");
+                Piece winner = Piece.UNSET;
+                while (winner == Piece.UNSET) {
+                    //Red move first
+                    winner = takeTurn(redPlayer, Piece.RED);
+                    //Ensure Red hasn't won before letting Blue take a turn
+                    if (winner == Piece.UNSET) {
+                        winner = takeTurn(bluePlayer, Piece.BLUE);
+                    }
                 }
-                if (!bluePlayer.finalGameState(GameState.WON)) {
-                    System.out.println("Error: Failed to send Blue player their final game state");
+                //Game finished, show the final board state
+                BoardManager_tqvj24.printBoard(board.getBoardView());
+
+                if (winner == Piece.RED) {
+                    if (!redPlayer.finalGameState(GameState.WON)) {
+                        System.out.println("Error: Failed to send red player their final game state");
+                    }
+                    if (!bluePlayer.finalGameState(GameState.LOST)) {
+                        System.out.println("Error: Failed to send blue player their final game state");
+                    }
+                } else {
+                    if (!redPlayer.finalGameState(GameState.LOST)) {
+                        System.out.println("Error: Failed to send red player their final game state");
+                    }
+                    if (!bluePlayer.finalGameState(GameState.WON)) {
+                        System.out.println("Error: Failed to send Blue player their final game state");
+                    }
                 }
             }
-
         } catch (NoBoardDefinedException noBoardEx) {
             System.out.println("Error: No board has been defined!");
             return false;
@@ -92,7 +95,7 @@ public class GameManager implements GameManagerInterface {
             System.out.println("Error: There are no valid moves to make!");
             return false;
         } catch (Exception e) {
-            System.out.println("Error: Game ended unexpectedly");
+            System.out.println("Error: Game ended unexpectedly due to: " + e.getClass().getSimpleName());
             return false;
         }
         return true;
@@ -118,7 +121,7 @@ public class GameManager implements GameManagerInterface {
             } catch (InvalidPositionException e) {
                 System.out.println("That is not a valid position!\nPlease try again!");
             } catch (InvalidColourException e) {
-                System.out.println("Error: Invalid colour given to place");
+                System.out.println("Error: Invalid colour");
             }
             //These catches are here, as they can be retried, and do not mean the game is currently unplayable
         }

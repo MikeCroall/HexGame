@@ -11,8 +11,10 @@ public class BoardManager_tqvj24 {
     public static void printBoard(Piece[][] grid) {
         //Print top coordinates
         System.out.print("\n ");
-        for (int x = 0; x < Math.min(grid.length, 13); x++) {
-            System.out.print("   " + (x < 10 ? x : ".")); //Print coordinates until 9, then ellipses, before nothing
+        for (int x = 0; x < grid.length; x++) {
+            String digitToShow = "" + x;
+            digitToShow = digitToShow.substring(digitToShow.length()-1);
+            System.out.print("   " + digitToShow); //Print coordinates until 9, then ellipses, before nothing
         }
 
         //Print top of hexs
@@ -82,7 +84,7 @@ public class BoardManager_tqvj24 {
         return (isValidSpace(x, y, grid) && grid[x][y] == Piece.UNSET);
     }
 
-    public static ArrayList<Point> getFreeSpaces(Piece[][] grid) { //TODO use this for randomChoice in ComputerPlayer_tqvj24
+    public static ArrayList<Point> getFreeSpaces(Piece[][] grid) {
         ArrayList<Point> result = new ArrayList<Point>();
         for (int x = 0; x < grid.length; x++) {
             for (int y = 0; y < grid[0].length; y++) {
