@@ -13,14 +13,14 @@ public class HumanPlayer implements PlayerInterface {
 
     @Override
     public MoveInterface makeMove(Piece[][] boardView) throws NoValidMovesException {
-        if (colour == Piece.UNSET || currentGameState != GameState.INCOMPLETE|| !BoardManager_tqvj24.hasValidMove(boardView)) {
+        if (colour == Piece.UNSET || currentGameState != GameState.INCOMPLETE|| !BoardManager_mike.hasValidMove(boardView)) {
             throw new NoValidMovesException();
         }
 
         MoveInterface move = new Move();
         boolean validPosition = false;
 
-        BoardManager_tqvj24.printBoard(boardView);
+        BoardManager_mike.printBoard(boardView);
 
         while (!validPosition) {
             validPosition = true;

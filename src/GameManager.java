@@ -2,6 +2,7 @@ public class GameManager implements GameManagerInterface {
 
     private PlayerInterface redPlayer, bluePlayer;
     private BoardInterface board;
+    public Piece whoWon = Piece.UNSET;
 
     // TODO go back through FAQs and ensure all are satisfied (start from q33)
 
@@ -57,6 +58,7 @@ public class GameManager implements GameManagerInterface {
     @Override
     public boolean playGame() {
         try {
+            whoWon = Piece.UNSET;
             if (redPlayer == null || bluePlayer == null) {
                 System.out.println("Error: At least one player object has not been specified, and so the game cannot play.");
             } else {
@@ -70,8 +72,8 @@ public class GameManager implements GameManagerInterface {
                     }
                 }
                 //Game finished, show the final board state
-                BoardManager_tqvj24.printBoard(board.getBoardView());
-
+                //BoardManager_mike.printBoard(board.getBoardView());
+                whoWon = winner;
                 if (winner == Piece.RED) {
                     if (!redPlayer.finalGameState(GameState.WON)) {
                         System.out.println("Error: Failed to send red player their final game state");

@@ -37,7 +37,7 @@ public class Board implements BoardInterface {
         if (grid == null) {
             throw new NoBoardDefinedException();
         }
-        return BoardManager_tqvj24.actualCopy(grid);
+        return BoardManager_mike.actualCopy(grid);
     }
 
     @Override
@@ -48,10 +48,10 @@ public class Board implements BoardInterface {
         if (grid == null) {
             throw new NoBoardDefinedException();
         }
-        if (!BoardManager_tqvj24.isValidSpace(move.getXPosition(), move.getYPosition(), grid)) {
+        if (!BoardManager_mike.isValidSpace(move.getXPosition(), move.getYPosition(), grid)) {
             throw new InvalidPositionException();
         }
-        if (!BoardManager_tqvj24.isFreeSpace(move.getXPosition(), move.getYPosition(), grid)) {
+        if (!BoardManager_mike.isFreeSpace(move.getXPosition(), move.getYPosition(), grid)) {
             throw new PositionAlreadyTakenException();
         }
 
@@ -70,7 +70,7 @@ public class Board implements BoardInterface {
             throw new NoBoardDefinedException();
         }
 
-        return BoardManager_tqvj24.winner(grid);
+        return BoardManager_mike.winner(grid);
     }
 
 }

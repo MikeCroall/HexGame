@@ -1,4 +1,3 @@
 Manifest-Version: 1.0
-Main_ryan-Class: Main_tqvj24
 Main-Class: Main_tqvj24
 

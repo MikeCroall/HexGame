@@ -2,7 +2,7 @@ import java.awt.*;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-public class BoardManager_tqvj24 {
+public class BoardManager_mike {
 
     private static Piece wentFirst = Piece.RED; //red assumed, later figured out if wrong
 

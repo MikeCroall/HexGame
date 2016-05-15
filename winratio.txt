@@ -1,4 +1,4 @@
-How often ComputerPlayer_tqvj24 beats a purely random choice of move on a 12x12 board
+How often ComputerPlayer_mike beats a purely random choice of move on a 12x12 board
 
 100 runs:
 	84% won when going first
